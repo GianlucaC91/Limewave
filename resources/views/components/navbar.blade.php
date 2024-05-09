@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-s text-p">
+<nav class="navbar navbar-expand-lg bg-s text-p shadow-sm">
     <div class="container-fluid w-100">
         <div class="row w-100 m-0">
             <div class="col-12 d-flex justify-content-between">
@@ -21,12 +21,12 @@
                                 Dropdown
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item text-p" href="#">Action</a></li>
-                                <li><a class="dropdown-item text-p" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item text-p" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -50,7 +50,7 @@
                                     <li><a class="dropdown-item text-p" href="{{ route('register') }}">Registrati</a></li>
                                 @endguest
                                 @auth
-                                <li><form class="dropdown-item" method="POST" action="logout">
+                                <li><form class="dropdown-item" method="POST" action="{{route('logout')}}">
                                     @csrf 
                                     <button class="nav-link btn btn-primary">
                                         Logout

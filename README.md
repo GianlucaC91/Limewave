@@ -7,17 +7,17 @@
 ### ACCEPTANCE CRITERIA:
 
 
-- [ ] Utente deve potersi loggare
-- [ ] Bottone “inserisci annuncio” in home
-- [ ] Solo gli utenti loggati possono inserire un annuncio
-- [ ] Dopo register o login, subito redirect a "inserisci annuncio"
-- [ ] Categorie dell'annuncio pre-compilate
-    - [ ] 10 categorie sono sufficienti
-- [ ] La relazione tra Categoria e Annuncio è  1 a N
-- [ ] La relazione tra Utente e Annuncio è 1 a N
-- [ ] Utilizzo di Laravel Livewire per l'inserimento dell'annuncio
-- [ ] Ad annuncio inserito visualizzare un messaggio di conferma
-- [ ] Per ora non gestire foto o altri file
+- [x] Utente deve potersi loggare
+- [x] Bottone “inserisci annuncio” in home
+- [x] Solo gli utenti loggati possono inserire un annuncio
+- [x] Dopo register o login, subito redirect a "inserisci annuncio"
+- [x] Categorie dell'annuncio pre-compilate
+    - [x] 10 categorie sono sufficienti
+- [x] La relazione tra Categoria e Annuncio è  1 a N
+- [x] La relazione tra Utente e Annuncio è 1 a N
+- [x] Utilizzo di Laravel Livewire per l'inserimento dell'annuncio
+- [x] Ad annuncio inserito visualizzare un messaggio di conferma
+- [x] Per ora non gestire foto o altri file
 
 TIPS:
 Il bundling degli asset nei video è diverso. Dovrete utilizzare Laravel Vite, come visto a lezione.
