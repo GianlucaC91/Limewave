@@ -7,5 +7,5 @@ use App\Http\Controllers\ArticleController;
 // PublicController
 Route::get('/', [PublicController::class, "homepage"])->name("homepage");
 
-Route::get('/article/create', [ArticleController::class, "create"])->name("create")->middleware("auth");
+Route::get('/article/create', [ArticleController::class, "create"])->name("article.create")->middleware("auth");
 

@@ -12,7 +12,7 @@ class ArticleCreate extends Component
     public $price;
     public $body;
 
-    public function create (){
+    public function store (){
         Article::create([
             "title"=> $this->title,
             "price"=> $this->price,
