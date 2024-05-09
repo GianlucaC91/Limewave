@@ -12,7 +12,8 @@ class Article extends Model
     protected $fillable =[
         "title",
         "price",
-        "body"
+        "body",
+        "user_id"
     ];
 
     public function user()

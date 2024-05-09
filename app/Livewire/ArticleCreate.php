@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Article;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\Attributes\Validate;
 
@@ -21,13 +22,17 @@ class ArticleCreate extends Component
     public function store()
     {
         $this->validate();
+
         Article::create([
             "title" => $this->title,
             "price" => $this->price,
             "body" => $this->body,
+            "user_id"=> Auth::user()->id
         ]);
 
         $this->reset();
+        session()->flash('status', "Hai inserito correttamente l'annuncio ");
+        
     }
 
     public function render()
