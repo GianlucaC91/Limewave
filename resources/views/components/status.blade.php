@@ -1,3 +1,7 @@
 <div>
-    <!-- Well begun is half done. - Aristotle -->
+    @if (session('message'))
+        <div class="alert alert-success">
+            {{ session('message') }}
+        </div>
+    @endif
 </div>
