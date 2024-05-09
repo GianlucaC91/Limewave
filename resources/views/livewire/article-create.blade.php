@@ -11,12 +11,12 @@
                     <div class="mb-3">
                         <label for="title" class="form-label">Titolo</label>
                         <input wire:model="title" type="text" class="form-control" id="title" aria-describedby="emailHelp">
-                        <div>@error("title") {{$message}} @enderror</div>
+                        <div class="text-danger">@error("title") {{$message}} @enderror</div>
                     </div>
                     <div class="mb-3">
                         <label for="price" class="form-label">Prezzo</label>
                         <input wire:model="price" type="text" class="form-control" id="price">
-                        <div>@error("price") {{$message}} @enderror</div>
+                        <div class="text-danger">@error("price") {{$message}} @enderror</div>
                     </div>
                     <div class="mb-3">
                         <button class="btn btn-secondary w-100 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,7 +30,7 @@
                     <div class="mb-3">
                         <label for="body" class="form-label">Descrizione</label>
                         <textarea wire:model="body" type="text" class="form-control" id="body" cols="30" rows="5"></textarea>
-                        <div>@error("body") {{$message}} @enderror</div>
+                        <div class="text-danger">@error("body") {{$message}} @enderror</div>
                     </div>
                     <button type="submit" class="btn btn-primary">Crea!</button>
                 </form>
