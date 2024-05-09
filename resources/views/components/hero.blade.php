@@ -1,5 +1,5 @@
 <header class="masthead">
-    <div class="container h-100">
+    <div class="container h-75">
         <div class="row h-100 align-items-center">
             <div class="col-12 text-center">
                 <h1 class="fw-light">Vertically Centered Masthead Content</h1>
@@ -8,6 +8,11 @@
                 <a href="{{ route('login') }}" class="btn btn-info">Accedi</a>
                 <a href="{{ route('register') }}" class="btn btn-success">Registrati</a>
                 @endguest
+                @auth
+                    <button class="btn btn-primary text-white">
+                        <a class="text-white" style="text-decoration: none;" href="{{route("create")}}">Inserisci annuncio</a> 
+                    </button>
+                @endauth
             </div>
         </div>
     </div>
