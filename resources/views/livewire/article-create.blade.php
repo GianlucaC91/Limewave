@@ -6,7 +6,7 @@
             <div class="col-12">
 
                 <form 
-                wire:submit="create"
+                wire:submit="store"
                  >
                     <div class="mb-3">
                         <label for="title" class="form-label">Titolo</label>

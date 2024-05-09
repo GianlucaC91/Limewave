@@ -10,7 +10,7 @@
                 @endguest
                 @auth
                     <button class="btn btn-primary text-white">
-                        <a class="text-white" style="text-decoration: none;" href="{{route("create")}}">Inserisci annuncio</a> 
+                        <a class="text-white" style="text-decoration: none;" href="{{route("article.create")}}">Inserisci annuncio</a> 
                     </button>
                 @endauth
             </div>
