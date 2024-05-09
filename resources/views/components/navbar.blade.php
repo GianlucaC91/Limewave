@@ -72,7 +72,7 @@
                
             </div>
         </div>
-        <div class="col-12 d-flex">
+        <div class="col-12 d-flex mt-3">
             <form class="d-flex w-100" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-custom" type="submit">Search</button>

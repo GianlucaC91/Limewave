@@ -2,4 +2,5 @@
 @import 'bootstrap-icons';
 @import './root.css';
 @import "./masthead.css";
+@import "./navbar.css";
 @import "./global.css";
