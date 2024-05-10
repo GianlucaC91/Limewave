@@ -21,7 +21,7 @@ class ArticleCreate extends Component
     #[Validate('min:10', message: 'La descrizione deve contenere almeno 10 caratteri')]
     public $body = "";
     #[Validate('required', message: 'La categoria è necessaria')]
-    public $category;
+    public $category="";
 
     public function store()
     {
