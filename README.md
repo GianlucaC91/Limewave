@@ -52,3 +52,4 @@ Il bundling degli asset nei video è diverso. Dovrete utilizzare Laravel Vite, c
 
 ### Risorse Utili
 * popup di conferma https://livewire.laravel.com/docs/wire-confirm 
+* Da settare true: 'expire_on_close' => env('SESSION_EXPIRE_ON_CLOSE', false),gi
