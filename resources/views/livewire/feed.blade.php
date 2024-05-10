@@ -10,7 +10,7 @@
                   <p class="card-text">Venduto da {{$article->user->name}}</p>
                   <p class="card-text">{{$article->body}}</p>
                   <p class="card-text">{{$article->price}}</p>
-                  <a href="#" class="btn btn-primary">Dettaglio WIP</a>
+                  <a href="{{route('article.detail', compact('article'))}}" class="btn btn-primary">Dettaglio</a>
                 </div>
               </div>
             </div>
