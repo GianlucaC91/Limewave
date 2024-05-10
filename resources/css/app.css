@@ -1,6 +1,7 @@
 @import 'bootstrap';
 @import 'bootstrap-icons';
 @import './root.css';
+@import 'swiper/css/bundle';
 @import "./masthead.css";
 @import "./navbar.css";
 @import "./global.css";
