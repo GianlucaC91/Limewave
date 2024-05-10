@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-s text-p shadow-sm">
+<nav class="navbar fixed-top navbar-expand-lg bg-s text-p shadow-sm pb-3">
     <div class="container-fluid w-100">
         <div class="row w-100 m-0">
             <div class="col-12 d-flex justify-content-between">
@@ -22,7 +22,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 @foreach ($categories as $category)
-                                <li><a class="dropdown-item" href="{{route("categoryShow", compact("category"))}}">{{$category->name}}</a></li>
+                                <li><a class="dropdown-item" href="{{route("categoryShow", compact("category"))}}">{{$category->name}} ({{$category->articles->count()}})</a></li>
                                     
                                 @endforeach
                             </ul>
@@ -69,7 +69,7 @@
         <div class="col-12 d-flex mt-3">
             <form class="d-flex w-100" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-custom" type="submit">Search</button>
+                <button class="btn btn-accent" type="submit">Search</button>
               </form>
         </div>
         </div>
