@@ -21,12 +21,10 @@
                                 Dropdown
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                @foreach ($categories as $category)
+                                <li><a class="dropdown-item" href="{{route("categoryShow", compact("category"))}}">{{$category->name}}</a></li>
+                                    
+                                @endforeach
                             </ul>
                         </li>
                     </ul>
@@ -50,11 +48,7 @@
                                     <li><a class="dropdown-item text-p" href="{{ route('register') }}">Registrati</a></li>
                                 @endguest
                                 @auth
-<<<<<<< HEAD
-                                <li><form class="dropdown-item" method="POST" action="{{route("logout")}}">
-=======
                                 <li><form class="dropdown-item" method="POST" action="{{route('logout')}}">
->>>>>>> 4bf5198faede4ea8877eae7391540b0d0c69758c
                                     @csrf 
                                     <button class="nav-link btn btn-primary">
                                         Logout
