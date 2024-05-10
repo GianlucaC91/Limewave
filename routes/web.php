@@ -5,6 +5,11 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
 
 // PublicController
-Route::get('/', [PublicController::class, "homepage"])->name("homepage");
+Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 
-Route::get('/article/create', [ArticleController::class, "create"])->name("article.create")->middleware("auth");
+// ArticleController
+Route::get('/article/create', [ArticleController::class, 'create'])->name('article.create')->middleware('auth');
+
+Route::get('/article/detail/{article}', [ArticleController::class, 'show'])->name('article.detail');
+
+
