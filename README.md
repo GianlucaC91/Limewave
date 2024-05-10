@@ -39,7 +39,7 @@ Il bundling degli asset nei video è diverso. Dovrete utilizzare Laravel Vite, c
 - [x] Foto segnaposto
 - [x] In homepage visualizzare gli ultimi 4-6 annunci
 - [x] Ordine dal più recente al più vecchio
-    - [ ] non usare `sortByDesc()` ma `orderBy()`: https://laravel.com/docs/10.x/queries#orderby
+    - [x] non usare `sortByDesc()` ma `orderBy()`: https://laravel.com/docs/10.x/queries#orderby
     // Example
     $articles = Article::orderBy('created_at','desc')->get()
 - [x] Pagina dettaglio dell’annuncio
