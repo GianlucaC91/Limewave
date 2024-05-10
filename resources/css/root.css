@@ -1,7 +1,9 @@
 :root {
    --color-s:#1e2029;
+   --color-sHover:#4e5468;
    --color-p:#e3e3e3;
    --color-a:#e0ff00;
+   --color-aHover:rgb(207, 235, 0);
 }
 
 .bg-s{
@@ -28,7 +30,24 @@
     color: var(--color-s); /*text secondary*/
 }
 
-.btn-custom{
+.btn-accent{
     background-color: var(--color-a);
     color: var(--color-s);
+    transition: 0.3s;
+}
+
+.btn-s{
+    background-color: var(--color-s);
+    color: var(--color-p);
+    transition: 0.3s;
+}
+
+.btn-accent:hover{
+    background-color: var(--color-aHover);
+    color: var(--color-s);
+}
+
+.btn-s:hover{
+    background-color: var(--color-sHover);
+    color: var(--color-p);
 }
