@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="/media/temp-favicon.svg">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="mt-5 pt-5">
+<body>
     <x-navbar/>
     
         <x-status/>    

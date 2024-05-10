@@ -23,55 +23,61 @@
                             <ul class="dropdown-menu">
                                 @foreach ($categories as $category)
                                 <li><a class="dropdown-item" href="{{route("categoryShow", compact("category"))}}">{{$category->name}} ({{$category->articles->count()}})</a></li>
-                                    
                                 @endforeach
                             </ul>
                         </li>
                     </ul>
                    
                     <div class="collapse navbar-collapse d-flex">
-                        <div class="ms-auto">
+                        <div class="ms-auto dropdown">
                             <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    @auth
-                                    <i class="bi bi-person-circle text-a f"></i>
-                                    @endauth
-                                        
-                                       @guest
-                                       <i class="bi bi-person"></i>
-                                       @endguest
-    
-                                </a>
-                            <ul class="dropdown-menu bg-s">
+                            aria-expanded="false">
+                                @auth
+                                <i class="bi bi-person-circle text-a f"></i>
+                                @endauth
+                                    
                                 @guest
-                                    <li><a class="dropdown-item text-p" href="{{ route('login') }}">Accedi</a></li>
-                                    <li><a class="dropdown-item text-p" href="{{ route('register') }}">Registrati</a></li>
+                                <i class="bi bi-person"></i>
+                                @endguest
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end  bg-white">
+                                @guest
+                                    <li><a class="dropdown-item text-s" href="{{ route('login') }}">Accedi</a></li>
+                                    <li><a class="dropdown-item text-s" href="{{ route('register') }}">Registrati</a></li>
                                 @endguest
                                 @auth
-                                <li><form class="dropdown-item" method="POST" action="{{route('logout')}}">
-                                    @csrf 
-                                    <button class="nav-link btn btn-primary">
-                                        Logout
-                                        </button>
-                                </form></li>
-                                @endauth
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Profilo</a>
+                                    </li>
 
+                                    <li>
+                                        <a class="dropdown-item" href="#">Dashboard</a>
+                                    </li>
+
+                                    <li>
+                                        <hr class="dropdown-divider mx-3">
+                                    </li>
+
+                                    <li><form class="dropdown-item" method="POST" action="{{route('logout')}}">
+                                        @csrf 
+                                            <button class="nav-link btn btn-primary">
+                                                Logout
+                                            </button>
+                                        </form>
+                                    </li>
+                                @endauth
+                            </ul>
                         </div>
                     </div>
                
+                </div>
             </div>
-        </div>
-        <div class="col-12 d-flex mt-3">
-            <form class="d-flex w-100" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-accent" type="submit">Search</button>
-              </form>
-        </div>
+            <div class="col-12 d-flex mt-3">
+                <form class="d-flex w-100" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-accent" type="submit">Search</button>
+                </form>
+            </div>
         </div>
     </div>
 </nav>

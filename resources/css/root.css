@@ -7,6 +7,10 @@
 }
 
 
+body{
+    margin-top: 125px;
+}
+
 /* BACKGROUND STYLES */
 .bg-p{
     background-color: var(--color-p); /*colore primary*/
