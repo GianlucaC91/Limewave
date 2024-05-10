@@ -11,8 +11,8 @@
                     <p class="lead">È arrivato il momento di liberare casa da quello che non usi più! Oppure compra di seconda mano per rispettare un favore all'ambiente! Comincia subito a fare affari!</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                         @guest
-                        <button type="button" class="btn btn-accent btn-hero"><a href="{{ route('register') }}" class="btn btn-accent btn-lg px-4 fw-bold">Registrati</a></button>
-                        <button type="button" class="btn btn-s"><a href="{{ route('login') }}" class="btn btn btn-s btn-lg px-4 fw-bold">Accedi</a></button>
+                        <a href="{{ route('register') }}" class="btn btn-accent btn-hero btn-lg fw-bold pt-3">Registrati</a>
+                        <a href="{{ route('login') }}" class="btn btn-s btn-lg fw-bold pt-3 px-4">Accedi</a>
                         @endguest
                         
                         @auth
