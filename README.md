@@ -34,17 +34,17 @@ Il bundling degli asset nei video è diverso. Dovrete utilizzare Laravel Vite, c
 
 ### ACCEPTANCE CRITERIA:                             
 
-- [ ] Titolo, prezzo e descrizione come campi necessari
-- [ ] Categoria
-- [ ] Foto segnaposto
-- [ ] In homepage visualizzare gli ultimi 4-6 annunci
-- [ ] Ordine dal più recente al più vecchio
+- [x] Titolo, prezzo e descrizione come campi necessari
+- [x] Categoria
+- [x] Foto segnaposto
+- [x] In homepage visualizzare gli ultimi 4-6 annunci
+- [x] Ordine dal più recente al più vecchio
     - [ ] non usare `sortByDesc()` ma `orderBy()`: https://laravel.com/docs/10.x/queries#orderby
     // Example
     $articles = Article::orderBy('created_at','desc')->get()
-- [ ] Pagina dettaglio dell’annuncio
-- [ ] Nel dettaglio ci sono N-foto segnaposto, come carosello oppure altre soluzioni altre soluzioni di web design
-- [ ] cliccando su una categoria, voglio vedere la lista degli annunci di quella categoria
+- [x] Pagina dettaglio dell’annuncio
+- [x] Nel dettaglio ci sono N-foto segnaposto, come carosello oppure altre soluzioni altre soluzioni di web design
+- [x] cliccando su una categoria, voglio vedere la lista degli annunci di quella categoria
 
 
 
