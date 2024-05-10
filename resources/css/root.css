@@ -6,6 +6,12 @@
    --color-aHover:rgb(207, 235, 0);
 }
 
+
+/* BACKGROUND STYLES */
+.bg-p{
+    background-color: var(--color-p); /*colore primary*/
+}
+
 .bg-s{
     background-color: var(--color-s); /*colore secondary*/
 }
@@ -14,10 +20,8 @@
     background-color: var(--color-a); /*colore accent*/
 }
 
-.bg-p{
-    background-color: var(--color-p); /*colore primary*/
-}
 
+/* TEXT STYLES */
 .text-a{
     color: var(--color-a); /*text accent*/
 }
@@ -30,6 +34,7 @@
     color: var(--color-s); /*text secondary*/
 }
 
+/* BUTTON STYLES */
 .btn-accent{
     background-color: var(--color-a);
     color: var(--color-s);
@@ -50,4 +55,23 @@
 .btn-s:hover{
     background-color: var(--color-sHover);
     color: var(--color-p);
+}
+
+/* BORDER STYLES */
+.border-p {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--color-p);    
+}
+
+.border-s {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--color-s);    
+}
+
+.border-a {
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--color-a);    
 }
