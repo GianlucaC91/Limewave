@@ -74,7 +74,7 @@ return [
     */
 
     'home' => '/article/create',
-
+    
     /*
     |--------------------------------------------------------------------------
     | Fortify Routes Prefix / Subdomain

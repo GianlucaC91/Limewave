@@ -50,7 +50,11 @@
                                     <li><a class="dropdown-item text-p" href="{{ route('register') }}">Registrati</a></li>
                                 @endguest
                                 @auth
+<<<<<<< HEAD
+                                <li><form class="dropdown-item" method="POST" action="{{route("logout")}}">
+=======
                                 <li><form class="dropdown-item" method="POST" action="{{route('logout')}}">
+>>>>>>> 4bf5198faede4ea8877eae7391540b0d0c69758c
                                     @csrf 
                                     <button class="nav-link btn btn-primary">
                                         Logout

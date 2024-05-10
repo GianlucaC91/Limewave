@@ -1,3 +1,31 @@
+<<<<<<< HEAD
+<div>
+
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12">
+
+                <form 
+                wire:submit="store"
+                 >
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Titolo</label>
+                        <input wire:model="title" type="text" class="form-control" id="title" aria-describedby="emailHelp">
+                        <div class="text-danger">@error("title") {{$message}} @enderror</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Prezzo</label>
+                        <input wire:model="price" type="text" class="form-control" id="price">
+                        <div class="text-danger">@error("price") {{$message}} @enderror</div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-secondary w-100 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                          </button>
+                          <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+=======
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-12 col-md-10 col-xl-8">
@@ -51,13 +79,25 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary  fw-bold w-25 shadow-sm">Crea</button>
                             </form>
+>>>>>>> 4bf5198faede4ea8877eae7391540b0d0c69758c
                             
                         </div>
                     </div>
+<<<<<<< HEAD
+                    <div class="mb-3">
+                        <label for="body" class="form-label">Descrizione</label>
+                        <textarea wire:model="body" type="text" class="form-control" id="body" cols="30" rows="5"></textarea>
+                        <div class="text-danger">@error("body") {{$message}} @enderror</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Crea!</button>
+                </form>
+                
+=======
                 </div>
             
             
             
+>>>>>>> 4bf5198faede4ea8877eae7391540b0d0c69758c
             </div>
 
         </div>
