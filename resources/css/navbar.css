@@ -1,4 +1,8 @@
-.nav-link::before{
+.link-custom{
+    position: relative;
+}
+
+.link-custom::before{
     content: "";
     position: absolute;
     bottom: 0;
@@ -9,6 +13,22 @@
     transition: .5s;
 }
 
-.nav-link:hover:before{
+.link-custom:hover:before{
     width: 100%;
 }
+
+.link-custom:hover{
+    color: var(--color-p);
+  }
+
+.dropdown:hover{
+    background-color: var(--color-s);
+    color: var(--color-a);
+  }
+
+  /* .dropdown-logout{
+    left: 1350px !important;
+    right: auto !important;
+    top: 48px !important;
+  } */
+  

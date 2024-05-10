@@ -28,7 +28,7 @@
     color: var(--color-s); /*text secondary*/
 }
 
-.btn-custom{
+.btn-accent{
     background-color: var(--color-a);
     color: var(--color-s);
 }
