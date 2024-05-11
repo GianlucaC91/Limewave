@@ -1,3 +1,4 @@
+/* LINK CUSTOM */
 .link-custom{
     position: relative;
 }
@@ -26,9 +27,32 @@
     color: var(--color-a);
   }
 
-  /* .dropdown-logout{
-    left: 1350px !important;
-    right: auto !important;
-    top: 48px !important;
-  } */
-  
+  /* LINK CUSTOM 2 */
+  .link-custom-2{
+    position: relative;
+}
+
+.link-custom-2::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-a);
+    transition: .5s;
+}
+
+.link-custom-2:hover:before{
+    width: 100%;
+}
+
+.link-custom-2:hover{
+    color: #1e2029;
+  }
+
+.dropdown-2:hover{
+    background-color: var(--color-s);
+    color: var(--color-a);
+  }
+
