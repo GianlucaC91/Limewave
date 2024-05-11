@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-s text-p shadow-sm">
+<nav class="navbar fixed-top navbar-expand-lg bg-s text-p shadow-sm pb-3">
     <div class="container-fluid w-100">
         <div class="row w-100 m-0">
             <div class="col-12 d-flex justify-content-between">
@@ -8,90 +8,76 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-lg-0">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link link-custom text-p" aria-current="page" href="{{ route('homepage') }}">Home</a>
+                            <a class="nav-link text-p" aria-current="page" href="{{ route('homepage') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link-custom text-p" href="#">Link</a>
+                            <a class="nav-link text-p" href="#">Link</a>
                         </li>
-
                         <li class="nav-item dropdown">
-                            <a class="nav-link link-custom dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Dropdown
                             </a>
-                            <ul class="dropdown-menu bg-s">
-                                <li><a class="dropdown-item text-p dropdown" href="#">Action</a></li>
-                                <li><a class="dropdown-item text-p dropdown" href="#">Another action</a></li>
-                                {{-- <li>
-                                    <hr class="dropdown-divider tetx-p">
-                                </li> --}}
-                                <li><a class="dropdown-item text-p dropdown" href="#">Something else here</a></li>
+                            <ul class="dropdown-menu">
+                                @foreach ($categories as $category)
+                                <li><a class="dropdown-item" href="{{route("categoryShow", compact("category"))}}">{{$category->name}} ({{$category->articles->count()}})</a></li>
+                                @endforeach
                             </ul>
                         </li>
                     </ul>
                    
                     <div class="collapse navbar-collapse d-flex">
-                        <div class="ms-auto">
+                        <div class="ms-auto dropdown">
                             <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            
-                            @auth
-                            {{-- <div class="d-flex">
-                                <p class="text-p mx-4"> Ciao, {{Auth::user()->name}}</p>
-                            </div> --}}
-                            <i class="bi bi-person-circle text-a fs-5"></i>
-                                    @endauth
-                                        
-                                       {{-- @guest
-                                       <i class="bi bi-person text-a fs-5"></i> --}}
-                                       {{-- <button type="button" class="btn btn-primary">Primary</button>
-                                       <button type="button" class="btn btn-outline-primary">Primary</button> --}}
-                                       {{-- <li class="btn btn-custom-login"><a class="dropdown-item text-a" href="{{ route('login') }}">Accedi</a></li >
-                                       <li class="btn btn-custom-register"><a class="dropdown-item text-s" href="{{ route('register') }}">Registrati</a></li > --}}
-                                       {{-- @endguest --}}
-    
-                                </a>
-                            {{-- <ul class="dropdown-menu bg-s"> --}}
-                                @guest
-                                <div class="dropdown-center me-5">
-                                    {{-- <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                      Centered dropdown
-                                    </button> --}}
-                                    <ul class="dropdown-menu me-5">
-                                        <li><a class="dropdown-item text-p dropdown" href="{{ route('login') }}">Accedi</a></li>
-                                        <li><a class="dropdown-item text-p dropdown" href="{{ route('register') }}">Registrati</a></li>
-                                   
+                                @auth
+                                <i class="bi bi-person-circle text-a f"></i>
+                                @endauth
                                     
+                                @guest
+                                <i class="bi bi-person"></i>
+                                @endguest
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end  bg-white">
+                                @guest
+                                    <li><a class="dropdown-item text-s" href="{{ route('login') }}">Accedi</a></li>
+                                    <li><a class="dropdown-item text-s" href="{{ route('register') }}">Registrati</a></li>
                                 @endguest
                                 @auth
-                                <li><form class="dropdown-item dropdown" method="POST" action="{{route("logout")}}">
-                                    @csrf 
-                                    <button class="nav-link btn bg-s text-p">
-                                        Logout
-                                        </button>
-                                </form></li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">Profilo</a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="#">Dashboard</a>
+                                    </li>
+
+                                    <li>
+                                        <hr class="dropdown-divider mx-3">
+                                    </li>
+
+                                    <li><form class="dropdown-item" method="POST" action="{{route('logout')}}">
+                                        @csrf 
+                                            <button class="nav-link btn btn-primary">
+                                                Logout
+                                            </button>
+                                        </form>
+                                    </li>
                                 @endauth
                             </ul>
                         </div>
-                                {{-- <li>
-                                    <hr class="dropdown-divider">
-                                </li> --}}
-                                {{-- <li><a class="dropdown-item dropdown text-p" href="#">Something else here</a></li> --}}
-                            {{-- </ul> --}}
-
-                        </div>
                     </div>
                
+                </div>
             </div>
-        </div>
-        <div class="col-12 d-flex">
-            <form class="d-flex w-100" role="search">
-                <input class="form-control me-2 mt-3" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-accent mt-3" type="submit">Search</button>
-              </form>
-        </div>
+            <div class="col-12 d-flex mt-3">
+                <form class="d-flex w-100" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-accent" type="submit">Search</button>
+                </form>
+            </div>
         </div>
     </div>
 </nav>

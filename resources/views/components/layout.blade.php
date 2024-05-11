@@ -8,10 +8,12 @@
     <link rel="icon" type="image/x-icon" href="/media/temp-favicon.svg">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="">
+<body>
     <x-navbar/>
-    <x-status/>    
-    {{$slot}}
-    <x-footer/>
+    
+        <x-status/>    
+        {{$slot}}
+        <x-footer/>
+    
 </body>
 </html>
