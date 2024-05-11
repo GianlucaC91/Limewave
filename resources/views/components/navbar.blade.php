@@ -44,18 +44,18 @@
                             <i class="bi bi-person-circle text-a fs-5"></i>
                                     @endauth
                                         
-                                       @guest
-                                       <i class="bi bi-person text-a fs-5"></i>
+                                       {{-- @guest
+                                       <i class="bi bi-person text-a fs-5"></i> --}}
                                        {{-- <button type="button" class="btn btn-primary">Primary</button>
                                        <button type="button" class="btn btn-outline-primary">Primary</button> --}}
                                        {{-- <li class="btn btn-custom-login"><a class="dropdown-item text-a" href="{{ route('login') }}">Accedi</a></li >
                                        <li class="btn btn-custom-register"><a class="dropdown-item text-s" href="{{ route('register') }}">Registrati</a></li > --}}
-                                       @endguest
+                                       {{-- @endguest --}}
     
                                 </a>
                             {{-- <ul class="dropdown-menu bg-s"> --}}
                                 @guest
-                                <div class="dropdown-center">
+                                <div class="dropdown-center me-5">
                                     {{-- <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                       Centered dropdown
                                     </button> --}}
@@ -79,7 +79,7 @@
                                     <hr class="dropdown-divider">
                                 </li> --}}
                                 {{-- <li><a class="dropdown-item dropdown text-p" href="#">Something else here</a></li> --}}
-                            </ul>
+                            {{-- </ul> --}}
 
                         </div>
                     </div>
