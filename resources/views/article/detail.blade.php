@@ -1,33 +1,11 @@
 <x-layout>
     
-    {{-- <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="https://picsum.photos/200/300" alt=""></div>
-          <div class="swiper-slide"><img src="https://picsum.photos/200/301" alt=""></div>
-          <div class="swiper-slide"><img src="https://picsum.photos/200/302" alt=""></div>
-                
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-    
-      <!-- Swiper JS -->
-      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
-      <!-- Initialize Swiper -->
-      <script>
-        var swiper = new Swiper(".mySwiper", {
-          pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            renderBullet: function (index, className) {
-              return '<span class="' + className + '">' + (index + 1) + "</span>";
-            },
-          },
-        });
-      </script> --}}
-
       {{-- PLACEHOLDER CAROUSEL, final carousel will be a swiper carousel, once got how to implement in laravel --}}
+      
+      {{-- PAGE TITLE IS CONTEXTUAL --}}
+      @section('title', $article->title)
 
+      {{-- ARTICLE PAGE --}}
       <div class="container-fluid">        
           <div class="row justify-content-center ">
               <div class="col-12 col-md-6">

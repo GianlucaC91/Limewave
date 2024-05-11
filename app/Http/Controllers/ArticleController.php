@@ -19,8 +19,8 @@ class ArticleController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        return view("article.create");
+    {   
+        return view('article.create');
     }
 
     /**
@@ -36,7 +36,8 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        return view('article.detail', compact('article'));
+        $title = $article->title;
+        return view('article.detail', compact('article', 'title'));
     }
 
     /**
