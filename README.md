@@ -54,5 +54,5 @@ Il bundling degli asset nei video è diverso. Dovrete utilizzare Laravel Vite, c
 * popup di conferma https://livewire.laravel.com/docs/wire-confirm
 
 ### ToDo Extra
-* Quando implementato RICORDAMI settare true: 'expire_on_close' => env('SESSION_EXPIRE_ON_CLOSE', false)
-* dropdown categorie navbar deve aggiornarsi dopo inserimento articolo
+- [ ] Quando implementato RICORDAMI settare true: 'expire_on_close' => env('SESSION_EXPIRE_ON_CLOSE', false)
+- [ ] Dropdown categorie navbar deve aggiornarsi dopo inserimento articolo

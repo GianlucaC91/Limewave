@@ -8,6 +8,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    {{-- NAVBAR NAV LINKS --}}
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
                             <a class="nav-link text-p" aria-current="page" href="{{ route('homepage') }}">Home</a>
@@ -15,6 +16,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-p" href="#">Link</a>
                         </li>
+                        {{-- CATEGORY DROPDOWN --}}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
@@ -27,12 +29,14 @@
                             </ul>
                         </li>
                     </ul>
-                   
+                    {{-- NAVBAR USER AND LANG PANEL --}}
                     <div class="collapse navbar-collapse d-flex">
                         <div class="ms-auto dropdown">
+                            {{-- USER ICONS AND PROPIC --}}
                             <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                                 @auth
+                                {{-- WHEN IMPLEMENTED, PROPIC HERE (IF NULL, CURRENT ICON OR DEFAULT PROPIC) --}}
                                 <i class="bi bi-person-circle text-a f"></i>
                                 @endauth
                                     
@@ -40,6 +44,7 @@
                                 <i class="bi bi-person"></i>
                                 @endguest
                             </a>
+                                {{-- USER LOGIN AND LOGOUT --}}
                             <ul class="dropdown-menu dropdown-menu-end  bg-white">
                                 @guest
                                     <li><a class="dropdown-item text-s" href="{{ route('login') }}">Accedi</a></li>
@@ -72,6 +77,7 @@
                
                 </div>
             </div>
+            {{-- SEARCHBAR --}}
             <div class="col-12 d-flex mt-3">
                 <form class="d-flex w-100" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
