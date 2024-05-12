@@ -52,6 +52,9 @@ Il bundling degli asset nei video è diverso. Dovrete utilizzare Laravel Vite, c
 
 ### Risorse Utili
 * popup di conferma https://livewire.laravel.com/docs/wire-confirm
+* RICORDARSI DI PULLARE PRIMA DI INIZIARE IL LAVORO
+* Consiglio all'inizio di ogni sessione di lavoro di lanciare php artisan migrate:fresh --seed così da lavorare su un db popolato e avere una visione sempre chiara del risultato estetico
+
 
 ### ToDo Extra
 - [ ] Quando implementato RICORDAMI settare true: 'expire_on_close' => env('SESSION_EXPIRE_ON_CLOSE', false)
