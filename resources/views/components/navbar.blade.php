@@ -19,7 +19,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-p link-custom" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                Dropdown
+                                Categorie
                             </a>
                             <ul class="dropdown-menu">
                                 @foreach ($categories as $category)
@@ -107,7 +107,7 @@
         {{-- CATEGORY DROPDOWN --}}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
-          aria-expanded="false">Dropdown</a>
+          aria-expanded="false">Categorie</a>
           <ul class="dropdown-menu">
             @foreach ($categories as $category)
             <li><a class="dropdown-item" href="{{route("categoryShow", compact("category"))}}">{{$category->name}} ({{$category->articles->count()}})</a></li>
