@@ -14,7 +14,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    <x-navbar/>
+    <x-navbar-mino/>
     
         <x-status/>    
         {{$slot}}
