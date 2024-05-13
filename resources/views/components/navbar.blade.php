@@ -34,9 +34,19 @@
                         {{-- USER ICONS AND PROPIC --}}
                         <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
+                       
                         @auth
                         {{-- WHEN IMPLEMENTED, PROPIC HERE (IF NULL, CURRENT ICON OR DEFAULT PROPIC) --}}
-                        <i class="bi bi-person-circle text-a f"></i>
+
+
+                        
+                       
+                        <span>
+                            
+                            <i class="bi bi-person-circle text-a f"></i>
+                            {{Auth::user()->name}}
+                        </span>
+                         
                         @endauth
                         
                         @guest
