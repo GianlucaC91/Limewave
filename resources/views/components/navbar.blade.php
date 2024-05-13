@@ -36,13 +36,8 @@
                         aria-expanded="false">
                        
                         @auth
-                        {{-- WHEN IMPLEMENTED, PROPIC HERE (IF NULL, CURRENT ICON OR DEFAULT PROPIC) --}}
-
-
-                        
-                       
-                        <span>
-                            
+                        <span>                            
+                            {{-- WHEN IMPLEMENTED, PROPIC HERE (IF NULL, CURRENT ICON OR DEFAULT PROPIC) --}}
                             <i class="bi bi-person-circle text-a f"></i>
                             {{Auth::user()->name}}
                         </span>

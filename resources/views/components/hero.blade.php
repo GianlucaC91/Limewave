@@ -18,7 +18,7 @@
                             @endguest
                             
                             @auth
-                            <button type="button" class="btn btn-accent btn-hero"><a href="{{ route('article.create') }}" class="btn btn btn-accent btn-lg px-4 fw-bold">Carica un annuncio</a></button>
+                            <a href="{{ route('article.create') }}" class="btn btn-accent btn-hero btn-lg fw-bold pt-3 shadow">Carica un annuncio</a>
                             @endauth
                         </div>
                     </div>

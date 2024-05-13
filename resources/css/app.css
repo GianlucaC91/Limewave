@@ -3,5 +3,6 @@
 @import 'swiper/css/bundle';
 @import "./masthead.css";
 @import "./navbar.css";
+@import "./card.css";
 @import "./global.css";
 @import './root.css';
