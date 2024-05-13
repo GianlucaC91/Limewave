@@ -1,5 +1,6 @@
 <div class="container-fluid">
     <div class="row justify-content-around ">
+     
         @foreach ($articles as $article)
         <div class="col-3 mx-2 my-5">
             {{-- @dd($articles) --}}
