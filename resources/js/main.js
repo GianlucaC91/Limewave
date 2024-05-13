@@ -2,6 +2,9 @@ window.addEventListener('userUpdated', event => {
     Livewire.emit('refreshUser');
 });
 
-setTimeout(function() {
-    document.querySelector('#status-msg').remove();
-}, 4000);
+// STATUS MSG TIMEOUT NOT WORKING
+
+// let message = document.querySelector('#status-msg')
+// setTimeout(() => {
+//     message.remove()
+// }, 4000);
