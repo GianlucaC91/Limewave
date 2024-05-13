@@ -4,7 +4,7 @@
         <div class="row justify-content-center ">
             <div class="col-10 col-md-8 col-xl-6 border-p bg-white shadow-sm p-4 log-1">
                 <h1 class="display-5 fw-bold text-body-emphasis lh-1 my-3 underline-colors">Accedi</h1>
-                <form method="POST" action="login" class="">
+                <form method="POST" action="login" >
                     @csrf
                     <div class="mb-3">
                         <label for="email" class="form-label log-1"> Indirizzo email </label>
