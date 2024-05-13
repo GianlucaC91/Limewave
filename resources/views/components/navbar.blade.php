@@ -72,9 +72,9 @@
                                     <li><a class="dropdown-item text-s" href="{{ route('register') }}">Registrati</a></li>
                                 @endguest
                                 @auth
-                                    {{-- PROILE PAGE --}}
+                                    {{-- PROFILE PAGE --}}
                                     <li>
-                                        <a class="dropdown-item" href="{{route('user.profile')}}">Profilo</a>
+                                        <a class="dropdown-item" href="{{route('profile')}}">Profilo</a>
                                     </li>
 
                                     <li>

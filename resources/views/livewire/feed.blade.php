@@ -10,9 +10,9 @@
             </div>
             @foreach ($articles as $article)
                 <div class="col-12 col-md-3">
-                    {{-- @dd($articles) --}}
                     <div class="card rounded-0 shadow" style="width: 18rem;">
-                        <p class="card-text">Venduto da {{ $article->user->name }}</p>
+                        <p class="pt-2 ps-3 fw-bold d-flex align-items-center "> <a
+                            href="{{ route('user.profile', ['user' => $article->user]) }}"><img src="{{Storage::url($article->user->img)}}" class="card-img avatars "></a> {{ $article->user->name }}</p>
                         <img src="https://picsum.photos/20{{ $article->id }}" class="card-img-top rounded-0 "
                             alt="...">
                         <div class="card-body">

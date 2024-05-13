@@ -10,7 +10,8 @@ use App\Http\Controllers\CategoryController;
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 
 // UserController
-Route::get("/user/profile", [UserController::class, "profile"])->name("user.profile")->middleware("auth");
+Route::get("/profile", [UserController::class, "profile"])->name("profile");
+Route::get("/profile/{user}", [UserController::class, "userProfile"])->name("user.profile");
 
 // CategoryController
 Route::get("/categoria/{category:name}", [CategoryController::class, "categoryShow"])->name("categoryShow");
