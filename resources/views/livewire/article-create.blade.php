@@ -1,14 +1,13 @@
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-10 col-xl-8">
+
             <div>
                 <x-status/> 
             
                 <div class="container my-5">
-                    <div class="row">
-                        <div class="col-12">
-            
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-md-8 col-xl-6  bg-white shadow p-4 log-1">
+                            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-5 underline-colors ">Crea Articolo </h1>
                             <form 
+                            class=""
                             wire:submit="store"
                              >
                                 <div class="mb-3">
@@ -49,7 +48,7 @@
                                     <textarea wire:model="body" type="text" class="form-control" id="body" cols="30" rows="5"></textarea>
                                     <div class="text-danger">@error("body") {{$message}} @enderror</div>
                                 </div>
-                                <button type="submit" class="btn btn-primary  fw-bold w-25 shadow-sm">Crea</button>
+                                <button type="submit" class="btn btn-accent btn-lg fw-bold pt-3 px-4 shadow btn-hero-login pb-3 mt-4">Crea</button>
                             </form>
                             
                         </div>
@@ -60,9 +59,7 @@
             
             </div>
 
-        </div>
-    </div>
-</div>
+  
 
 
 

@@ -1,0 +1,18 @@
+.detailCarousel{
+    margin-right: 0px;
+    margin-top: 15px;
+}
+
+@media (min-width: 768px ) {
+    .detailCarousel{
+        /* margin-right: -12px !important; */
+        margin-top: 0px;
+    }
+}
+
+@media (min-width: 1067px ) {
+    .detailCarousel{
+        margin-right: -12px !important;
+        margin-top: 0px;
+    }
+}

@@ -10,7 +10,7 @@
         {{-- OLD FEED --}}
         <div class="row justify-content-around ">
           @foreach ($articles as $article)
-          <div class="col-12 col-md-3 mx-1 m-md-0 my-5">
+          <div class="col-12 col-md-4 mx-1 m-md-0 my-5">
             {{-- @dd($articles) --}}
             <div class="card" style="width: 18rem;">
               <img src="https://picsum.photos/20{{$article->id}}" class="card-img-top" alt="...">
