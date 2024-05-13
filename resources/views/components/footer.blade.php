@@ -1,5 +1,5 @@
  
- <footer class="bg-s py-3 mx-0 px-0 container-fluid">
+ <footer class="bg-s py-3 px-5 mx-0 px-0 container-fluid">
         <div class="row">
           <div class="col-6 col-md-2 mb-3 text-a mt-3">
             <h5>Section</h5>
@@ -35,7 +35,7 @@
           </div>
         </div>
     
-        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top ms-5 text-p">
+        <div class="d-flex flex-column flex-sm-row justify-content-between pt-4 border-top my-5 text-p">
           <p>© 2024 LimeWave, Inc. All rights reserved.</p>
           <ul class="list-unstyled d-flex">
             <li class="ms-3"><a class="link-body-emphasis" href="#"><i class="bi bi-twitter-x text-p fs-5"></i></a></li>
