@@ -1,12 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CategoryController;
 
 // PublicController
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
+
+// UserController
+Route::get("/user/profile", [UserController::class, "profile"])->name("user.profile")->middleware("auth");
 
 // CategoryController
 Route::get("/categoria/{category:name}", [CategoryController::class, "categoryShow"])->name("categoryShow");

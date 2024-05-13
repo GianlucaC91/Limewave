@@ -51,7 +51,7 @@
                         @endguest
                         @auth
                         <li>
-                            <a class="dropdown-item" href="#">Profilo</a>
+                            <a class="dropdown-item" href="{{route("user.profile")}}">Profilo</a>
                         </li>
                         
                         <li>
@@ -135,7 +135,7 @@
             aria-expanded="false"><i class="bi bi-person-circle text-a f"></i></a>
             <ul class="dropdown-menu">
                 <li>
-                    <a class="dropdown-item" href="#">Profilo</a>
+                    <a class="dropdown-item" href="{{route("user.profile")}}">Profilo</a>
                 </li>
                 <li>
                     <a class="dropdown-item" href="#">Dashboard</a>
