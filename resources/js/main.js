@@ -1,7 +1,7 @@
 window.addEventListener('userUpdated', event => {
-    const statusMsg = document.querySelector("#status-msg");
-    if (statusMsg) {
-        statusMsg.remove();
-    }
     Livewire.emit('refreshUser');
 });
+
+setTimeout(function() {
+    document.querySelector('#status-msg').remove();
+}, 4000);

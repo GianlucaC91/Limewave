@@ -1,7 +1,7 @@
 <x-layout>
+
     <x-hero/>
-    {{-- @dd($articles) --}}
-    <livewire:feed
-        {{-- :articles=$articles --}}
-    />
+
+    <livewire:feed />
+    
 </x-layout>

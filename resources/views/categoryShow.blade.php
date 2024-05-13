@@ -2,11 +2,10 @@
     
     <div class="container">
         <div class="row justify-content-around ">
-            
             <h1 class="text-center mt-3">Categoria {{$category->name}}</h1>
+            
             @forelse ($category->articles as $article)
             <div class="col-3 my-5">                
-                {{-- @dd($articles) --}}
                 <div class="card" style="width: 18rem;">
                     <img src="https://picsum.photos/20{{$article->id}}" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -19,6 +18,7 @@
                 </div>
             </div>
             @empty
+
             <p>Non sono presenti annunci</p> 
             <p><a href="{{route("article.create")}}">Pubblicane uno</a></p>
             
@@ -26,7 +26,5 @@
             
         </div>
     </div>
-    
-    
     
 </x-layout>
