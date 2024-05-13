@@ -38,7 +38,7 @@
                         @auth
                         <span>                            
                             {{-- WHEN IMPLEMENTED, PROPIC HERE (IF NULL, CURRENT ICON OR DEFAULT PROPIC) --}}
-                            <i class="bi bi-person-circle text-a f"></i>
+                            <img src="{{Auth::user()->img}}" alt="">
                             {{Auth::user()->name}}
                         </span>
                          
