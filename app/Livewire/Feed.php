@@ -9,8 +9,8 @@ class Feed extends Component
 {
     public function render()
     {
-        $articles = Article::orderBy('created_at','desc')->take(6)->get();
-       
+        $articles = Article::orderBy('created_at', 'desc')->take(6)->get();
+
         return view('livewire.feed', compact('articles'));
     }
 }

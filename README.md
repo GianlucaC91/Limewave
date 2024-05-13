@@ -60,4 +60,4 @@ Il bundling degli asset nei video è diverso. Dovrete utilizzare Laravel Vite, c
 - [ ] Quando implementato RICORDAMI settare true: 'expire_on_close' => env('SESSION_EXPIRE_ON_CLOSE', false)
 - [ ] Dropdown categorie navbar deve aggiornarsi dopo inserimento articolo
 - [ ] Titolo pagina contestuale
-- [ ] Text truncate backend ove necessario
+- [x] Text truncate backend ove necessario

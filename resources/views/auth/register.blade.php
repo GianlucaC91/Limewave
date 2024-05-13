@@ -11,8 +11,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
-                        
+                        <input type="email" name="email" class="form-control" id="email">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
@@ -20,9 +19,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="password_confirmation" class="form-label">Conferma Password</label>
-                        <input type="password" name="password_confirmation" class="form-control" id="password_confirmation">
+                        <input type="password" name="password_confirmation" class="form-control"
+                            id="password_confirmation">
                     </div>
-                    <button type="submit" class="btn btn-accent btn-lg fw-bold pt-3 px-4 shadow btn-hero-login pb-3 mt-4">Registrati</button>
+                    <button type="submit"
+                        class="btn btn-accent btn-lg fw-bold pt-3 px-4 shadow btn-hero-login pb-3 mt-4">Registrati</button>
                 </form>
             </div>
         </div>

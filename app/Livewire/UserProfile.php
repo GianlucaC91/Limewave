@@ -13,22 +13,29 @@ class UserProfile extends Component
     use WithFileUploads;
 
     public $user;
+
     #[Validate('required', message: 'Username è necessario')]
     #[Validate('min:3', message: 'Username deve contenere almeno 3 caratteri')]
     public $name;
+
     #[Validate('required', message: 'Email è necessaria')]
     #[Validate('email', message: 'Inserire un indirizzo email valido')]
     public $email;
+
     #[Validate('nullable', 'confirmed')]
     #[Validate('min:8', message: 'La password deve contenere almeno 8 caratteri')]
     public $password;
-    public $password_confirmation;
-    #[Validate('nullable', 'image', 'max:1024', message: 'Immagine non valida')]
+
+    // MAYBE NOT NEEDED
+    // public $password_confirmation;
+
+    #[Validate('nullable', 'image', message: 'Immagine non valida')]
+    #[Validate( 'max:1024', message: 'Immagine troppo grande (max 1 mb)')]
     public $img;
 
     public function mount()
     {
-        $this->user = Auth::user() ?? new User(); // Inizializza $user se Auth::user() restituisce null
+        $this->user = Auth::user() ?? new User();
         $this->name = $this->user->name;
         $this->email = $this->user->email;
     }
@@ -53,12 +60,14 @@ class UserProfile extends Component
         session()->flash("status", "Profilo modificato correttamente");
     }
 
+    // REFRESH USER-PROFILE DATA
     public function refreshUser()
     {
         $this->user = Auth::user();
         $this->name = $this->user->name;
         $this->email = $this->user->email;
     }
+
     public function render()
     {
         return view('livewire.user-profile');
