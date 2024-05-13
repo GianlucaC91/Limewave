@@ -1,0 +1,12 @@
+.detailCarousel{
+    margin-right: 0px;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 768px ) {
+    .detailCarousel{
+        margin-right: -12px !important;
+        margin-bottom: 0px;
+
+    }
+}
