@@ -31,7 +31,7 @@
                 <div class=" row align-items-center bg-white">
                     <div class="col-12 pt-5">
                         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">LimeWave mobile</h1>
-                        <p class="lead">È AHAHAHAH arrivato il momento di liberare casa da quello che non usi più! Oppure compra di seconda mano per rispettare un favore all'ambiente! Comincia subito a fare affari!</p>
+                        <p class="lead">È arrivato il momento di liberare casa da quello che non usi più! Oppure compra di seconda mano per rispettare un favore all'ambiente! Comincia subito a fare affari!</p>
                     </div>
                     <div class="hero-mobile d-flex align-items-end ">
                         <div class="d-grid gap-2 mb-3 d-md-flex justify-content-md-start">
