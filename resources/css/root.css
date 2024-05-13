@@ -26,7 +26,6 @@ body{
     background-color: var(--color-a); /*colore accent*/
 }
 
-
 /* TEXT STYLES */
 .text-a{
     color: var(--color-a); /*text accent*/
@@ -81,3 +80,35 @@ body{
     border-style: solid;
     border-color: var(--color-a);    
 }
+
+/* BOTTONE MODIFICA DATI UTENTE */
+.bg-a-custom{
+    background-color: var(--color-a);
+}
+.bg-a-custom:hover{
+    background-color: var(--color-a);
+}
+.btn-user{
+    /* previous size */
+    /* width: 300px;
+    height: 65px; */
+    width: 15rem;
+    height: 40px;
+    border-radius: 0px;
+}
+
+.form-user{
+border-radius: 0;
+}
+
+.form-user {
+    position: relative;
+}
+
+.line{
+        border-left: 6px solid var(--color-s);
+        height: 390px;
+        position: absolute;
+        left: -15px;
+    }
+
