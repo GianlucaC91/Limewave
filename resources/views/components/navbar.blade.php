@@ -24,12 +24,8 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Categorie
                             </a>
-                            <ul class="dropdown-menu">
-                                @foreach ($categories as $category)
-                                    <li><a class="dropdown-item link-custom-2"
-                                            href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}
-                                            ({{ $category->articles->count() }})</a></li>
-                                @endforeach
+                            <ul class="dropdown-menu rounded-0 shadow">
+                                <livewire:category-counter/>
                             </ul>
                         </li>
                     </ul>
@@ -60,25 +56,28 @@
                                 {{-- WHEN IMPLEMENTED, PROPIC HERE (IF NULL, CURRENT ICON OR DEFAULT PROPIC) --}}
                                 <i class="bi bi-person-circle text-a fs-5"></i>
                                 @endauth
-
                                 @guest
                                     <i class="bi bi-person text-a"></i>
                                 @endguest
                             </a>
-                            {{-- USER LOGIN AND LOGOUT --}}
-                            <ul class="dropdown-menu dropdown-menu-end  bg-white">
+                                {{-- USER LOGIN AND LOGOUT --}}
+                            <ul class="dropdown-menu dropdown-menu-end  bg-white  rounded-0 shadow">
                                 @guest
-                                    <li><a class="dropdown-item text-s" href="{{ route('login') }}">Accedi</a></li>
-                                    <li><a class="dropdown-item text-s" href="{{ route('register') }}">Registrati</a></li>
+                                    <li><a class="dropdown-item text-s" href="{{ route('login') }}"><i class="bi bi-box-arrow-in-right"></i> Accedi</a></li>
+                                    <li><a class="dropdown-item text-s" href="{{ route('register') }}"><i class="bi bi-plus"></i> Registrati</a></li>
                                 @endguest
                                 @auth
-                                    {{-- PROILE PAGE --}}
+                                    {{-- PROFILE PAGE --}}
                                     <li>
-                                        <a class="dropdown-item" href="{{route('user.profile')}}">Profilo</a>
+                                        <a class="dropdown-item" href="{{route('user.profile')}}"><i class="bi bi-person-bounding-box"></i> Profilo</a>
                                     </li>
 
                                     <li>
-                                        <a class="dropdown-item" href="#">Dashboard</a>
+                                        <a class="dropdown-item" href="#"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item" href="{{ route('article.create') }}"><i class="bi bi-megaphone"></i> Nuovo Annuncio</a>
                                     </li>
 
                                     <li>
@@ -89,7 +88,7 @@
                                         <form class="dropdown-item" method="POST" action="{{ route('logout') }}">
                                             @csrf
                                             <button class="nav-link btn bg-white">
-                                                Logout
+                                                <i class="bi bi-box-arrow-in-left text-danger"></i> Logout
                                             </button>
                                         </form>
                                     </li>
