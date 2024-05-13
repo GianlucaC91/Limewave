@@ -29,19 +29,31 @@
                         </li>
                     </ul>
                     {{-- SEARCHBAR --}}
-                    <form class="d-flex w-75 ms-4 mt-1" role="search">
+                    {{-- <form class="d-flex w-75 ms-4 mt-1" role="search">
                         <input class="form-control me-2 border-0" type="search" placeholder="Cerca qui..." aria-label="Search">
                         <button class="btn btn-accent border-0 w-25" type="submit">Cerca <i class="bi bi-search"></i></button>
+                    </form> --}}
+
+                    {{-- SEARCHBAR ALTERNATIVA --}}
+                    <form class="d-flex w-50 mx-4 me-auto" role="search">
+                        <input class="form-control rounded-0  border-0" type="search" placeholder="Cerca qui..." aria-label="Search">
+                        <button class="btn btn-accent border-0 rounded-0" type="submit"><i class="bi bi-search"></i></button>
                     </form>
+
                     {{-- NAVBAR USER AND LANG PANEL --}}
                     <div class="collapse navbar-collapse d-flex">
+                        {{-- LANG PANEL --}}
+                        <div class="ms-auto dropdown">
+                           
+                        </div>
+                        {{-- USER PANEL --}}
                         <div class="ms-auto dropdown">
                             {{-- USER ICONS AND PROPIC --}}
                             <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                                 @auth
                                 {{-- WHEN IMPLEMENTED, PROPIC HERE (IF NULL, CURRENT ICON OR DEFAULT PROPIC) --}}
-                                <i class="bi bi-person-circle text-a f"></i>
+                                <i class="bi bi-person-circle text-a fs-5"></i>
                                 @endauth
                                     
                                 @guest
@@ -56,7 +68,7 @@
                                 @endguest
                                 @auth
                                     <li>
-                                        <a class="dropdown-item" href="#">Profilo</a>
+                                        <a class="dropdown-item" href="{{route('user.profile')}}">Profilo</a>
                                     </li>
   
                                     <li>
@@ -78,7 +90,7 @@
                             </ul>
                         </div>
                     </div>
-               
+                                   
                 </div>
             </div>
         </div>
