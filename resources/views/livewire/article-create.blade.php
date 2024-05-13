@@ -48,7 +48,7 @@
                                     <textarea wire:model="body" type="text" class="form-control" id="body" cols="30" rows="5"></textarea>
                                     <div class="text-danger">@error("body") {{$message}} @enderror</div>
                                 </div>
-                                <button type="submit" class="btn btn-s btn-lg fw-bold pt-3 px-4 shadow btn-hero-login pb-3 mt-4">Crea</button>
+                                <button type="submit" class="btn btn-accent btn-lg fw-bold pt-3 px-4 shadow btn-hero-login pb-3 mt-4">Crea</button>
                             </form>
                             
                         </div>
