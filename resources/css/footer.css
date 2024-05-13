@@ -5,3 +5,19 @@ footer{
 .link-footer-custom:hover{
 color: var(--color-p);
 }
+
+.facebook:hover{
+    color: rgb(82, 82, 255);
+}
+
+.instagram:hover{
+    background: linear-gradient(to right, #FEDA75, #FA7E1E , #D62976, #962FBF , #4F5BD5);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.tiktok:hover{
+    background: linear-gradient(to right, #ff0050, #00f2ea);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
