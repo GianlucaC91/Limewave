@@ -72,7 +72,7 @@
                                     @enderror
                                 </div>
                                 {{-- SEND BUTTON --}}
-                                <button type="submit" class="btn btn-warning">Modifica dati utente</button>
+                                <button type="submit" class="btn btn-accent fw-bold shadow">Modifica dati utente</button>
                             </form>
                             {{-- LOADING TEXT --}}
                             <div wire:loading>

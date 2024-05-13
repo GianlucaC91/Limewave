@@ -1,8 +1,8 @@
 <nav class="navbar fixed-top navbar-expand-lg bg-s text-p shadow-sm pb-3">
     <div class="container-fluid w-100">
-        <div class="row w-100 m-0">
+        <div class="row w-100  m-0">
             <div class="col-12 d-flex justify-content-between">
-                <a class="navbar-brand text-a" href="{{ route('homepage') }}">Navbar</a>
+                <a class="navbar-brand link-custom text-a mt-1" href="{{ route('homepage') }}">Limewave</a>
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -36,7 +36,7 @@
                     </form> --}}
 
                     {{-- SEARCHBAR ALTERNATIVA --}}
-                    <form class="d-flex w-50 mx-4 me-auto" role="search">
+                    <form class="d-flex mt-3 w-50 mx-4 me-auto" role="search">
                         <input class="form-control rounded-0  border-0" type="search" placeholder="Cerca qui..." aria-label="Search">
                         <button class="btn btn-accent border-0 rounded-0" type="submit"><i class="bi bi-search"></i></button>
                     </form>

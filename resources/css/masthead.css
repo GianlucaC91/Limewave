@@ -10,7 +10,7 @@ DELETE IF DEPRECATED? */
   } */
 
   .hero {
-    margin-top: 150px;
+    margin-top: 50px;
     padding: 0px;
     min-height: 35vh;
   }

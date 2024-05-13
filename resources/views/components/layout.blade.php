@@ -15,10 +15,10 @@
 </head>
 <body>
     <x-navbar/>
-    
+    <main>
         <x-status/>    
         {{$slot}}
-        <x-footer/>
-    
+    </main>
+    <x-footer/>
 </body>
 </html>
