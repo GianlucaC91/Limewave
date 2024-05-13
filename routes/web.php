@@ -9,7 +9,7 @@ use App\Http\Controllers\CategoryController;
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 
 // CategoryController
-Route::get("/categoria/{category:name}", [CategoryController::class, "categoryShow"])->name("categoryShow")->middleware("auth");
+Route::get("/categoria/{category:name}", [CategoryController::class, "categoryShow"])->name("categoryShow");
 
 // ArticleController
 Route::get('/article/create', [ArticleController::class, 'create'])->name('article.create')->middleware('auth');

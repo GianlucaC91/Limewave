@@ -37,7 +37,7 @@ class ArticleCreate extends Component
 
         
         $this->reset();
-        session()->flash('status', "Hai inserito correttamente l'annuncio ");
+        session()->flash('status', "Annuncio inserito con successo");
         
     }
 
