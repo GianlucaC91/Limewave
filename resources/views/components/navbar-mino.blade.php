@@ -29,6 +29,14 @@
                           </ul>
                       </li>
                   </ul>
+
+                  {{-- <div class="col-12 d-flex mt-3 justify-content-center"> --}}
+                    <form class="d-flex w-75 ms-4 mt-1" role="search">
+                        <input class="form-control me-2 border-0" type="search" placeholder="Cerca qui..." aria-label="Search">
+                        <button class="btn btn-accent border-0 w-25" type="submit">Cerca <i class="bi bi-search"></i></button>
+                    </form>
+                {{-- </div> --}}
+
                   {{-- NAVBAR USER AND LANG PANEL --}}
                   <div class="collapse navbar-collapse d-flex">
                       <div class="ms-auto dropdown">
@@ -78,12 +86,7 @@
               </div>
           </div>
           {{-- SEARCHBAR --}}
-          <div class="col-12 d-flex mt-3">
-              <form class="d-flex w-100" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-accent" type="submit">Search</button>
-              </form>
-          </div>
+          
       </div>
   </div>
 </nav>

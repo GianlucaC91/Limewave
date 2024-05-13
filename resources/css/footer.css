@@ -1,0 +1,7 @@
+footer{
+    margin-top: 142px;
+}
+
+.link-footer-custom:hover{
+color: var(--color-p);
+}
