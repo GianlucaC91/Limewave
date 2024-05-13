@@ -30,7 +30,7 @@ class UserProfile extends Component
     // public $password_confirmation;
 
     #[Validate('nullable', 'image', message: 'Immagine non valida')]
-    #[Validate( 'max:1024', message: 'Immagine troppo grande (max 1 mb)')]
+    // #[Validate( 'max:1024', message: 'Immagine troppo grande (max 1 mb)')]
     public $img;
 
     public function mount()
