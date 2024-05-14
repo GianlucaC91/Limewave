@@ -20,12 +20,14 @@ class UserSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@presto.it',
             'password' => bcrypt('12345678'),
+            "is_admin" => true,
         ]);
 
         User::factory()->create([
-            'name' => 'Editor',
-            'email' => 'editor@presto.it',
+            'name' => 'Revisor',
+            'email' => 'revisor@presto.it',
             'password' => bcrypt('12345678'),
+            "is_revisor" => true,
         ]);
 
         User::factory()->create([
