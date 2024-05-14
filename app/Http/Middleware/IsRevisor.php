@@ -20,7 +20,7 @@ class IsRevisor
             return $next($request);
         }
         else{
-            return redirect(route('homepage'))->with('message', 'Non sei autorizzato');
+            return redirect(route('homepage'))->with('status', 'Non sei autorizzato');
         }
     }
 }
