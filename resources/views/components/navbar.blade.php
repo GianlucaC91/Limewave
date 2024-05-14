@@ -138,11 +138,10 @@
                           </h2>
                           <div id="flush-collapseOne" class="accordion-collapse border-0 collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body border-0 bg-s text-p">
-                                <ul>
+                                <ul class="list-unstyled">
                                     @foreach ($categories as $category)
-                                        <li><a class="dropdown-item"
-                                                href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}
-                                                ({{ $category->articles->count() }})</a></li>
+                                        <li><a class="dropdown-item mb-2"
+                                                href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }} <span class="badge rounded-pill bg-a text-s ms-2">{{ $category->articles->count() }}</span></a></li>
                                     @endforeach
                                 </ul>
                             </div>
