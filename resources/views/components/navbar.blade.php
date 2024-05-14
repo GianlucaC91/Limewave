@@ -123,21 +123,17 @@
             </li>
 
             {{-- CATEGORY DROPDOWN --}}
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown border-0">
 
-
-                {{-- <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">Dropdown</a> --}}
-
-                    <div class="accordion accordion-flush" id="accordionExample">
-                        <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button collapsed text-p bg-s" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    <div class="accordion accordion-flush border-0" id="accordionExample">
+                        <div class="accordion-item border-0">
+                          <h2 id="accordionH2" class="accordion-header bg-s border-0 ">
+                            <button class="accordion-button border-0 collapsed text-p bg-s ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                               Categorie
                             </button>
                           </h2>
-                          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
+                          <div id="flush-collapseOne" class="accordion-collapse border-0 collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body border-0 bg-s text-p">
                                 <ul>
                                     @foreach ($categories as $category)
                                         <li><a class="dropdown-item"
