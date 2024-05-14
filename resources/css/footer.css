@@ -3,7 +3,11 @@ footer{
 }
 
 .link-footer-custom:hover{
-color: var(--color-p);
+    color: var(--color-a) !important;
+}
+
+.link-footer-custom{
+    color: var(--color-p) !important;
 }
 
 .facebook:hover{
