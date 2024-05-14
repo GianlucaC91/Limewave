@@ -16,11 +16,12 @@ class IsRevisor
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user() && Auth::user()->is_revisor || Auth::user()->is_admin) {
+        $user = Auth::user();
+        
+        if ($user && ($user->is_revisor || $user->is_admin)) {
             return $next($request);
         }
-        else{
-            return redirect(route('homepage'))->with('message', 'Non sei autorizzato');
-        }
+    
+        return redirect(route('homepage'))->with('status', 'Non sei autorizzato');
     }
 }
