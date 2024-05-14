@@ -33,9 +33,9 @@
                         </li>
                     </ul>
                     {{-- SEARCHBAR --}}
-                    {{-- <form class="d-flex w-75 ms-4 mt-1" role="search">
-                        <input class="form-control me-2 border-0" type="search" placeholder="Cerca qui..." aria-label="Search">
-                        <button class="btn btn-accent border-0 w-25" type="submit">Cerca <i class="bi bi-search"></i></button>
+                    {{-- <form class="d-flex w-50 ms-4 mt-1" role="search">
+                        <input class="form-control me-2 border-0 rounded-4" type="search" placeholder="Cerca qui..." aria-label="Search">
+                        <button class="btn btn-accent border-0 rounded-4" type="submit"> <i class="bi bi-search"></i></button>
                     </form> --}}
 
                     {{-- SEARCHBAR ALTERNATIVA --}}
@@ -128,15 +128,36 @@
 
             {{-- CATEGORY DROPDOWN --}}
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">Dropdown</a>
-                <ul class="dropdown-menu">
-                    @foreach ($categories as $category)
-                        <li><a class="dropdown-item"
-                                href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}
-                                ({{ $category->articles->count() }})</a></li>
-                    @endforeach
-                </ul>
+
+
+                {{-- <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">Dropdown</a> --}}
+
+                    <div class="accordion accordion-flush" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed text-p bg-s" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                              Categorie
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul>
+                                    @foreach ($categories as $category)
+                                        <li><a class="dropdown-item"
+                                                href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}
+                                                ({{ $category->articles->count() }})</a></li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                          </div>
+                        </div>
+                    
+                    
+                    </div>
+
+
+
             </li>
         </ul>
 
