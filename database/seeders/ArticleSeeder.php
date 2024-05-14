@@ -27,7 +27,7 @@ class ArticleSeeder extends Seeder
                 Article::create([
                     'title' => $faker->words($faker->numberBetween(2, 10), true),
                     'price' => $faker->randomFloat(2, 10, 1000),
-                    'body' => $faker->text(400),
+                    'body' => $faker->text(rand(30, 200)),
                     'user_id' => rand(1, 4),
                     'category_id' => $category->id
                 ]);

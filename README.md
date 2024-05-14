@@ -61,3 +61,6 @@ Il bundling degli asset nei video è diverso. Dovrete utilizzare Laravel Vite, c
 - [ ] Dropdown categorie navbar deve aggiornarsi dopo inserimento articolo
 - [ ] Titolo pagina contestuale 
 - [x] Text truncate backend ove necessario
+
+
+### Changelog 14/05/2024
