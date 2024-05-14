@@ -30,9 +30,9 @@
                         </li>
                     </ul>
                     {{-- SEARCHBAR --}}
-                    {{-- <form class="d-flex w-75 ms-4 mt-1" role="search">
-                        <input class="form-control me-2 border-0" type="search" placeholder="Cerca qui..." aria-label="Search">
-                        <button class="btn btn-accent border-0 w-25" type="submit">Cerca <i class="bi bi-search"></i></button>
+                    {{-- <form class="d-flex w-50 ms-4 mt-1" role="search">
+                        <input class="form-control me-2 border-0 rounded-4" type="search" placeholder="Cerca qui..." aria-label="Search">
+                        <button class="btn btn-accent border-0 rounded-4" type="submit"> <i class="bi bi-search"></i></button>
                     </form> --}}
 
                     {{-- SEARCHBAR ALTERNATIVA --}}

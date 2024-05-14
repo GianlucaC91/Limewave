@@ -12,9 +12,9 @@
         {{-- OLD FEED --}}
         
         @foreach ($articles as $article)
-        
-        <div class="card col-3 rounded-0 shadow-sm mx-2 my-3" style="width: 18rem;">
-            <p class="pt-2 ps-3 fw-bold d-flex align-items-center "> <a
+
+        <div class="card col-3 rounded-4 shadow-sm mx-2 my-3" style="width: 18rem;">
+            <p class="fw-bold d-flex align-items-center "> <a
                 href="{{ route('user.profile', ['user' => $article->user]) }}"><img src="{{Storage::url($article->user->img)}}" class="card-img avatars "></a> {{ $article->user->name }}</p>
                 <img src="https://picsum.photos/20{{ $article->id }}" class="card-img-top rounded-0 "
                 alt="...">

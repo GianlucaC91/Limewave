@@ -22,7 +22,7 @@
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Verifica dell'articolo</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Notizie</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Limewave Pro</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Guuida Limewave Pro</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Guida Limewave Pro</a></li>
             </ul>
           </div>
     
