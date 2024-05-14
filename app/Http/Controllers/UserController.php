@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    function profile()
+    public function profile()
     {
         $user = auth()->user();
         $articles = Article::all();
@@ -19,7 +19,8 @@ class UserController extends Controller
     public function userProfile($user)
     {
         $user = User::findOrFail($user);
+        
         $articles = Article::all();
-        return view("livewire.user-profile", compact("user", "articles"));
+        return view("user.profile", compact("user", "articles"));
     }
 }

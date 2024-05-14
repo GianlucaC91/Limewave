@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use Livewire\Livewire;
 use App\Models\Category;
+use App\Livewire\UserProfile;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 

@@ -68,6 +68,7 @@
                                 @endguest
                                 @auth
                                     {{-- PROFILE PAGE --}}
+                                    
                                     <li>
                                         <a class="dropdown-item" href="{{route('profile')}}"><i class="bi bi-person-bounding-box"></i> Profilo</a>
                                     </li>

@@ -33,9 +33,9 @@ class UserProfile extends Component
     // #[Validate( 'max:1024', message: 'Immagine troppo grande (max 1 mb)')]
     public $img;
 
-    public function mount()
+    public function mount($user)
     {
-        $this->user = Auth::user() ?? new User();
+        $this->user = $user;
         $this->name = $this->user->name;
         $this->email = $this->user->email;
     }

@@ -1,4 +1,7 @@
+<x-layout>
 
+    <livewire:user-profile :$user />
     
-<livewire:user-profile :articles=$articles />
+</x-layout>
+    
 
