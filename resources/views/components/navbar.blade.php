@@ -15,9 +15,9 @@
                             <a class="nav-link text-p link-custom" aria-current="page"
                                 href="{{ route('homepage') }}">Home</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link text-p link-custom" href="#">Link</a>
-                        </li>
+                        </li> --}}
                         {{-- CATEGORY DROPDOWN --}}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-p link-custom" href="#" role="button"
