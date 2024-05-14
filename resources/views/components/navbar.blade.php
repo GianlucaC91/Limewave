@@ -1,3 +1,6 @@
+@php
+    use App\Models\Article;
+    @endphp
 <nav class="navbar fixed-top navbar-expand-lg bg-s text-p shadow-sm pb-3">
     <div class="container-fluid w-100">
         <div class="row w-100  m-0">
@@ -72,11 +75,12 @@
                                     <li>
                                         <a class="dropdown-item" href="{{route('profile')}}"><i class="bi bi-person-bounding-box"></i> Profilo</a>
                                     </li>
-
+                                    @if(Auth::user()->is_revisor || Auth::user()->is_admin)
                                     <li>
-                                        <a class="dropdown-item" href="#"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                                        <a class="dropdown-item" href="{{route("revisor.dashboard")}}"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                                        <span>{{Article::reviseNotification()}}</span>
                                     </li>
-
+                                    @endif
                                     <li>
                                         <a class="dropdown-item" href="{{ route('article.create') }}"><i class="bi bi-megaphone"></i> Nuovo Annuncio</a>
                                     </li>
