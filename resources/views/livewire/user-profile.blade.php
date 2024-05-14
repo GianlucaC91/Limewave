@@ -79,9 +79,10 @@
                                 <p>Sto aggiornando i dati...</p>
                             </div>
                     @endif
+                    @endauth
                     @if (Auth::id() !== $user->id)
                         <div class="d-flex justify-content-center my-3">
-                            <img src="{{ Storage::url($user->img) }}" alt="" class="img-fluid ">
+                            <img src="{{ Storage::url($user->img) }}" alt="" class="img-fluid" width="300px">
                         </div>
                         <h3>Gli annunci di {{ $user->name }}</h3>
                         <table class="table">
@@ -110,7 +111,7 @@
                             </tbody>
                         </table>
                     @endif
-                @endauth
+                
             </div>
         </div>
 </div>
