@@ -3,7 +3,7 @@
     <div class="row justify-content-center ">
         <div class="col-12 col-md-11 col-xl-9">
             {{-- DESKTOP SECTION --}}
-            <div class="container-fluid shadow d-none d-md-block">
+            <div class="container shadow d-none d-md-block">
                 <div class="row bg-white overflow-hidden">
                     <div class="col-12 col-md-6 order-1 position-relative">
                         <img src="./media/hero-image.png" class="heroImg position-absolute bottom-0 " loading="lazy">
