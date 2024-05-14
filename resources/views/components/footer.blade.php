@@ -5,7 +5,9 @@
             <h5>Limewave</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p  link-footer-custom">Chi siamo</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Lavori</a></li>
+              <li class="nav-item mb-2">
+                <a href="{{route('revisor.form')}}" class="btn bg-black text-light" type="submit"> Lavora con noi </a>   
+              </li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Sostenibilità</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Stampa</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Pubblicità</a></li>
