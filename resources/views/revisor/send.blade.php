@@ -8,6 +8,10 @@
   <meta content="telephone=no" name="format-detection">
   <title>Email: {{$contactMail ['email']}}</title>
   <style type="text/css">
+/* NAME-SIZE */
+.font-size{
+    font-size: 100px;
+}
 #outlook a {
 	padding:0;
 }
@@ -76,7 +80,7 @@ a[x-apple-data-detectors] {
                   <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                      <tr>
-                      <td align="center" class="h-auto" valign="middle" height="63" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:63px;color:#1e2029;font-size:42px"><strong>Nome:<p>{{$contactMail ['name']}}</p></strong></p></td>
+                      <td align="center" class="h-auto" valign="middle" height="63" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:63px;color:#1e2029;font-size:42px"><strong>Nome:<p class="font-size">{{$contactMail ['name']}}</p></strong></p></td>
                      </tr>
                      <tr>
                       <td align="center" class="es-m-txt-c" style="padding:0;Margin:0;padding-bottom:10px;padding-top:20px"><h3 style="Margin:0;line-height:20px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:20px;font-style:normal;font-weight:bold;color:#1e2029"><p>Messaggio: {{$contactMail ['description']}}</p></h3></td>
