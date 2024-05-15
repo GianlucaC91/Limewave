@@ -13,6 +13,7 @@
                         <th scope="col">Utente</th>
                         <th scope="col">Titolo</th>
                         <th scope="col">Prezzo</th>
+                        <th scope="col">Categoria</th>
                         <th scope="col">Descrizione</th>
                         <th scope="col">Immagini</th>                
                         <th colspan="3" scope="col">Azioni</th>                
@@ -26,6 +27,7 @@
                         <td>{{Str::limit($pending->user->name, 15)}}</td>
                         <td>{{Str::limit($pending->title, 15)}}</td>
                         <td>{{Str::limit($pending->price, 15)}}</td>
+                        <td>{{Str::limit($pending->category->name, 15)}}</td>
                         <td>{{Str::limit($pending->body, 20)}}</td>
                         <td>
                             
