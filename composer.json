@@ -11,7 +11,7 @@
         "laravel/scout": "*",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.4",
-        "teamtnt/laravel-scout-tntsearch-driver": "^14.0"
+        "teamtnt/laravel-scout-tntsearch-driver": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
