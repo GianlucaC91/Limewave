@@ -8,11 +8,11 @@
     color: red;
 } */
 
-.img-card{
-  transition: .5s;
+.divImg{
+  transition: 0.3s;
 }
 
-.card:hover > div > .img-card{
-  transform: scale(1.3);
+.card:hover > div > .divImg {
+  transform: scale(1.2) !important;
 }
 
