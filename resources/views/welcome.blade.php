@@ -2,5 +2,5 @@
 
     <x-hero/>
     <livewire:feed />
-    
+
 </x-layout>
