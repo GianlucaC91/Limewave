@@ -10,7 +10,7 @@ class Feed extends Component
     public function render()
     {
         
-        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(8)->get();
+        $articles = Article::where('is_accepted', true)->orderBy('updated_at', 'desc')->take(6)->get();
 
         return view('livewire.feed', compact('articles'));
     }

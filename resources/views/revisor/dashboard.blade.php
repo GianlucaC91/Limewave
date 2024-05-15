@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container">
+    {{-- <div class="container">
         <div class="row">
             <div class="col-12 col-md-6">
                 <h1>{{ $article_to_check ? "Ecco l'annuncio da revisionare" : 'Congratulazioni! Non ci sono annunci da revisionare' }}
@@ -66,37 +66,7 @@
     </div>
 </div>
 </div>
-@endif
-<div class="container">
-    <div class="row">
-        <div class="col-12 col-md-6">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Id Articolo</th>
-                        <th scope="col">Utente</th>
-                        <th scope="col">Titolo</th>
-                        <th scope="col">Prezzo</th>
-                        <th scope="col">Descrizione</th>
-                        <th scope="col">Immagini</th>                
-                        <th scope="col">Azioni</th>                
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Id Articolo</td>
-                        <td>Utente</td>
-                        <td>Titolo</td>
-                        <td>Prezzo</td>
-                        <td>Descrizione</td>
-                        <td>Immagini</td>                
-                        <td>Azioni</td>   
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+@endif --}}
+{{-- @dd($article_to_check) --}}
+<livewire:revise/>
 </x-layout>
