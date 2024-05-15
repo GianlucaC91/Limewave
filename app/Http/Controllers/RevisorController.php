@@ -35,12 +35,6 @@ class RevisorController extends Controller
             'email'=> $request->input('email'),
             'description'=> $request->input('description'),            
         ];
-        Mail::to('presto@noreply.com')->send (new AdminMail($contactMail, $user));
-        return redirect()->back()->with("status","Il messaggio è stato inviato correttamente");
-    }
-
-    public function dashboard(){
-        $article_to_check = Article::where("is_accepted", null)->first();
         return view("revisor.dashboard", compact("article_to_check"));
     }
 
