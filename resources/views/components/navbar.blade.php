@@ -40,7 +40,7 @@
 
                     {{-- SEARCHBAR ALTERNATIVA --}}
                     <form action="{{route("article.search")}}" method="GET" class="d-flex mt-3 w-50 mx-4 me-auto" role="search" type="search">
-                        <input name="searched" class="form-control rounded-0  border-0" type="search" placeholder="Cerca qui..." aria-label="Search">
+                        <input id="navbarSearchbar" name="searched" class="form-control rounded-0  border-0" type="search" placeholder="Cerca qui..." aria-label="Search">
                         <button class="btn btn-accent border-0 rounded-0" type="submit"><i class="bi bi-search"></i></button>
                     </form>                   
 
