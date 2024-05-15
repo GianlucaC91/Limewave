@@ -39,23 +39,28 @@ class RevisorController extends Controller
         return redirect()->back()->with("status","Il messaggio è stato inviato correttamente");
     }
 
-    public function dashboard(){
-        $article_to_check = Article::where("is_accepted", null)->first();
-        return view("revisor.dashboard", compact("article_to_check"));
-    }
-
-    public function acceptArticle(Article $article) {
-        $article->setApproved(true);
-        return redirect()->back()->with("status","Annuncio Accettato");
-    }
-
-    public function rejectArticle(Article $article) {
-        $article->setApproved(false);
-        return redirect()->back()->with("status","Annuncio rifiutato");
-    }
-
+    
     public function makeRevisor(User $user) {
         Artisan::call('limewave:make-revisor', ['email'=>$user->email]);
         return redirect('/')->with('status', 'Utente ' . $user->name . ' è ora revisore');
     }
+    
+    
+    
+    // REVISING LOGIC MOVED TO LIVEWIRE/REVISE
+
+    public function dashboard(){
+        return view("revisor.dashboard");
+    }
+
+    // public function acceptArticle(Article $article) {
+    //     $article->setApproved(true);
+    //     return redirect()->back()->with("status","Annuncio Accettato");
+    // }
+    
+    // public function rejectArticle(Article $article) {
+    //     $article->setApproved(false);
+    //     return redirect()->back()->with("status","Annuncio rifiutato");
+    // }
+
 }
