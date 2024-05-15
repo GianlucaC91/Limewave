@@ -16,6 +16,7 @@ class Article extends Model
         'body',
         'user_id',
         'category_id',
+        "is_accepted",
     ];
     
     public function toSearchableArray()
