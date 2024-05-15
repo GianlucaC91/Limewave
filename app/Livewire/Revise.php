@@ -31,4 +31,15 @@ class Revise extends Component
         $this->article_to_check = Article::where("is_accepted", null)->get();
         return view('livewire.revise');
     }
+
+    
+    public function undoApproval($articleId)
+    {
+        $article = Article::find($articleId);
+        if ($article) {
+            $article->is_accepted = null;
+            $article->save();
+            session()->flash('status', 'Annuncio rifiutato.');
+        }
+    }
 }

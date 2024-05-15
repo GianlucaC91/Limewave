@@ -7,6 +7,16 @@ use Livewire\Component;
 
 class Feed extends Component
 {
+    public $articles;
+
+    public function mount()
+    {
+        $this->articles = Article::where('is_accepted', true)
+            ->orderBy('updated_at', 'desc')
+            ->take(6)
+            ->get();
+    }
+
     public function render()
     {
         
@@ -14,4 +24,18 @@ class Feed extends Component
 
         return view('livewire.feed', compact('articles'));
     }
+
+    public function undoApproval($articleId)
+{
+    if (auth()->check()) {
+        $article = Article::find($articleId);
+        if ($article) {
+            $article->update(['is_accepted' => null]);
+            session()->flash('status', 'Annuncio rifiutato.');
+            $this->mount(); // Reload the articles after undoing approval
+        }
+    } else {
+        session()->flash('status', 'Devi effettuare l\'accesso per annullare l\'approvazione.');
+    }
+}
 }

@@ -27,6 +27,11 @@
                                 <p class="card-text">Prezzo: {{ $article->price }} €</p>
                                 <span class="mb-1"><a href="{{ route('article.detail', compact('article')) }}"
                                 class="btn btn-accent rounded-0 fw-bold shadow">Dettagli</a></span>
+                                @if(auth()->check() && (auth()->user()->is_revisor || auth()->user()->is_admin))
+                                <span class="mb-1">
+                                    <button wire:click="undoApproval({{ $article->id }})" class="btn btn-warning rounded-0 fw-bold shadow">Undo</button>
+                                </span>
+                                @endif
                             </div>
                         </div>       
                         @endif      
