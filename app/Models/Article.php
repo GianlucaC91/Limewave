@@ -8,8 +8,7 @@ use Laravel\Scout\Searchable;
 
 class Article extends Model
 {
-    use Searchable;
-    use HasFactory;
+    use Searchable, HasFactory;
 
     protected $fillable =[
         'title',
@@ -50,13 +49,4 @@ class Article extends Model
         return Article::where("is_accepted", null)->count();
     }
 
-    public function toSearchableArray(){
-        $category = $this->category;
-        $array = [
-             "id" => $this->id,
-            "title" => $this->title,
-            "category" => $category,
-        ];
-       return $array;
-    }
 }
