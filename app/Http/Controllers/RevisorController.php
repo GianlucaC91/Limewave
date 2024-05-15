@@ -6,15 +6,17 @@ use App\Mail\AdminMail;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use App\Http\Middleware\IsRevisor;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
 {
 
-    public function revisorForm ()
-{
-    return view('revisor.form');
+    public function revisorForm (){
+    $user = Auth::user();
+    return view('revisor.form', compact('user'));
 
 }
 // Invio Mail
@@ -24,19 +26,15 @@ class RevisorController extends Controller
             'name' => 'required|max:255|min:3',
             'email' => 'required',
             'description' => 'required|min:10',
-        ]);
+        ]);        
 
+        $user = Auth::user();
+        
         $contactMail = [
             'name'=> $request->input('name'),
             'email'=> $request->input('email'),
-            'description'=> $request->input('description'),
+            'description'=> $request->input('description'),            
         ];
-        Mail::to('presto@noreply.com')->send (new AdminMail($contactMail));
-        return redirect()->back()->with("status","Il messaggio è stato inviato correttamente");
-    }
-
-    public function dashboard(){
-        $article_to_check = Article::where("is_accepted", null)->first();
         return view("revisor.dashboard", compact("article_to_check"));
     }
 
@@ -48,5 +46,10 @@ class RevisorController extends Controller
     public function rejectArticle(Article $article) {
         $article->setApproved(false);
         return redirect()->back()->with("status","Annuncio rifiutato");
+    }
+
+    public function makeRevisor(User $user) {
+        Artisan::call('limewave:make-revisor', ['email'=>$user->email]);
+        return redirect('/')->with('status', 'Utente ' . $user->name . ' è ora revisore');
     }
 }

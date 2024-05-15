@@ -26,13 +26,18 @@ class ArticleCreate extends Component
     public function store()
     {
         $this->validate();
+        $adminAccept = null ;
+         if (Auth::user()->is_admin) {
+            $adminAccept = true;
+        };
 
         Article::create([
             "title" => $this->title,
             "price" => $this->price,
             "body" => $this->body,
             "user_id" => Auth::user()->id,
-            "category_id" => $this->category
+            "category_id" => $this->category,
+            "is_accepted" => $adminAccept,
         ]);
 
         $this->dispatch('category-update');
