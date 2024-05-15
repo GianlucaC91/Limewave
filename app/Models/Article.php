@@ -9,7 +9,6 @@ use Laravel\Scout\Searchable;
 class Article extends Model
 {
     use Searchable, HasFactory;
-    
 
     protected $fillable =[
         'title',
