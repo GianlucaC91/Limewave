@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 class Article extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
 
     protected $fillable =[
         "title",
@@ -35,5 +36,15 @@ class Article extends Model
 
     public static function reviseNotification(){
         return Article::where("is_accepted", null)->count();
+    }
+
+    public function toSearchableArray(){
+        $category = $this->category;
+        $array = [
+             "id" => $this->id,
+            "title" => $this->title,
+            "category" => $category,
+        ];
+       return $array;
     }
 }
