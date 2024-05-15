@@ -73,26 +73,26 @@
                                     {{-- PROFILE PAGE --}}
                                     
                                     <li>
-                                        <a class="dropdown-item" href="{{route('profile')}}"><i class="bi bi-person-bounding-box"></i> Profilo</a>
+                                        <a class="dropdown-item text-p link-custom" href="{{route('profile')}}"><i class="bi bi-person-bounding-box"></i> Profilo</a>
                                     </li>
                                     @if(Auth::user()->is_revisor || Auth::user()->is_admin)
                                     <li>
-                                        <a class="dropdown-item" href="{{route("revisor.dashboard")}}"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                                        <a class="dropdown-item text-p link-custom" href="{{route("revisor.dashboard")}}"><i class="bi bi-speedometer2"></i> Dashboard</a>
                                         <span>{{Article::reviseNotification()}}</span>
                                     </li>
                                     @endif
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('article.create') }}"><i class="bi bi-megaphone"></i> Nuovo Annuncio</a>
+                                        <a class="dropdown-item text-p link-custom" href="{{ route('article.create') }}"><i class="bi bi-megaphone"></i> Nuovo Annuncio</a>
                                     </li>
 
                                     <li>
-                                        <hr class="dropdown-divider mx-3">
+                                        <hr class="dropdown-divider mx-5 mt-3 mb-2 bg-p">
                                     </li>
 
                                     <li>
-                                        <form class="dropdown-item" method="POST" action="{{ route('logout') }}">
+                                        <form class="dropdown-item link-custom" method="POST" action="{{ route('logout') }}">
                                             @csrf
-                                            <button class="nav-link btn bg-white">
+                                            <button class="nav-link btn bg-s text-p ">
                                                 <i class="bi bi-box-arrow-in-left text-danger"></i> Logout
                                             </button>
                                         </form>

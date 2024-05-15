@@ -54,7 +54,7 @@
 }
 
 .link-custom-2:hover{
-    color: #1e2029;
+    color: var(--color-p);
     background-color: var(--color-s);
   }
 
