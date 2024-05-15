@@ -46,6 +46,31 @@ Il bundling degli asset nei video è diverso. Dovrete utilizzare Laravel Vite, c
 - [x] Nel dettaglio ci sono N-foto segnaposto, come carosello oppure altre soluzioni altre soluzioni di web design
 - [x] cliccando su una categoria, voglio vedere la lista degli annunci di quella categoria
 
+## User story #3:
+- Come Pablo
+- vorrei poter collaborare col team presto.it
+- in modo tale da poter avere un’entrata extra.
+
+### ACCEPTANCE CRITERIA:
+
+- [x] Un utente registrato viene reso revisore tramite un comando d'automazione
+- [x] I revisori possono accedere ad una sezione a loro dedicata
+    - [x] Lista di annunci da revisionare
+    - [x] Bottone accetta annuncio
+    - [x] Bottone rifiuta annuncio
+- [x] Creare una vista "lavora con noi" in cui l’utente registrato, tramite un form, richiede di diventare revisore e al submit far partire una mail con i dettagli della richiesta
+
+## User story #10
+- Come Pino 
+- vorrei poter cercare tra gli annunci
+- in modo tale da visualizzare subito quello che mi interessa
+
+### ACCEPTANCE CRITERIA:
+
+- [x] Implementazione della ricerca full-text
+    - [x] Ricerca per titolo
+    - [x] Ricerca per descrizione
+    - [x] Ricerca per categoria
 
 
 
@@ -55,12 +80,17 @@ Il bundling degli asset nei video è diverso. Dovrete utilizzare Laravel Vite, c
 * RICORDARSI DI PULLARE PRIMA DI INIZIARE IL LAVORO
 * Consiglio all'inizio di ogni sessione di lavoro di lanciare php artisan migrate:fresh --seed così da lavorare su un db popolato e avere una visione sempre chiara del risultato estetico
 * Comando da lanciare per rendere revisori = `php artisan limewave:make-revisor {email}`  Oppure `php artisan` per vedere la lista dei comandi
+* comandi scout per indicizzare il database dopo le migrazioni
+    * visualizzare stato indice
+        * php artisan scout:status
+    * svuotare l'indice
+        * php artisan scout:flush "App\Models\Article"
+    * indicizzare database
+        * php artisan scout:import "App\Models\Article"
+
 
 ### ToDo Extra
 - [x] Quando implementato RICORDAMI settare true: 'expire_on_close' => env('SESSION_EXPIRE_ON_CLOSE', false)
-- [ ] Dropdown categorie navbar deve aggiornarsi dopo inserimento articolo
+- [x] Dropdown categorie navbar deve aggiornarsi dopo inserimento articolo
 - [ ] Titolo pagina contestuale 
 - [x] Text truncate backend ove necessario
-
-
-### Changelog 14/05/2024
