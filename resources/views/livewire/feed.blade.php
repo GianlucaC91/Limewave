@@ -10,8 +10,13 @@
                         <p class="lead">Più di 100 nuovi annunci ogni ora</p>
                     </div> --}}
                     {{-- OLD FEED --}}
+<<<<<<< HEAD
                     
                     {{-- @foreach ($articles as $article)
+=======
+{{--                     
+                    @foreach ($articles as $article)
+>>>>>>> c416390242a29fc2d03f11b9e3eff65278e88547
                     @if ($article->is_accepted || $article->user->is_admin)
                         <div class="card col-3 rounded-4 shadow-sm mx-2 mt-2 mb-5 px-0" style="width: 18rem;">
                             <p class="pt-2 ps-3 fw-bold d-flex align-items-center "> <a
@@ -32,8 +37,12 @@
                 </div>        
             </div>
         </div>
+<<<<<<< HEAD
     </div>
 </div> --}}
+=======
+    </div>  --}}
+>>>>>>> c416390242a29fc2d03f11b9e3eff65278e88547
     
     
 <div class="container-fluid pt-md-5 hero">
