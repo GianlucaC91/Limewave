@@ -29,7 +29,8 @@ class ArticleSeeder extends Seeder
                     'price' => $faker->randomFloat(2, 10, 1000),
                     'body' => $faker->text(rand(30, 200)),
                     'user_id' => rand(1, 4),
-                    'category_id' => $category->id
+                    'category_id' => $category->id,
+                    'is_accepted' => [0, 1, null][rand(0, 2)]
                 ]);
             }
         }
