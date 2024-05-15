@@ -2,6 +2,8 @@
     <div class="row justify-content-center">
         <div class="col-12 col-md-10">
             <x-status/>
+            {{-- div per classe table responsive --}}
+            <div class="table-responsive">
             <table class="table">
                 
                 <thead>
@@ -94,7 +96,8 @@
                     @endforeach
                 </tbody>
             </table>
-            
+            </div>
+            {{-- div per classe table responsive --}}
         </div>
     </div>
 </div>

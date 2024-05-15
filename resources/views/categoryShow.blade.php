@@ -21,7 +21,7 @@
                                     <div class="card-body">
                                         <p class="card-text">Prezzo: {{ $article->price }}</p>
                                         <a href="{{ route('article.detail', compact('article')) }}"
-                                            class="btn btn-accent rounded-0 fw-bold shadow">Dettagli</a>
+                                            class="btn btn-accent rounded-0 fw-bold shadow mb-1">Dettagli</a>
                                     </div>
                                 </div>
                         

@@ -67,9 +67,9 @@ use App\Models\Article;
                         <a class="dropdown-item text-p link-custom" href="{{route('profile')}}"><i class="bi bi-person-bounding-box"></i> Profilo</a>
                     </li>
                     @if(Auth::user()->is_revisor || Auth::user()->is_admin)
-                    <li>
+                    <li class="d-flex">
                         <a class="dropdown-item text-p link-custom" href="{{route("revisor.dashboard")}}"><i class="bi bi-speedometer2"></i> Dashboard</a>
-                        <span>{{Article::reviseNotification()}}</span>
+                        <span class="text-s mx-2 badge rounded-pill bg-a pt-2">{{Article::reviseNotification()}}</span>
                     </li>
                     @endif
                     <li>
@@ -166,10 +166,10 @@ use App\Models\Article;
                     aria-expanded="false"><i class="bi bi-person-circle text-a f"></i></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item" href="#">Profilo</a>
+                            <a class="dropdown-item" href="{{route('profile')}}">Profilo</a>
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">Dashboard</a>
+                            <a class="dropdown-item" href="{{route("revisor.dashboard")}}">Dashboard</a>
                         </li>
                         <li>
                             <hr class="dropdown-divider mx-3">
