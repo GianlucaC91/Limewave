@@ -1,4 +1,4 @@
-<div class="container-fluid pt-md-5 hero">
+{{-- <div class="container-fluid pt-md-5 hero">
     <div class="row justify-content-center ">
         <div class="col-12 col-md-11 col-xl-9">
             
@@ -8,10 +8,10 @@
                     <div class="col-12 ps-5 pb-5 mt-5">
                         <h2 class="display-6 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">Annunci Recenti</h2>
                         <p class="lead">Più di 100 nuovi annunci ogni ora</p>
-                    </div>
+                    </div> --}}
                     {{-- OLD FEED --}}
                     
-                    @foreach ($articles as $article)
+                    {{-- @foreach ($articles as $article)
                     @if ($article->is_accepted || $article->user->is_admin)
                         <div class="card col-3 rounded-4 shadow-sm mx-2 mt-2 mb-5 px-0" style="width: 18rem;">
                             <p class="pt-2 ps-3 fw-bold d-flex align-items-center "> <a
@@ -28,12 +28,12 @@
                             </div>
                         </div>       
                         @endif      
-                        @endforeach            
-                    </div>        
-                </div>
+                    @endforeach            
+                </div>        
             </div>
         </div>
     </div>
+</div> --}}
     
     
 <div class="container-fluid pt-md-5 hero">
