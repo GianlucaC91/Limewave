@@ -4,8 +4,10 @@
           <div class="col-6 col-md-2 mb-3 text-a mt-3">
             <h5>Limewave</h5>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p  link-footer-custom">Chi siamo</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Lavori</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Chi siamo</a></li>
+              <li class="nav-item mb-2">
+                <a href="{{route('revisor.form')}}" class="nav-link p-0 text-p link-footer-custom" type="submit"> Lavora con noi </a>   
+              </li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Sostenibilità</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Stampa</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Pubblicità</a></li>
@@ -22,7 +24,7 @@
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Verifica dell'articolo</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Notizie</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Limewave Pro</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Guuida Limewave Pro</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Guida Limewave Pro</a></li>
             </ul>
           </div>
     

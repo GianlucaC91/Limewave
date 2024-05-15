@@ -1,3 +1,6 @@
+@php
+    use App\Models\Article;
+    @endphp
 <nav class="navbar fixed-top navbar-expand-lg bg-s text-p shadow-sm pb-3">
     <div class="container-fluid w-100">
         <div class="row w-100  m-0">
@@ -30,9 +33,9 @@
                         </li>
                     </ul>
                     {{-- SEARCHBAR --}}
-                    {{-- <form class="d-flex w-75 ms-4 mt-1" role="search">
-                        <input class="form-control me-2 border-0" type="search" placeholder="Cerca qui..." aria-label="Search">
-                        <button class="btn btn-accent border-0 w-25" type="submit">Cerca <i class="bi bi-search"></i></button>
+                    {{-- <form class="d-flex w-50 ms-4 mt-1" role="search">
+                        <input class="form-control me-2 border-0 rounded-4" type="search" placeholder="Cerca qui..." aria-label="Search">
+                        <button class="btn btn-accent border-0 rounded-4" type="submit"> <i class="bi bi-search"></i></button>
                     </form> --}}
 
                     {{-- SEARCHBAR ALTERNATIVA --}}
@@ -72,11 +75,12 @@
                                     <li>
                                         <a class="dropdown-item" href="{{route('profile')}}"><i class="bi bi-person-bounding-box"></i> Profilo</a>
                                     </li>
-
+                                    @if(Auth::user()->is_revisor || Auth::user()->is_admin)
                                     <li>
-                                        <a class="dropdown-item" href="#"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                                        <a class="dropdown-item" href="{{route("revisor.dashboard")}}"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                                        <span>{{Article::reviseNotification()}}</span>
                                     </li>
-
+                                    @endif
                                     <li>
                                         <a class="dropdown-item" href="{{ route('article.create') }}"><i class="bi bi-megaphone"></i> Nuovo Annuncio</a>
                                     </li>
@@ -123,16 +127,32 @@
             </li>
 
             {{-- CATEGORY DROPDOWN --}}
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">Dropdown</a>
-                <ul class="dropdown-menu">
-                    @foreach ($categories as $category)
-                        <li><a class="dropdown-item"
-                                href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }}
-                                ({{ $category->articles->count() }})</a></li>
-                    @endforeach
-                </ul>
+            <li class="nav-item dropdown border-0">
+
+                    <div class="accordion accordion-flush border-0" id="accordionExample">
+                        <div class="accordion-item border-0">
+                          <h2 id="accordionH2" class="accordion-header bg-s border-0 ">
+                            <button class="accordion-button border-0 collapsed text-p bg-s ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                              Categorie
+                            </button>
+                          </h2>
+                          <div id="flush-collapseOne" class="accordion-collapse border-0 collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body border-0 bg-s text-p">
+                                <ul class="list-unstyled">
+                                    @foreach ($categories as $category)
+                                        <li><a class="dropdown-item mb-2"
+                                                href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }} <span class="badge rounded-pill bg-a text-s ms-2">{{ $category->articles->count() }}</span></a></li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                          </div>
+                        </div>
+                    
+                    
+                    </div>
+
+
+
             </li>
         </ul>
 

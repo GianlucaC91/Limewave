@@ -38,4 +38,15 @@ class Article extends Model
     public function category(){
         return $this->belongsTo(Category::class);
     }
+    
+    public function setApproved($el)
+    {
+        $this->is_accepted = $el;
+        $this->save();
+        return true;
+    }
+
+    public static function reviseNotification(){
+        return Article::where("is_accepted", null)->count();
+    }
 }
