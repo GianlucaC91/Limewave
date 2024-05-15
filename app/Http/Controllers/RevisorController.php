@@ -35,7 +35,7 @@ class RevisorController extends Controller
 
     public function acceptArticle(Article $article) {
         $article->setApproved(true);
-        
+        return redirect()->back()->with("status","Annuncio Accettato");
     }
 
     public function rejectArticle(Article $article) {

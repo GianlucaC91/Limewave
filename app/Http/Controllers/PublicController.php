@@ -11,4 +11,9 @@ class PublicController extends Controller
         $articles = Article::orderBy('created_at','desc')->get();
         return view('welcome', compact('articles'));
     }
+
+    public function searchArticles(Request $request) {
+        $articles = Article::search($request->searched)->where('is_accepted', true)->paginate(10);
+        return view('search.results', compact('articles'));
+    }
 }
