@@ -25,6 +25,7 @@
 
 .link-custom:hover{
     color: var(--color-p);
+    background-color: var(--color-s);
   }
 
 .dropdown:hover{
