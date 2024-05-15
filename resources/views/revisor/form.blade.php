@@ -9,9 +9,9 @@
                 <form method="POST" action="{{route('send.email')}}">
                     @csrf
                   
-                    <div class="mb-3">
+                    <div>
                         <label for="name" class="form-label log-1"> Nome </label>
-                        <input type="text" name="name" class="form-control" id="name">
+                        <input type="text" name="name" value="{{$user->name}}" class="form-control" id="name">
                         <div class="text-danger">
                             @error('name')
                                 "Inserisci un nome valido"
@@ -20,7 +20,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label log-1"> Indirizzo email </label>
-                        <input type="email" name="email" class="form-control" id="email">
+                        <input type="email" name="email" value="{{$user->email}}" class="form-control" id="email">
                         <div class="text-danger">
                             @error('email')
                                 "Inserisci una mail valida"

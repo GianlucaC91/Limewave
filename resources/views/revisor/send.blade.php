@@ -6,18 +6,7 @@
   <meta name="x-apple-disable-message-reformatting">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content="telephone=no" name="format-detection">
-  <title>Nuovo messaggio</title><!--[if (mso 16)]>
-    <style type="text/css">
-    a {text-decoration: none;}
-    </style>
-    <![endif]--><!--[if gte mso 9]><style>sup { font-size: 100% !important; }</style><![endif]--><!--[if gte mso 9]>
-<xml>
-    <o:OfficeDocumentSettings>
-    <o:AllowPNG></o:AllowPNG>
-    <o:PixelsPerInch>96</o:PixelsPerInch>
-    </o:OfficeDocumentSettings>
-</xml>
-<![endif]-->
+  <title>Email: {{$contactMail ['email']}}</title>
   <style type="text/css">
 #outlook a {
 	padding:0;
@@ -87,16 +76,13 @@ a[x-apple-data-detectors] {
                   <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                      <tr>
-                      <td align="center" class="h-auto" valign="middle" height="63" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:63px;color:#1e2029;font-size:42px"><strong>Grazie per averci contattato</strong></p></td>
+                      <td align="center" class="h-auto" valign="middle" height="63" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:63px;color:#1e2029;font-size:42px"><strong>Nome:<p>{{$contactMail ['name']}}</p></strong></p></td>
                      </tr>
                      <tr>
-                      <td align="center" class="es-m-txt-c" style="padding:0;Margin:0;padding-bottom:10px;padding-top:20px"><h3 style="Margin:0;line-height:20px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:20px;font-style:normal;font-weight:bold;color:#1e2029">Per essere diventato un nostro revisionario ecco a te un codice sconto per il tuo prossimo acquisto su Limewave</h3></td>
+                      <td align="center" class="es-m-txt-c" style="padding:0;Margin:0;padding-bottom:10px;padding-top:20px"><h3 style="Margin:0;line-height:20px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:20px;font-style:normal;font-weight:bold;color:#1e2029"><p>Messaggio: {{$contactMail ['description']}}</p></h3></td>
                      </tr>
                      <tr>
-                      <td align="center" class="es-m-txt-c" style="padding:0;Margin:0;padding-bottom:10px"><h1 style="Margin:0;line-height:70px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:70px;font-style:normal;font-weight:bold;color:#1e2029">&nbsp;LIMEWAVE10</h1></td>
-                     </tr>
-                     <tr>
-                      <td align="center" style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:27px;color:#1e2029;font-size:18px">Inserendo questo codice avrai il 10% di sconto su tutti i prodotti che trovi sul sito&nbsp;</p></td>
+                      <td align="center" style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:27px;color:#1e2029;font-size:18px"><a href="{{route('make.revisor', compact('user'))}}">Rendi revisore</a>&nbsp;</p></td>
                      </tr>
                      <tr>
                       <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src="https://eirzpzh.stripocdn.email/content/guids/CABINET_77fa9df71413359a761c0ab5f0098f2a051a12a4077e95d373e7a67d0633f6e2/images/dai_una_seconda_chance_alle_cose_che_non_usi_piu_caricale_vendile_e_guadagna_1.png" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="560"></td>
@@ -174,4 +160,12 @@ a[x-apple-data-detectors] {
    </table>
   </div>
  </body>
+</html>
+
+ 
+
+    
+    
+    
+</body>
 </html>
