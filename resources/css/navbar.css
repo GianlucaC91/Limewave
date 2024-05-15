@@ -3,6 +3,11 @@
     position: relative;
 }
 
+.nav-link, .nav-link.show{
+  color: var(--color-p) !important;
+  /* i navlink non diventano piu neri una volta cliccati */
+}
+
 .link-custom::before{
     content: "";
     position: absolute;
@@ -49,6 +54,7 @@
 
 .link-custom-2:hover{
     color: #1e2029;
+    background-color: var(--color-s);
   }
 
 .dropdown-2:hover{

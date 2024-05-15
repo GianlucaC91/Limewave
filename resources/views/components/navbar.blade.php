@@ -27,7 +27,7 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Categorie
                             </a>
-                            <ul class="dropdown-menu rounded-0 shadow">
+                            <ul class="dropdown-menu shadow bg-s">
                                 <livewire:category-counter/>
                             </ul>
                         </li>
