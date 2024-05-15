@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="text-end">
-                        <button type="submit" class="btn btn-accent btn-lg fw-bold pt-3 px-4 shadow btn-hero-login pb-3 mt-4">Invia richiesta </button>
+                        <button type="submit" class="btn btn-accent fw-bold px-4 shadow btn-hero-login mt-4">Invia richiesta</button>
                     </div>
                 </form>
             </div>
