@@ -12,7 +12,7 @@
                     {{-- OLD FEED --}}
                     
                     @foreach ($articles as $article)
-                    
+                    @if ($article->is_accepted || $article->user->is_admin)
                     <div class="card col-3 rounded-4 shadow-sm mx-2 my-3" style="width: 18rem;">
                         <p class="fw-bold d-flex align-items-center mt-2"> <a
                             href="{{ route('user.profile', ['user' => $article->user]) }}"><img src="{{Storage::url($article->user->img)}}" class="card-img avatars "></a> {{ $article->user->name }}</p>
@@ -29,7 +29,8 @@
                                         <span><i class="bi bi-suit-heart-fill fs-5 heart"></i></span>
                                 </div>
                             </div>
-                        </div>             
+                        </div>       
+                        @endif      
                         @endforeach            
                     </div>        
                 </div>
