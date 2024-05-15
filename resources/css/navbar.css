@@ -3,6 +3,11 @@
     position: relative;
 }
 
+.nav-link, .nav-link.show{
+  color: var(--color-p) !important;
+  /* i navlink non diventano piu neri una volta cliccati */
+}
+
 .link-custom::before{
     content: "";
     position: absolute;
@@ -20,6 +25,7 @@
 
 .link-custom:hover{
     color: var(--color-p);
+    background-color: var(--color-s);
   }
 
 .dropdown:hover{
@@ -48,7 +54,8 @@
 }
 
 .link-custom-2:hover{
-    color: #1e2029;
+    color: var(--color-p);
+    background-color: var(--color-s);
   }
 
 .dropdown-2:hover{
@@ -56,6 +63,10 @@
     color: var(--color-a);
   }
 
+  #navbarSearchbar:focus{
+    box-shadow: 0 0 0 0rem !important;   
+    outline: 2px solid var(--color-a);
+  }
 
   /* NAVBAR OFFCANVAS PER MOBILE  */
 

@@ -1,7 +1,7 @@
 <div>
     @foreach ($categories as $category)
-    <li>
-        <a class="dropdown-item link-custom-2" href="{{ route('categoryShow', compact('category')) }}">
+    <li class="bg-s ">
+        <a class="dropdown-item link-custom-2 text-p" href="{{ route('categoryShow', compact('category')) }}">
             {{ $category->name }}
             ({{ $category->articles->count() }})
         </a>
