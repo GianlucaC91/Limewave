@@ -8,8 +8,7 @@ use Laravel\Scout\Searchable;
 
 class Article extends Model
 {
-    use Searchable;
-    use HasFactory;
+    use Searchable, HasFactory;
 
     protected $fillable =[
         'title',
@@ -49,4 +48,5 @@ class Article extends Model
     public static function reviseNotification(){
         return Article::where("is_accepted", null)->count();
     }
+
 }

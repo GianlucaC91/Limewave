@@ -19,6 +19,13 @@ class RevisorController extends Controller
 }
 // Invio Mail
     public function sendEmail (Request $request) {
+
+        $validated = $request->validate([
+            'name' => 'required|max:255|min:3',
+            'email' => 'required',
+            'description' => 'required|min:10',
+        ]);
+
         $contactMail = [
             'name'=> $request->input('name'),
             'email'=> $request->input('email'),
@@ -35,7 +42,7 @@ class RevisorController extends Controller
 
     public function acceptArticle(Article $article) {
         $article->setApproved(true);
-        
+        return redirect()->back()->with("status","Annuncio Accettato");
     }
 
     public function rejectArticle(Article $article) {

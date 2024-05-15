@@ -39,10 +39,10 @@
                     </form> --}}
 
                     {{-- SEARCHBAR ALTERNATIVA --}}
-                    <form class="d-flex mt-3 w-50 mx-4 me-auto" role="search">
-                        <input class="form-control rounded-0  border-0" type="search" placeholder="Cerca qui..." aria-label="Search">
+                    <form action="{{route("articles.search")}}" method="GET" class="d-flex mt-3 w-50 mx-4 me-auto" role="search" type="search">
+                        <input name="searched" class="form-control rounded-0  border-0" type="search" placeholder="Cerca qui..." aria-label="Search">
                         <button class="btn btn-accent border-0 rounded-0" type="submit"><i class="bi bi-search"></i></button>
-                    </form>
+                    </form>                   
 
                     {{-- NAVBAR USER AND LANG PANEL --}}
                     <div class="collapse navbar-collapse d-flex">
@@ -140,8 +140,8 @@
                             <div class="accordion-body border-0 bg-s text-p">
                                 <ul class="list-unstyled">
                                     @foreach ($categories as $category)
-                                        <li><a class="dropdown-item mb-2"
-                                                href="{{ route('categoryShow', compact('category')) }}">{{ $category->name }} <span class="badge rounded-pill bg-a text-s ms-2">{{ $category->articles->count() }}</span></a></li>
+                                        <li><a class="dropdown-item mb-2 d-flex justify-content-between "
+                                                href="{{ route('categoryShow', compact('category')) }}"><span class="badge rounded-pill bg-a text-s me-4 fs-6 my-2 py-2">{{ $category->articles->count() }} {{ $category->name }} </span></a></li>
                                     @endforeach
                                 </ul>
                             </div>
