@@ -21,4 +21,7 @@ Route::get('/article/create', [ArticleController::class, 'create'])->name('artic
 
 Route::get('/article/detail/{article:title}', [ArticleController::class, 'show'])->name('article.detail');
 
+// Search
+Route::get('/ricerca/annuncio', [PublicController::class, 'searchArticles'])->name('articles.search');
+
 
