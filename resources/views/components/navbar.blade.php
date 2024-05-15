@@ -27,7 +27,7 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Categorie
                             </a>
-                            <ul class="dropdown-menu rounded-0 shadow">
+                            <ul class="dropdown-menu shadow bg-s">
                                 <livewire:category-counter/>
                             </ul>
                         </li>
@@ -64,10 +64,10 @@
                                 @endguest
                             </a>
                                 {{-- USER LOGIN AND LOGOUT --}}
-                            <ul class="dropdown-menu dropdown-menu-end  bg-white  rounded-0 shadow">
+                            <ul class="dropdown-menu dropdown-menu-end bg-s shadow">
                                 @guest
-                                    <li><a class="dropdown-item text-s" href="{{ route('login') }}"><i class="bi bi-box-arrow-in-right"></i> Accedi</a></li>
-                                    <li><a class="dropdown-item text-s" href="{{ route('register') }}"><i class="bi bi-plus"></i> Registrati</a></li>
+                                    <li><a class="dropdown-item text-p link-custom" href="{{ route('login') }}"><i class="bi bi-box-arrow-in-right"></i> Accedi</a></li>
+                                    <li><a class="dropdown-item text-p link-custom" href="{{ route('register') }}"><i class="bi bi-plus"></i> Registrati</a></li>
                                 @endguest
                                 @auth
                                     {{-- PROFILE PAGE --}}
