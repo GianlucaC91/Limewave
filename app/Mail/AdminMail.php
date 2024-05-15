@@ -18,9 +18,12 @@ class AdminMail extends Mailable
      * Create a new message instance.
      */
     public $contactMail;
-    public function __construct($contact)
+    public $user;
+
+    public function __construct($contact, $user)
     {
         $this->contactMail = $contact;
+        $this->user = $user;
     }
 
     /**
@@ -29,7 +32,7 @@ class AdminMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Contact Mail',
+            subject: 'Revisor Request',
             from: new Address($this->contactMail ['email'], $this->contactMail['name'])
         );
     }
