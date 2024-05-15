@@ -37,6 +37,7 @@ class ArticleCreate extends Component
 
         $this->dispatch('category-update');
         $this->reset();
+
         session()->flash('status', "Annuncio inserito con successo");
     }
 

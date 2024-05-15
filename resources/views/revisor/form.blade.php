@@ -10,7 +10,7 @@
                     @csrf
                   
                     <div class="mb-3">
-                        <label for="name" class="form-label log-1"> Nome</label>
+                        <label for="name" class="form-label log-1"> Nome </label>
                         <input type="text" name="name" class="form-control" id="name">
                     </div>
                     <div class="mb-3">
