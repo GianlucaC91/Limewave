@@ -13,20 +13,20 @@
                     
                     @foreach ($articles as $article)
                     @if ($article->is_accepted || $article->user->is_admin)
-                    <div class="card col-3 rounded-4 shadow-sm mx-2 my-3 px-0" style="width: 18rem;">
+                    <div class="card col-3 rounded-4 shadow-sm mx-2 mt-2 mb-5 px-0" style="width: 18rem;">
                         <p class="pt-2 ps-3 fw-bold d-flex align-items-center "> <a
                             href="{{ route('user.profile', ['user' => $article->user]) }}"><img src="{{Storage::url($article->user->img)}}" class="card-img avatars "></a> {{ $article->user->name }}</p>
-                            <div class="overflow-hidden rounded-3">
-                                <img src="https://picsum.photos/20{{ $article->id }}" class="card-img-top rounded-3 my-0 img-card"
-                                alt="...">
-                            </div>
-
-                            <div class="card-body">
+                            <img src="https://picsum.photos/20{{ $article->id }}" class="card-img-top rounded-0 "
+                            alt="...">
+                            <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">{{ Str::limit($article->title, 20)}}</h5>
                                 <p class="card-text">Categoria: {{ $article->category->name }}</p>
                                 <p class="card-text">{{ Str::limit($article->body, 50) }}</p>
-                                <a href="{{ route('article.detail', compact('article')) }}"
-                                class="btn btn-accent rounded-0 fw-bold shadow">Dettagli</a>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-end ">
+                                <p class="card-text">Prezzo: {{ $article->price }} €</p>
+                                <span class="mb-1"><a href="{{ route('article.detail', compact('article')) }}"
+                                class="btn btn-accent rounded-0 fw-bold shadow">Dettagli</a></span>
                             </div>
                         </div>       
                         @endif      
