@@ -5,9 +5,14 @@
 
         <div class="container-fluid">
             <div class="row justify-content-center ">
-                <div class="col-12 my-5">
-                    <h2 class="display-6 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">Annunci Recenti</h2>
+                <div class="col-12 col-md-10 my-5 bg-white p-5 shadow-sm">
+                    <p>     
+                        <a href="{{ route('user.profile', ['user' => Auth::user()->id]) }}"><img src="{{Storage::url(Auth::user()->img)}}" class="card-img avatars me-2 mt-2"></a>
+                        <span class="ps-3 fs-3">Benvenuto {{Auth::user()->name}}</span>
+                    </p>
+                    <h2 class="display-6 fw-bold text-body-emphasis ps-3 lh-1 mb-3 underline-colors">Annunci da approvare</h2>
                 </div>
+        
 
                 <div class="col-12 col-md-10">
                     <x-status/>
