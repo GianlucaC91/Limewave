@@ -84,6 +84,8 @@
             </div>
 {{-- Rejected Announcements Table --}}
 <h2>Articoli Rifiutati</h2>
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10">
             <div class="table-responsive">
                 <table class="table">
                     <thead>
