@@ -36,7 +36,7 @@
 </div> --}}
     
     
-<div class="container-fluid pt-md-5 hero">
+{{-- <div class="container-fluid pt-md-5 hero">
     <div class="row justify-content-center ">
         <div class="col-12 col-md-11 col-xl-9">
             
@@ -47,7 +47,7 @@
                         <h2 class="display-6 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">Annunci Recenti</h2>
                         <p class="lead">Più di 100 nuovi annunci ogni ora</p>
                     </div>
-                    {{-- OLD FEED --}}
+                    OLD FEED 
                     
                     @foreach ($articles as $article)
                     @if ($article->is_accepted || $article->user->is_admin)
@@ -79,7 +79,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     
     
 {{-- <div class="container-fluid pt-md-5 hero">
