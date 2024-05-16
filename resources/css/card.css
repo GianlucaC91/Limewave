@@ -16,3 +16,7 @@
   transform: scale(1.2) !important;
 }
 
+.cardName{
+  text-decoration: none;
+  color: var(--color-s);
+}

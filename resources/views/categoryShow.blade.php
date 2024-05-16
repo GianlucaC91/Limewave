@@ -11,8 +11,12 @@
 
                         @forelse ($category->acceptedArticles as $article)
                                 <div class="col-3 card rounded-4 shadow-sm mx-2 mt-2 mb-5 px-0" style="width: 18rem;">
-                                    <p class="pt-2 ps-3 fw-bold d-flex align-items-center "> <a
-                                        href="{{ route('user.profile', ['user' => $article->user]) }}"><img src="{{Storage::url($article->user->img)}}" class="card-img avatars "></a> {{ $article->user->name }}</p>
+                                    <p class="pt-2 ps-3 fw-bold d-flex align-items-center"><a
+                                        href="{{ route('user.profile', ['user' => $article->user]) }}"><img src="{{Storage::url($article->user->img)}}" class="card-img avatars me-2 mt-2"></a>
+                                        <span class="mt-1 cardName"><a class="cardName"
+                                            href="{{ route('user.profile', ['user' => $article->user]) }}"> {{ $article->user->name }}</a>
+                                        </span>
+                                    </p>
                                     <div class="overflow-hidden"><img src="https://picsum.photos/20{{ $article->id }}" class="card-img-top divImg rounded-0" alt="..."></div>
                                     <div class="card-body">
                                         <h5 class="card-title">{{Str::limit($article->title,20)}}</h5>
