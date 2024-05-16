@@ -32,6 +32,7 @@ class UserProfile extends Component
     #[Validate('nullable', 'image', message: 'Immagine non valida')]
     // #[Validate( 'max:1024', message: 'Immagine troppo grande (max 1 mb)')]
     public $img;
+    public$imgPreview;
 
     public function mount($user)
     {
@@ -40,6 +41,11 @@ class UserProfile extends Component
         $this->email = $this->user->email;
     }
 
+    
+    public function updatedImg()
+    {
+        $this->imgPreview = $this->img->temporaryUrl();
+    }
     // User profile update
     public function updateUser()
     {

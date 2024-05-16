@@ -13,7 +13,11 @@
                 @if (Auth::id() == $user->id)
                     <div class="col-10 col-md-4 d-flex flex-column justify-content-center">
                         <label for="oldimg" class="form-label">Avatar attuale:</label>
-                        <img src="{{ Storage::url($user->img) }}" id="oldimg" class="img-fluid my-3" alt="">
+                        @if ($imgPreview)
+                            <img src="{{ $imgPreview }}" id="imgPreview" class="img-fluid my-3" alt="Preview">
+                        @else
+                            <img src="{{ Storage::url($user->img) }}" id="oldimg" class="img-fluid my-3" alt="Current Avatar">
+                        @endif
                     </div>
                     {{-- COL FORM --}}
                     <div class="col-10 col-md-8 col-xl-6 border-p bg-p shadow-sm p-4">

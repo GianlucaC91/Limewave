@@ -1,9 +1,10 @@
-{{-- <div class="container-fluid pt-md-5 hero">
+ 
+ 
+ <div class="container-fluid pt-md-5 hero">
     <div class="row justify-content-center ">
-        <div class="col-12 col-md-11 col-xl-9">
-            
-            
+        <div class="col-12 col-md-11 col-xl-9">      
             <div class="container">
+<<<<<<< HEAD
                 <div class="row bg-white shadow justify-content-evenly ">        
                     <div class="col-12 ps-5 pb-5 mt-5">
                         <h2 class="display-6 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">Annunci Recenti</h2>
@@ -43,6 +44,9 @@
             
             <div class="container">
                 <div class="row bg-white shadow justify-content-evenly ">        
+=======
+            <div class="row bg-white shadow justify-content-evenly ">        
+>>>>>>> f2e160cd52d1d75dc08e91bee07e449782d87407
                     <div class="col-12 ps-5 pb-5 mt-5">
                         <h2 class="display-6 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">Annunci Recenti</h2>
                         <p class="lead">Più di 100 nuovi annunci ogni ora</p>
