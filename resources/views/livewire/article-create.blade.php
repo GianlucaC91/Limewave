@@ -64,6 +64,32 @@
                             @enderror
                         </div>
                     </div>
+
+                    {{-- IMAGES  --}}
+                    <div class="text-danger">
+                        @error('images')
+                            {{ $message }}
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="images" class="form-label">Inserisci immagini</label>
+                        <input type="file" wire:model="temp_images" multiple class="form-control" id="images" name="images">
+                    </div>
+                    {{-- @dd($images) --}}
+                    @if (!empty($images))
+                         <div class="row">
+                            <div class="col-12">
+                                <p>Photo Preview:</p>
+                                <div>
+                                    @foreach ($images as $el)
+                                        <img src="{{$el->temporaryUrl()}}" alt="">
+                                    @endforeach
+                                </div>
+                            </div>
+                         </div>
+                    @endif
+
                     {{-- SEND BUTTON --}}
                     <button type="submit"
                         class="btn btn-accent fw-bold w-25">Crea</button>

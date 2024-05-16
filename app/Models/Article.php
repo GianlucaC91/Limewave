@@ -52,4 +52,10 @@ class Article extends Model
         return Article::where("is_accepted", null)->count();
     }
 
+    //Gestione Image
+    public function images(){
+
+        return $this->hasMany(Image::class);
+    }
+
 }
