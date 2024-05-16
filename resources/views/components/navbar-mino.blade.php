@@ -60,7 +60,7 @@
                               @endguest
                               @auth
                                   <li>
-                                      <a class="dropdown-item" href="{{route("user.profile") }}">Profilo</a>
+                                    <a class="dropdown-item" href="{{route('user.profile')}}">Profilo</a>
                                   </li>
 
                                   <li>
