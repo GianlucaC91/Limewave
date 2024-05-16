@@ -1,4 +1,5 @@
 <div class="container-fluid">
+    <h2 class="text-center">Articoli in attesa di revisione</h2>
     <div class="row justify-content-center">
         <div class="col-12 col-md-10">
             <x-status/>
@@ -82,10 +83,12 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
 {{-- Rejected Announcements Table --}}
-<h2>Articoli Rifiutati</h2>
-<div class="row justify-content-center">
-    <div class="col-12">
+    <h2 class="text-center">Articoli Rifiutati</h2>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10">
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -147,14 +150,12 @@
 
                                     </div>
                                     <div class="modal-footer">
-                                        <button data-bs-dismiss="modal" wire:click='rejectArticle({{$rejected}})'
-                                            wire:confirm="Sei sicuro di voler rifiutare l'annuncio?"
+                                        <button data-bs-dismiss="modal" wire:click='rejectArticle({{$rejected}})'                                            
                                             class="btn btn-danger">
                                             Rifiuta
                                         </button>
 
-                                        <button data-bs-dismiss="modal" wire:click='acceptArticle({{$rejected}})'
-                                            wire:confirm="Sei sicuro di voler accettare l'annuncio?"
+                                        <button data-bs-dismiss="modal" wire:click='acceptArticle({{$rejected}})'                                            
                                             class="btn btn-success">
                                             Accetta
                                         </button>
