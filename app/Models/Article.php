@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Scout\Searchable;
 
 class Article extends Model
 {
-    use Searchable, HasFactory;
+    use Searchable, HasFactory, SoftDeletes;
 
     protected $fillable =[
         'title',
@@ -17,6 +18,7 @@ class Article extends Model
         'user_id',
         'category_id',
         "is_accepted",
+        "deleted_at"
     ];
     
     public function toSearchableArray()
