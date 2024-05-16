@@ -6,9 +6,10 @@
             <div class="table-responsive">
                 <table class="table">
                     <thead>
-                        <tr>
+                        <tr class="text-center">
                             <th scope="col">#</th>
                             <th scope="col">Id Articolo</th>
+                            <th scope="col">Categoria</th>
                             <th scope="col">Utente</th>
                             <th scope="col">Titolo</th>
                             <th scope="col">Prezzo</th>
@@ -22,6 +23,7 @@
                         <tr class="text-center">
                             <th scope="row" class="p-3">{{$loop->iteration}}</th>
                             <td>{{$pending->id}}</td>
+                            <td>{{$pending->category->name}}</td>
                             <td>{{Str::limit($pending->user->name, 15)}}</td>
                             <td>{{Str::limit($pending->title, 15)}}</td>
                             <td>{{Str::limit($pending->price, 15)}}</td>
