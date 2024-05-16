@@ -1,6 +1,6 @@
 <div>
     <x-status />
-
+    
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-10 col-md-8 col-xl-6  bg-white shadow p-4 log-1">
@@ -10,14 +10,13 @@
                     <div class="mb-3">
                         <label for="title" class="form-label">Titolo</label>
                         <input wire:model="title" type="text" class="form-control" id="title"
-                            aria-describedby="emailHelp">
+                        aria-describedby="emailHelp">
                         <div class="text-danger">
                             @error('title')
-                                {{ $message }}
+                            {{ $message }}
                             @enderror
                         </div>
                     </div>
-
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-4 ps-0">
@@ -27,32 +26,31 @@
                                     <input wire:model="price" type="text" class="form-control" id="price">
                                     <div class="text-danger">
                                         @error('price')
-                                            {{ $message }}
+                                        {{ $message }}
                                         @enderror
                                     </div>
-                                </div>
-
+                                </div>                                
                             </div>
                             <div class="col-8 pe-0">
                                 {{-- CATEGORY SELECT --}}
                                 <div class="mb-3">
                                     <label for="category" class="form-label">Categoria</label>
                                     <select wire:model="category" class="form-select"
-                                        aria-label="Default select example">
-                                        <option selected value="{{ null }}">Seleziona la categoria</option>
-                                        @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                        @endforeach
-                                    </select>
-                                    <div class="text-danger">
-                                        @error('category')
-                                            {{ $message }}
-                                        @enderror
-                                    </div>
+                                    aria-label="Default select example">
+                                    <option selected value="{{ null }}">Seleziona la categoria</option>
+                                    @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                                <div class="text-danger">
+                                    @error('category')
+                                    {{ $message }}
+                                    @enderror
                                 </div>
-
                             </div>
+                            
                         </div>
+                    </div>
                     </div>
                     {{-- DESCRIPTION --}}
                     <div class="mb-3">
@@ -60,44 +58,46 @@
                         <textarea wire:model="body" type="text" class="form-control" id="body" cols="30" rows="5"></textarea>
                         <div class="text-danger">
                             @error('body')
-                                {{ $message }}
+                            {{ $message }}
                             @enderror
                         </div>
                     </div>
-
+                
                     {{-- IMAGES  --}}
                     <div class="text-danger">
                         @error('images')
-                            {{ $message }}
+                        {{ $message }}
                         @enderror
                     </div>
-
+                    
                     <div class="mb-3">
                         <label for="images" class="form-label">Inserisci immagini</label>
                         <input type="file" wire:model="temp_images" multiple class="form-control" id="images" name="images">
                     </div>
-                    {{-- @dd($images) --}}
-                    @if (!empty($images))
-                         <div class="row">
+                        {{-- IMAGES PREVIEW --}}
+                        @if (!empty($images))
+                        <div class="row">
                             <div class="col-12">
                                 <p>Photo Preview:</p>
+                                @foreach ($images as $key => $img)                            
                                 <div>
-                                    @foreach ($images as $el)
-                                        <img src="{{$el->temporaryUrl()}}" alt="">
-                                    @endforeach
+                                    <img src="{{$img->temporaryUrl()}}" alt="">
+                                    <h1>ciao</h1>
+                                    <button type="button" class="btn btn-danger" wire:click="removeImage({{$key}})">X</button>
                                 </div>
+                                @endforeach
                             </div>
-                         </div>
-                    @endif
-
+                        </div>
+                        @endif
+                    
                     {{-- SEND BUTTON --}}
                     <button type="submit"
-                        class="btn btn-accent fw-bold w-25">Crea</button>
-                </form>
-
-            </div>
+                    class="btn btn-accent fw-bold w-25">Crea</button>
+            </form>
+            
         </div>
     </div>
+</div>
 
 
 
