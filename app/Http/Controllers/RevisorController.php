@@ -16,7 +16,7 @@ class RevisorController extends Controller
 
     public function revisorForm (){
     $user = Auth::user();
-    if ($user->is_revisor || $user->is_revisor == null) {
+    if ($user->is_revisor || $user->is_revisor === null) {
         return redirect('/')->with('status', 'Sei già revisore o la tua richiesta è in attesa, attendi che venga elaborata');
     } else {
 
