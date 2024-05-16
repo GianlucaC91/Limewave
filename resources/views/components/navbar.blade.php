@@ -151,42 +151,84 @@ use App\Models\Article;
             
         {{-- REGISTER|LOGIN --}}
         @guest
-        <div class="dropdown mt-3">
+
+        {{-- prova accordion  --}}
+
+        <div class="accordion accordion-flush border-0" id="accordionLoginRegister">
+            <div class="accordion-item border-0">
+                <h2 id="accordionH2LoginRegister" class="accordion-header bg-s border-0 ">
+                    <button class="accordion-button accordionLoginRegister-button border-0 collapsed text-p bg-s ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        <i class="bi bi-person text-a fs-5"></i>
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse border-0 collapse" data-bs-parent="#accordionLoginRegister">
+                    <div class="accordion-body border-0 bg-s text-p px-0">
+
+                        <ul class="bg-s list-unstyled">
+                            <li class="py-2"><a class="text-p text-decoration-none " href="{{ route('login') }}">Accedi</a></li>
+                            <li class="py-2"><a class="text-p text-decoration-none " href="{{ route('register') }}">Registrati</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{-- fine prova accordion  --}}
+
+        {{-- <div class="dropdown mt-3">
             <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
             aria-expanded="false"><i class="bi bi-person text-a"></i></i></a>
             <ul class="dropdown-menu bg-s">
                 <li><a class="dropdown-item text-p link-custom" href="{{ route('login') }}">Accedi</a></li>
                 <li><a class="dropdown-item text-p link-custom" href="{{ route('register') }}">Registrati</a></li>
             </ul>
-        </div>
+        </div> --}}
         @endguest
         
         {{-- LOGOUT --}}
         @auth
-        <div class="dropdown mt-3">
-            <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
-            aria-expanded="false"><i class="bi bi-person-circle text-a f"></i></a>
-            <ul class="dropdown-menu">
-                <li>
-                    <a class="dropdown-item" href="{{route('profile')}}">Profilo</a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="{{route("revisor.dashboard")}}">Dashboard</a>
-                </li>
-                <li>
-                    <hr class="dropdown-divider mx-3">
-                </li>
-                <li>
-                    <form class="dropdown-item" method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button class="nav-link btn bg-white">
-                            Logout
-                        </button>
-                    </form>
-                </li>
-            </ul>
+        
+        <div class="accordion accordion-flush border-0" id="accordionLoginRegister">
+            <div class="accordion-item border-0">
+                <h2 id="accordionH2LoginRegister" class="accordion-header bg-s border-0 ">
+                    <button class="accordion-button accordionLoginRegister-button border-0 collapsed text-p bg-s ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        <i class="bi bi-person text-a fs-5"></i>
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse border-0 collapse" data-bs-parent="#accordionLoginRegister">
+                    <div class="accordion-body border-0 bg-s text-p px-0">
+
+                        <ul class="bg-s list-unstyled">
+                            <li class="py-2"><a class="text-p text-decoration-none " href="{{route('profile')}}">Profilo</a></li>
+                            <li class="py-2"><a class="text-p text-decoration-none " href="{{route("revisor.dashboard")}}">Dashboard</a></li>
+                            <form class="" method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button class="btn accordionLogoutBtn text-p bg-s border-none px-0">
+                                    Logout
+                                </button>
+                            </form>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
         </div>
+
         @endauth
+
+
+        {{-- href="{{route('profile')}}">Profilo</a>  --}}
+        {{-- href="{{route("revisor.dashboard")}}">Dashboard</a>  --}}
+        
+        {{-- <form class="dropdown-item" method="POST" action="{{ route('logout') }}">
+            @csrf
+            <button class="nav-link btn bg-white">
+                Logout
+            </button>
+        </form> --}}
+
+
         
         {{-- SEARCHBAR --}}
         <div class="col-12 d-flex mt-3 justify-content-center">
