@@ -104,96 +104,99 @@ use App\Models\Article;
     <div class="offcanvas-header bg-s">
         <h5 class="offcanvas-title" id="offcanvasExampleLabel"><img src="..." alt="logo"></h5>
         <button type="button" class="btn btn-s ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"><i
-            class="bi bi-x-lg text-a fs-2"></i></button>
-        </div>
-        <div class="offcanvas-body bg-s">
+            class="bi bi-x-lg text-a fs-2"></i>
+        </button>
+    </div>
+    <div class="offcanvas-body bg-s">
+        
+        {{-- NAVBAR NAV LINKS --}}
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link text-p" aria-current="page" href="{{ route('homepage') }}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-p" href="#">Link</a>
+            </li>
             
-            {{-- NAVBAR NAV LINKS --}}
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link text-p" aria-current="page" href="{{ route('homepage') }}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-p" href="#">Link</a>
-                </li>
+            {{-- CATEGORY DROPDOWN --}}
+            <li class="nav-item dropdown border-0">
                 
-                {{-- CATEGORY DROPDOWN --}}
-                <li class="nav-item dropdown border-0">
-                    
-                    <div class="accordion accordion-flush border-0" id="accordionExample">
-                        <div class="accordion-item border-0">
-                            <h2 id="accordionH2" class="accordion-header bg-s border-0 ">
-                                <button class="accordion-button border-0 collapsed text-p bg-s ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                    Categorie
-                                </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse border-0 collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body border-0 bg-s text-p">
-                                    <ul class="list-unstyled">
-                                        @foreach ($categories as $category)
-                                        <li><a class="dropdown-item mb-2 d-flex justify-content-between "
-                                            href="{{ route('categoryShow', compact('category')) }}"><span class="badge rounded-pill bg-a text-s me-4 fs-6 my-2 py-2">{{ $category->articles->count() }} {{ $category->name }} </span></a></li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                </div>
+                <div class="accordion accordion-flush border-0" id="accordionExample">
+                    <div class="accordion-item border-0">
+                        <h2 id="accordionH2" class="accordion-header bg-s border-0 ">
+                            <button class="accordion-button border-0 collapsed text-p bg-s ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                Categorie
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse border-0 collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body border-0 bg-s text-p">
+                                <ul class="list-unstyled">
+                                    @foreach ($categories as $category)
+                                    <li><a class="dropdown-item mb-2 d-flex justify-content-between "
+                                        href="{{ route('categoryShow', compact('category')) }}"><span class="badge rounded-pill bg-a text-s me-4 fs-6 my-2 py-2">{{ $category->articles->count() }} {{ $category->name }} </span></a>
+                                    </li>
+                                    @endforeach
+                                </ul>
                             </div>
-                            
-                            
                         </div>
-                        
-                        
-                        
-                    </li>
-                </ul>
-                
-                {{-- REGISTER|LOGIN --}}
-                @guest
-                <div class="dropdown mt-3">
-                    <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false"><i class="bi bi-person text-a"></i></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item text-s" href="{{ route('login') }}">Accedi</a></li>
-                        <li><a class="dropdown-item text-s" href="{{ route('register') }}">Registrati</a></li>
-                    </ul>
-                </div>
-                @endguest
-                
-                {{-- LOGOUT --}}
-                @auth
-                <div class="dropdown mt-3">
-                    <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false"><i class="bi bi-person-circle text-a f"></i></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item" href="{{route('profile')}}">Profilo</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="{{route("revisor.dashboard")}}">Dashboard</a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider mx-3">
-                        </li>
-                        <li>
-                            <form class="dropdown-item" method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <button class="nav-link btn bg-white">
-                                    Logout
-                                </button>
-                            </form>
-                        </li>
-                    </ul>
-                </div>
-                @endauth
-                
-                {{-- SEARCHBAR --}}
-                <div class="col-12 d-flex mt-3 justify-content-center">
-                    <form class="d-flex w-100" action="{{route("article.search")}}" method="GET" role="search" type="search">
-                        <input class="form-control me-2 rounded-4 border-0" id="navbarSearchbar" name="searched" type="search" placeholder="Cerca annunci..." aria-label="Search">
-                        <button class="btn btn-accent rounded-4 border-0" type="submit"><i
-                            class="bi bi-search"></i></button>
-                        </form>
                     </div>
+                        
+                        
                 </div>
-            </div>
+                    
+                    {{-- dropdown-item text-p link-custom  --}}
+                    
+            </li>
+        </ul>
             
+        {{-- REGISTER|LOGIN --}}
+        @guest
+        <div class="dropdown mt-3">
+            <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false"><i class="bi bi-person text-a"></i></i></a>
+            <ul class="dropdown-menu bg-s">
+                <li><a class="dropdown-item text-p link-custom" href="{{ route('login') }}">Accedi</a></li>
+                <li><a class="dropdown-item text-p link-custom" href="{{ route('register') }}">Registrati</a></li>
+            </ul>
+        </div>
+        @endguest
+        
+        {{-- LOGOUT --}}
+        @auth
+        <div class="dropdown mt-3">
+            <a class="nav-link dropdown-toggle text-p" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false"><i class="bi bi-person-circle text-a f"></i></a>
+            <ul class="dropdown-menu">
+                <li>
+                    <a class="dropdown-item" href="{{route('profile')}}">Profilo</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{{route("revisor.dashboard")}}">Dashboard</a>
+                </li>
+                <li>
+                    <hr class="dropdown-divider mx-3">
+                </li>
+                <li>
+                    <form class="dropdown-item" method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button class="nav-link btn bg-white">
+                            Logout
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        @endauth
+        
+        {{-- SEARCHBAR --}}
+        <div class="col-12 d-flex mt-3 justify-content-center">
+            <form class="d-flex w-100" action="{{route("article.search")}}" method="GET" role="search" type="search">
+                <input class="form-control me-2 rounded-4 border-0" id="navbarSearchbar" name="searched" type="search" placeholder="Cerca annunci..." aria-label="Search">
+                <button class="btn btn-accent rounded-4 border-0" type="submit"><i
+                    class="bi bi-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+        
