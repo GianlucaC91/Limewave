@@ -64,31 +64,30 @@
                     </div>
                 
                     {{-- IMAGES  --}}
-                    <div class="text-danger">
-                        @error('images')
-                        {{ $message }}
-                        @enderror
-                    </div>
                     
                     <div class="mb-3">
                         <label for="images" class="form-label">Inserisci immagini</label>
                         <input type="file" wire:model="temp_images" multiple class="form-control" id="images" name="images">
                     </div>
-                        {{-- IMAGES PREVIEW --}}
-                        @if (!empty($images))
-                        <div class="row">
-                            <div class="col-12">
-                                <p>Photo Preview:</p>
-                                @foreach ($images as $key => $img)                            
-                                <div>
-                                    <img src="{{$img->temporaryUrl()}}" alt="">
-                                    <h1>ciao</h1>
-                                    <button type="button" class="btn btn-danger" wire:click="removeImage({{$key}})">X</button>
-                                </div>
-                                @endforeach
+                    {{-- IMAGES PREVIEW --}}
+                    @if (!empty($images))
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Photo Preview:</p>
+                            @foreach ($images as $key => $img)                            
+                            <div>
+                                <img src="{{$img->temporaryUrl()}}" alt="">                                    
+                                <button type="button" class="btn btn-danger" wire:click="removeImage({{$key}})">X</button>
                             </div>
+                            @endforeach
                         </div>
-                        @endif
+                    </div>
+                    @endif
+                    <div class="text-danger">
+                        @error('images')
+                        {{ $message }}
+                        @enderror
+                    </div>
                     
                     {{-- SEND BUTTON --}}
                     <button type="submit"

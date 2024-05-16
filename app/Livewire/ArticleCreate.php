@@ -25,20 +25,23 @@ class ArticleCreate extends Component
     public $body = "";
     #[Validate('required', message: 'La categoria è necessaria')]
     public $category = "";
-
+    
+  
     public $temp_images = [];
+  
     public $images = [];
 
 
     public function store()
     {
         $this->validate();
+
         $adminAccept = null ;
          if (Auth::user()->is_admin) {
             $adminAccept = true;
         };
 
-        Article::create([
+        $article = Article::create([
             "title" => $this->title,
             "price" => $this->price,
             "body" => $this->body,
@@ -47,7 +50,13 @@ class ArticleCreate extends Component
             "is_accepted" => $adminAccept,
         ]);
 
+        foreach ($this->images as $image) {
+            $path = $image->store('img', 'public');
+            $article->images()->create(['path' => $path]);
+        }
+       
         $this->dispatch('category-update');
+        
         $this->reset();
 
         session()->flash('status', "Annuncio inserito con successo");
@@ -55,13 +64,14 @@ class ArticleCreate extends Component
 
     // TEMPORARY IMAGES SHOWN
     public function updatedTempImages() {
+        
         foreach ($this->temp_images as $image) {
             $this->images[] = $image;
         }
     }
     // TEMPORARY IMAGES REMOVAL
     public function removeImage($key) {
-
+        
         if (in_array($key, array_keys($this->images))) {
             unset($this->images[$key]);
         }

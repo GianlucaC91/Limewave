@@ -19,7 +19,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($pending_articles as $pending)
+                        @forelse ($pending_articles as $pending)
                         <tr class="text-center">
                             <th scope="row" class="p-3">{{$loop->iteration}}</th>
                             <td>{{$pending->id}}</td>
@@ -81,7 +81,11 @@
                                 </div>
                             </div>
                         </div>
-                        @endforeach
+                        @empty
+                        <tr>
+                            <td colspan="9" class="text-center">Non ci sono annunci rifiutati.</td>
+                        </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>
@@ -97,6 +101,7 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Id Articolo</th>
+                            <th scope="col">Categoria</th>
                             <th scope="col">Utente</th>
                             <th scope="col">Titolo</th>
                             <th scope="col">Prezzo</th>
@@ -110,6 +115,7 @@
                         <tr class="text-center">
                             <th scope="row" class="p-3">{{$loop->iteration}}</th>
                             <td>{{$rejected->id}}</td>
+                            <td>{{$rejected->category->name}}</td>
                             <td>{{Str::limit($rejected->user->name, 15)}}</td>
                             <td>{{Str::limit($rejected->title, 15)}}</td>
                             <td>{{Str::limit($rejected->price, 15)}}</td>
@@ -167,7 +173,7 @@
                         </div>
                         @empty
                         <tr>
-                            <td colspan="8" class="text-center">Non ci sono annunci rifiutati.</td>
+                            <td colspan="9" class="text-center">Non ci sono annunci rifiutati.</td>
                         </tr>
                         @endforelse
                     </tbody>
