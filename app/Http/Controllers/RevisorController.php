@@ -16,10 +16,15 @@ class RevisorController extends Controller
 
     public function revisorForm (){
     $user = Auth::user();
+    if ($user->is_revisor || $user->is_revisor === null) {
+        return redirect('/')->with('status', 'Sei già revisore o la tua richiesta è in attesa, attendi che venga elaborata');
+    } else {
+
     return view('revisor.form', compact('user'));
+    }
 
 }
-// Invio Mail
+    // Invio Mail
     public function sendEmail (Request $request) {
 
         $validated = $request->validate([
@@ -36,6 +41,8 @@ class RevisorController extends Controller
             'description'=> $request->input('description'),            
         ];
         Mail::to('presto@noreply.com')->send (new AdminMail($contactMail, $user));
+        $user->is_revisor = null;
+        $user->save();
         return redirect()->back()->with("status","Il messaggio è stato inviato correttamente");
     }
 

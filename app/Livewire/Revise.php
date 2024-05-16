@@ -7,39 +7,52 @@ use Livewire\Component;
 
 class Revise extends Component
 {   
-    public $article_to_check;  
-    
-    public function dashboard(){
-        $article_to_check = Article::where("is_accepted", null)->first();
-        return view("livewire.revise", compact("article_to_check"));
-    }
-    
-    
-    public function acceptArticle(Article $article) {
-        $article->setApproved(true);
-        
-    }
-    
-    public function rejectArticle(Article $article) {
-        $article->setApproved(false);
-        session()->flash('status', 'Post successfully updated.');
-        
-    }
-    
-    public function render()
+    public $pending_articles;
+    public $rejected_articles;
+
+    public function mount()
     {
-        $this->article_to_check = Article::where("is_accepted", null)->get();
-        return view('livewire.revise');
+        $this->pending_articles = Article::where("is_accepted", null)->get();
+        $this->rejected_articles = Article::onlyTrashed()->get();
     }
 
-    
-    public function undoApproval($articleId)
+    public function acceptArticle(Article $article)
     {
-        $article = Article::find($articleId);
-        if ($article) {
-            $article->is_accepted = null;
-            $article->save();
-            session()->flash('status', 'Annuncio rifiutato.');
+        $article->setApproved(true);
+        $this->mount();
+    }
+
+    public function rejectArticle(Article $article)
+    {
+        $article->delete();
+        session()->flash('status', 'Annuncio rifiutato');
+        $this->mount();
+    }
+
+    public function restoreArticle($articleId)
+    {
+        if (auth()->check() && (auth()->user()->is_revisor || auth()->user()->is_admin)) {
+            $article = Article::withTrashed()->find($articleId);
+            if ($article) {
+                $article->restore();
+                session()->flash('status', 'Annuncio ripristinato.');
+                $this->mount();
+            }
         }
+    }
+
+    public function deleteArticle($id)
+    {
+        $article = Article::withTrashed()->find($id);
+        if ($article) {
+            $article->forceDelete();
+            session()->flash("status", "Annuncio eliminato definitivamente");
+            $this->mount();
+        }
+    }
+
+    public function render()
+    {
+        return view('livewire.revise');
     }
 }
