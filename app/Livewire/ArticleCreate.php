@@ -26,7 +26,7 @@ class ArticleCreate extends Component
     #[Validate('required', message: 'La categoria è necessaria')]
     public $category = "";
 
-    public $temp_images;
+    public $temp_images = [];
     public $images = [];
 
 
@@ -52,6 +52,21 @@ class ArticleCreate extends Component
 
         session()->flash('status', "Annuncio inserito con successo");
     }
+
+    // TEMPORARY IMAGES SHOWN
+    public function updatedTempImages() {
+        foreach ($this->temp_images as $image) {
+            $this->images[] = $image;
+        }
+    }
+    // TEMPORARY IMAGES REMOVAL
+    public function removeImage($key) {
+
+        if (in_array($key, array_keys($this->images))) {
+            unset($this->images[$key]);
+        }
+    }
+
 
     public function render()
     {
