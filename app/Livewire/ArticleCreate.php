@@ -3,13 +3,16 @@
 namespace App\Livewire;
 
 use App\Models\Article;
-use App\Models\Category;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use App\Models\Category;
+use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleCreate extends Component
 {
+    use WithFileUploads;
+    
     #[Validate('required', message: 'Il titolo è necessario')]
     #[Validate('min:5', message: 'Il titolo deve contenere almeno 5 caratteri')]
     public $title = "";
@@ -22,6 +25,10 @@ class ArticleCreate extends Component
     public $body = "";
     #[Validate('required', message: 'La categoria è necessaria')]
     public $category = "";
+
+    public $temp_images;
+    public $images = [];
+
 
     public function store()
     {
