@@ -17,4 +17,9 @@ class Category extends Model
     {
         return $this->hasMany(Article::class);
     }
+
+    public function acceptedArticles()
+    {
+        return $this->hasMany(Article::class)->where('is_accepted', true);
+    }
 }
