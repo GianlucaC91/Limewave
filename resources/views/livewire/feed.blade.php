@@ -9,7 +9,7 @@
                         <h2 class="display-6 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">Annunci Recenti</h2>
                         <p class="lead">Più di 100 nuovi annunci ogni ora</p>
                     </div>
-                                        
+                        <p>{{__("messages.allArticles")}}</p>                
                     @foreach ($articles as $article)
                     @if ($article->is_accepted || $article->user->is_admin)
                     <div class="card col-3 rounded-4 shadow-sm mx-2 mt-2 mb-5 px-0" style="width: 18rem;">
