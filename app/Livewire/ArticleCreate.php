@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Jobs\CropImage;
 use App\Models\Article;
 use Livewire\Component;
 use App\Models\Category;
@@ -61,7 +62,8 @@ class ArticleCreate extends Component
             $path = $image->store($newFileName, 'public');
             $newImage= $article->images()->create(["path"=>$path]);
 
-            dispatch(new ResizeImage($newImage->path, 286, 286));
+            dispatch(new ResizeImage($newImage->path, 600, 600));
+            dispatch(new CropImage($newImage->path, 300, 300));
         }
 
         File::deleteDirectory(storage_path("/app/livewire-tmp"));
@@ -80,6 +82,8 @@ class ArticleCreate extends Component
             $this->images[] = $image;
         }
     }
+
+    
     // TEMPORARY IMAGES REMOVAL
     public function removeImage($key) {
         

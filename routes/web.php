@@ -1,11 +1,12 @@
 <?php
 
+use App\Livewire\ArticleCreate;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RevisorController;
+use App\Http\Controllers\CategoryController;
 
 // PublicController
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
@@ -37,3 +38,7 @@ Route::get('/ricerca/annuncio', [PublicController::class, 'searchArticles'])->na
 
 // Lang Route
 Route::post("/lingua/{lang}", [PublicController::class,"setLanguage"])->name("setLocale");
+
+// Test
+Route::post('/livewire/message/article-create.image-cropped', ArticleCreate::class)
+    ->name('livewire.message.article-create.image-cropped');
