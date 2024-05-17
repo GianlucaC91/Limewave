@@ -35,9 +35,8 @@ return [
     "annuoncementTitle" => " Ad title",//titolo annuncio
     "annuoncementDescription" => " Ad description",//descrizione annuncio
     "annuoncementDetail" => " Ad detail",//dettaglio annuncio
-    "readMore" => " Read more",//le4ggi di più
-
-
+    "readMore" => " Read more",//leggi di più
+    "description" => " Description",//Descrizione
 
 
 ];
