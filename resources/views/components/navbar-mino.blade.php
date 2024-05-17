@@ -33,7 +33,8 @@
                   {{-- <div class="col-12 d-flex mt-3 justify-content-center"> --}}
                     <form class="d-flex w-75 ms-4 mt-1" role="search">
                         <input class="form-control me-2 border-0" type="search" placeholder="Cerca qui..." aria-label="Search">
-                        <button class="btn btn-accent border-0 w-25" type="submit">Cerca <i class="bi bi-search"></i></button>
+                        <button class="btn btn-accent border-0 w-25" type="submit">{{__("messages.search")}}
+                            <i class="bi bi-search"></i></button>
                     </form>
                 {{-- </div> --}}
 
@@ -55,12 +56,12 @@
                               {{-- USER LOGIN AND LOGOUT --}}
                           <ul class="dropdown-menu dropdown-menu-end  bg-white">
                               @guest
-                                  <li><a class="dropdown-item text-s" href="{{ route('login') }}">Accedi</a></li>
-                                  <li><a class="dropdown-item text-s" href="{{ route('register') }}">Registrati</a></li>
+                                  <li><a class="dropdown-item text-s" href="{{ route('login') }}">{{__("messages.login")}}</a></li>
+                                  <li><a class="dropdown-item text-s" href="{{ route('register') }}">{{__("messages.register")}}</a></li>
                               @endguest
                               @auth
                                   <li>
-                                    <a class="dropdown-item" href="{{route('user.profile')}}">Profilo</a>
+                                    <a class="dropdown-item" href="{{route('user.profile')}}">{{__("messages.profile")}}</a>
                                   </li>
 
                                   <li>

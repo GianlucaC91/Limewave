@@ -6,7 +6,8 @@
   <meta name="x-apple-disable-message-reformatting">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta content="telephone=no" name="format-detection">
-  <title>Email: {{$contactMail ['email']}}</title>
+  <title>{{__("messages.email")}}
+    : {{$contactMail ['email']}}</title>
   <style type="text/css">
 /* NAME-SIZE */
 .font-size{
@@ -80,19 +81,20 @@ a[x-apple-data-detectors] {
                   <td align="center" valign="top" style="padding:0;Margin:0;width:560px">
                    <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                      <tr>
-                      <td align="center" class="h-auto" valign="middle" height="63" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:63px;color:#1e2029;font-size:42px"><strong>Nome:<p class="font-size">{{$contactMail ['name']}}</p></strong></p></td>
+                      <td align="center" class="h-auto" valign="middle" height="63" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:63px;color:#1e2029;font-size:42px"><strong>{{__("messages.name")}}
+                        :<p class="font-size">{{$contactMail ['name']}}</p></strong></p></td>
                      </tr>
                      <tr>
-                      <td align="center" class="es-m-txt-c" style="padding:0;Margin:0;padding-bottom:10px;padding-top:20px"><h3 style="Margin:0;line-height:20px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:20px;font-style:normal;font-weight:bold;color:#1e2029"><p>Messaggio: {{$contactMail ['description']}}</p></h3></td>
+                      <td align="center" class="es-m-txt-c" style="padding:0;Margin:0;padding-bottom:10px;padding-top:20px"><h3 style="Margin:0;line-height:20px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:20px;font-style:normal;font-weight:bold;color:#1e2029"><p>{{__("messages.description")}}: {{$contactMail ['description']}}</p></h3></td>
                      </tr>
                      <tr>
-                      <td align="center" style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:27px;color:#1e2029;font-size:18px"><a href="{{route('make.revisor', compact('user'))}}">Rendi revisore</a>&nbsp;</p></td>
+                      <td align="center" style="padding:0;Margin:0;padding-top:5px;padding-bottom:5px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:27px;color:#1e2029;font-size:18px"><a href="{{route('make.revisor', compact('user'))}}">{{__("messages.makeReviewer")}}</a>&nbsp;</p></td>
                      </tr>
                      <tr>
                       <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src="https://eirzpzh.stripocdn.email/content/guids/CABINET_77fa9df71413359a761c0ab5f0098f2a051a12a4077e95d373e7a67d0633f6e2/images/dai_una_seconda_chance_alle_cose_che_non_usi_piu_caricale_vendile_e_guadagna_1.png" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="560"></td>
                      </tr>
                      <tr>
-                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;color:#E3E3E3;font-size:16px">Testo</p></td>
+                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;color:#E3E3E3;font-size:16px">{{__("messages.text")}} </p></td>
                      </tr>
                      <tr>
                       <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src="https://eirzpzh.stripocdn.email/content/guids/CABINET_77fa9df71413359a761c0ab5f0098f2a051a12a4077e95d373e7a67d0633f6e2/images/dai_una_seconda_chance_alle_cose_che_non_usi_piu_caricale_vendile_e_guadagna_2.png" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="560"></td>
@@ -111,7 +113,7 @@ a[x-apple-data-detectors] {
                       <td align="center" style="padding:0;Margin:0;font-size:0px"><img class="adapt-img" src="https://eirzpzh.stripocdn.email/content/guids/CABINET_77fa9df71413359a761c0ab5f0098f2a051a12a4077e95d373e7a67d0633f6e2/images/dai_una_seconda_chance_alle_cose_che_non_usi_piu_caricale_vendile_e_guadagna_3.png" alt style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="560"></td>
                      </tr>
                      <tr>
-                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;color:#E3E3E3;font-size:16px">Testo</p></td>
+                      <td align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:24px;color:#E3E3E3;font-size:16px">{{__("messages.text")}}</p></td>
                      </tr>
                    </table></td>
                  </tr>
@@ -147,9 +149,10 @@ a[x-apple-data-detectors] {
                       <td style="padding:0;Margin:0">
                        <table cellpadding="0" cellspacing="0" width="100%" class="es-menu" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
                          <tr class="links">
-                          <td align="center" valign="top" width="33.33%" style="Margin:0;padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;border:0"><a target="_blank" href="" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;display:block;font-family:arial, 'helvetica neue', helvetica, sans-serif;color:#e0ff00;font-size:12px">Chi siamo</a></td>
-                          <td align="center" valign="top" width="33.33%" style="Margin:0;padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;border:0;border-left:1px solid #cccccc"><a target="_blank" href="" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;display:block;font-family:arial, 'helvetica neue', helvetica, sans-serif;color:#e0ff00;font-size:12px">Politica sulla privacy</a></td>
-                          <td align="center" valign="top" width="33.33%" style="Margin:0;padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;border:0;border-left:1px solid #cccccc"><a target="_blank" href="" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;display:block;font-family:arial, 'helvetica neue', helvetica, sans-serif;color:#e0ff00;font-size:12px">Termi e condizioni</a></td>
+                          <td align="center" valign="top" width="33.33%" style="Margin:0;padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;border:0"><a target="_blank" href="" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;display:block;font-family:arial, 'helvetica neue', helvetica, sans-serif;color:#e0ff00;font-size:12px">{{__("messages.whoWeAre")}}
+                          </a></td>
+                          <td align="center" valign="top" width="33.33%" style="Margin:0;padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;border:0;border-left:1px solid #cccccc"><a target="_blank" href="" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;display:block;font-family:arial, 'helvetica neue', helvetica, sans-serif;color:#e0ff00;font-size:12px">{{__("messages.privacyPolicy")}}</a></td>
+                          <td align="center" valign="top" width="33.33%" style="Margin:0;padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;border:0;border-left:1px solid #cccccc"><a target="_blank" href="" style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;text-decoration:none;display:block;font-family:arial, 'helvetica neue', helvetica, sans-serif;color:#e0ff00;font-size:12px">{{__("messages.termsConditions")}}</a></td>
                          </tr>
                        </table></td>
                      </tr>

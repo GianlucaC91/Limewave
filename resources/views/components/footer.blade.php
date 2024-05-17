@@ -4,13 +4,14 @@
           <div class="col-6 col-md-2 mb-3 text-a mt-3">
             <h5>Limewave</h5>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Chi siamo</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">{{__("messages.whoWeAre")}}
+              </a></li>
               <li class="nav-item mb-2">
-                <a href="{{route('revisor.form')}}" class="nav-link p-0 text-p link-footer-custom" type="submit"> Lavora con noi </a>   
+                <a href="{{route('revisor.form')}}" class="nav-link p-0 text-p link-footer-custom" type="submit"> {{__("messages.workWithUs")}}</a>   
               </li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Sostenibilità</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Stampa</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Pubblicità</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom"> {{__("messages.sustainability")}}</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom"> {{__("messages.press")}}</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">{{__("messages.advertising")}}</a></li>
 
 
               
@@ -18,24 +19,24 @@
           </div>
     
           <div class="col-6 col-md-2 mb-3 text-a mt-3">
-            <h5>Scopri</h5>
+            <h5>{{__("messages.youDiscover")}}</h5>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Come funziona</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Verifica dell'articolo</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Notizie</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">{{__("messages.howDoes")}}</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">{{__("messages.checkingItem")}}</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">{{__("messages.news")}}</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Limewave Pro</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Guida Limewave Pro</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">{{__("messages.guide")}} Limewave Pro</a></li>
             </ul>
           </div>
     
           <div class="col-6 col-md-2 mb-3 text-a mt-3">
-            <h5>Assistenza</h5>
+            <h5>{{__("messages.assistance")}}</h5>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Centro assistenza</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Vendere</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Acquistare</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Sicurezza</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">Affidabilità</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">{{__("messages.serviceCenter")}}</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">{{__("messages.sell")}}</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">{{__("messages.acquire")}}</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">{{__("messages.safety")}}</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-p link-footer-custom">{{__("messages.reliability")}}</a></li>
             </ul>
           </div>
         </div>

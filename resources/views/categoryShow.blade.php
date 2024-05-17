@@ -6,7 +6,8 @@
                 <div class="container">
                     <div class="row bg-white shadow justify-content-evenly">
                         <div class="col-12 ps-5 pb-5 mt-5">
-                            <h1 class="display-6 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">Categoria {{ $category->name }}</h1>
+                            <h1 class="display-6 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">{{__("messages.category")}}
+                                {{ $category->name }}</h1>
                         </div>
 
                         @forelse ($category->acceptedArticles as $article)
@@ -23,16 +24,18 @@
                                         <p class="card-text">Creato il: {{ $article->created_at->format('d/m/Y') }}</p>
                                     </div>
                                     <div class="card-body">
-                                        <p class="card-text">Prezzo: {{ $article->price }}</p>
+                                        <p class="card-text"{{__("messages.price")}}
+                                        : {{ $article->price }}</p>
                                         <a href="{{ route('article.detail', compact('article')) }}"
-                                            class="btn btn-accent rounded-0 fw-bold shadow mb-1">Dettagli</a>
+                                            class="btn btn-accent rounded-0 fw-bold shadow mb-1">{{__("messages.details")}}
+                                        </a>
                                     </div>
                                 </div>
                         
                         @empty
 
-                            <p>Non sono presenti annunci in questa categoria</p>
-                            <p><a href="{{ route('article.create') }}">Pubblicane uno</a></p>
+                            <p>{{__("messages.noAds")}}</p>
+                            <p><a href="{{ route('article.create') }}">{{__("messages.postOne")}}</a></p>
                             
                         @endforelse
 

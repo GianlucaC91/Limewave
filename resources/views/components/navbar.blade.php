@@ -22,7 +22,8 @@ use App\Models\Article;
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-p link-custom" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Categorie
+                        {{__("messages.categories")}}
+
                     </a>
                     <ul class="dropdown-menu shadow bg-s">
                         <livewire:category-counter/>
@@ -65,14 +66,17 @@ use App\Models\Article;
                 {{-- USER LOGIN AND LOGOUT --}}
                 <ul class="dropdown-menu dropdown-menu-end bg-s shadow">
                     @guest
-                    <li><a class="dropdown-item text-p link-custom" href="{{ route('login') }}"><i class="bi bi-box-arrow-in-right"></i> Accedi</a></li>
-                    <li><a class="dropdown-item text-p link-custom" href="{{ route('register') }}"><i class="bi bi-plus"></i> Registrati</a></li>
+                    <li><a class="dropdown-item text-p link-custom" href="{{ route('login') }}"><i class="bi bi-box-arrow-in-right"></i> {{__("messages.login")}}
+                    </a></li>
+                    <li><a class="dropdown-item text-p link-custom" href="{{ route('register') }}"><i class="bi bi-plus"></i> {{__("messages.register")}}
+                    </a></li>
                     @endguest
                     @auth
                     {{-- PROFILE PAGE --}}
                     
                     <li>
-                        <a class="dropdown-item text-p link-custom" href="{{route('profile')}}"><i class="bi bi-person-bounding-box"></i> Profilo</a>
+                        <a class="dropdown-item text-p link-custom" href="{{route('profile')}}"><i class="bi bi-person-bounding-box"></i> {{__("messages.profile")}}
+                        </a>
                     </li>
                     @if(Auth::user()->is_revisor || Auth::user()->is_admin)
                     <li class="d-flex">
@@ -81,7 +85,7 @@ use App\Models\Article;
                     </li>
                     @endif
                     <li>
-                        <a class="dropdown-item text-p link-custom" href="{{ route('article.create') }}"><i class="bi bi-megaphone"></i> Nuovo Annuncio</a>
+                        <a class="dropdown-item text-p link-custom" href="{{ route('article.create') }}"><i class="bi bi-megaphone"></i> {{__("messages.newAnnouncement")}}</a>
                     </li>
                     
                     <li>
@@ -133,7 +137,8 @@ use App\Models\Article;
                     <div class="accordion-item border-0">
                         <h2 id="accordionH2" class="accordion-header bg-s border-0 ">
                             <button class="accordion-button border-0 collapsed text-p bg-s ps-0" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                Categorie
+                                {{__("messages.categories")}}
+
                             </button>
                         </h2>
                         <div id="flush-collapseOne" class="accordion-collapse border-0 collapse" data-bs-parent="#accordionExample">
@@ -173,8 +178,10 @@ use App\Models\Article;
                     <div class="accordion-body border-0 bg-s text-p px-0">
 
                         <ul class="bg-s list-unstyled">
-                            <li class="py-2"><a class="text-p text-decoration-none " href="{{ route('login') }}">Accedi</a></li>
-                            <li class="py-2"><a class="text-p text-decoration-none " href="{{ route('register') }}">Registrati</a></li>
+                            <li class="py-2"><a class="text-p text-decoration-none " href="{{ route('login') }}">{{__("messages.login")}}
+                            </a></li>
+                            <li class="py-2"><a class="text-p text-decoration-none " href="{{ route('register') }}">{{__("messages.register")}}
+                            </a></li>
                         </ul>
 
                     </div>
@@ -208,7 +215,8 @@ use App\Models\Article;
                     <div class="accordion-body border-0 bg-s text-p px-0">
 
                         <ul class="bg-s list-unstyled">
-                            <li class="py-2"><a class="text-p text-decoration-none " href="{{route('profile')}}">Profilo</a></li>
+                            <li class="py-2"><a class="text-p text-decoration-none " href="{{route('profile')}}">{{__("messages.profile")}}
+                            </a></li>
                             <li class="py-2"><a class="text-p text-decoration-none " href="{{route("revisor.dashboard")}}">Dashboard</a></li>
                             <form class="" method="POST" action="{{ route('logout') }}">
                                 @csrf

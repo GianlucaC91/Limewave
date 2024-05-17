@@ -3,7 +3,8 @@
         <div class="row justify-content-center">
             <div class="col-10 col-md-8 col-xl-6 bg-white shadow-sm p-4 log-1">
                 <x-error />
-                <h1 class="display-5 fw-bold text-body-emphasis lh-1 my-3 underline-colors">Registrati</h1>
+                <h1 class="display-5 fw-bold text-body-emphasis lh-1 my-3 underline-colors">{{__("messages.register")}}
+                </h1>
                 <form method="POST" action="register">
                     @csrf
                     <div class="mb-3">
@@ -18,12 +19,12 @@
                         <label for="password" class="form-label">Password</label>
                         <input type="password" name="password" class="form-control" id="password">
                     <div class="mb-3">
-                        <label for="password_confirmation" class="form-label">Conferma Password</label>
+                        <label for="password_confirmation" class="form-label">{{__("messages.confirmPassword")}}</label>
                         <input type="password" name="password_confirmation" class="form-control"
                             id="password_confirmation">
                     </div>
                     <button type="submit"
-                        class="btn btn-accent btn-lg fw-bold pt-3 px-4 shadow btn-hero-login pb-3 mt-4">Registrati</button>
+                        class="btn btn-accent btn-lg fw-bold pt-3 px-4 shadow btn-hero-login pb-3 mt-4">{{__("messages.register")}}</button>
                 </form>
             </div>
         </div>

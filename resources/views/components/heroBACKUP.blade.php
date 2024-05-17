@@ -8,15 +8,16 @@
                 </div>
                 <div class="col-lg-6">
                     <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">LimeWave</h1>
-                    <p class="lead">È arrivato il momento di liberare casa da quello che non usi più! Oppure compra di seconda mano per rispettare un favore all'ambiente! Comincia subito a fare affari!</p>
+                    <p class="lead">{{__("messages.hero")}}
+                    </p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                         @guest
-                        <a href="{{ route('register') }}" class="btn btn-accent btn-hero btn-lg fw-bold pt-3">Registrati</a>
-                        <a href="{{ route('login') }}" class="btn btn-s btn-lg fw-bold pt-3 px-4">Accedi</a>
+                        <a href="{{ route('register') }}" class="btn btn-accent btn-hero btn-lg fw-bold pt-3">{{__("messages.register")}}</a>
+                        <a href="{{ route('login') }}" class="btn btn-s btn-lg fw-bold pt-3 px-4">{{__("messages.login")}}</a>
                         @endguest
                         
                         @auth
-                        <button type="button" class="btn btn-accent btn-hero"><a href="{{ route('article.create') }}" class="btn btn btn-accent btn-lg px-4 fw-bold">Carica un annuncio</a></button>
+                        <button type="button" class="btn btn-accent btn-hero"><a href="{{ route('article.create') }}" class="btn btn btn-accent btn-lg px-4 fw-bold">{{__("messages.uploadAnAd")}}</a></button>
                         @endauth
                     </div>
                 </div>

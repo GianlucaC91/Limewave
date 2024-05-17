@@ -17,7 +17,8 @@
                                 {{-- ARTICLE TITLE --}}
                             <h1 class="display-6 fw-bold">{{$article->title}}</h1>
                                 {{-- ARTICLE USER --}}
-                            <h3 class="fs-4 ">Inserito da {{$article->user->name}}</h3>
+                            <h3 class="fs-4 ">{{__("messages.postedBy")}}
+                              {{$article->user->name}}</h3>
                                 {{-- ARTICLE BODY --}}
                             <p class="lead">{{$article->body}} {{$article->body}}{{$article->body}} {{$article->body}} {{$article->body}} {{$article->body}}{{$article->body}} {{$article->body}}</p>
                         </div>
