@@ -6,9 +6,9 @@
         <div class="container-fluid">
             <div class="row justify-content-center ">
                 <div class="col-12 col-md-10 my-5 bg-white p-5 shadow-sm">
-                    <p>     
-                        <a href="{{ route('user.profile', ['user' => Auth::user()->id]) }}"><img src="{{Storage::url(Auth::user()->img)}}" class="card-img avatars me-2 mt-2"></a>
-                        <span class="ps-3 fs-3">Benvenuto {{Auth::user()->name}}</span>
+                    <p class="">     
+                        <a href="{{ route('user.profile', ['user' => Auth::user()->id]) }}"><img src="{{Storage::url(Auth::user()->img)}}" class="card-img avatars mb-2"></a>
+                        <span class="ps-2 fs-3">Benvenuto {{Auth::user()->name}}</span>
                     </p>
                     <h2 class="display-6 fw-bold text-body-emphasis ps-3 lh-1 mb-3 underline-colors">Annunci da approvare</h2>
                 </div>
@@ -122,8 +122,8 @@
             <div class="container-fluid">
                 <div class="row justify-content-center ">
 
-                    <div class="col-12 my-5">
-                        <h2 class="display-6 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">Annunci Rifiutati</h2>
+                    <div class="col-12 col-md-10 my-5 bg-white p-5 shadow-sm">
+                        <h2 class="display-6 fw-bold text-body-emphasis ps-3 lh-1 mb-3 underline-colors">Annunci da approvare</h2>
                     </div>
 
                         <div class="col-12 col-md-10">
@@ -138,7 +138,9 @@
                                             <th scope="col">Prezzo</th>
                                             <th scope="col">Descrizione</th>
                                             <th scope="col">Immagini</th>
-                                            <th colspan="3" scope="col">Azioni</th>
+                                            <th scope="col"></th>
+                                            <th class="text-center" scope="col">Azioni</th>
+                                            <th scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -153,14 +155,36 @@
                                             <td>
                                                 <i class="bi bi-card-image"></i>
                                             </td>
-                                            <td colspan="3" class="d-flex">
-                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+
+                                            <td>
+                                                <button type="button" class="btn py-2 mt-1 btn-primary" data-bs-toggle="modal"
                                                     data-bs-target="#article{{$rejected->id}}">
                                                     Visualizza
                                                 </button>
+                                            </td>
+
+                                            @if(Auth::user()->is_revisor || Auth::user()->is_admin)
+                                            <td>
+                                                <button wire:click="deleteArticle({{ $rejected->id }})" class="btn py-2 mt-1 btn-danger">
+                                                    Elimina
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <button wire:click="restoreArticle({{ $rejected->id }})" class="btn py-2 mt-1 btn-warning">
+                                                    Ripristina
+                                                </button>
+                                            </td>
+                                            @endif
+
+
+                                            {{-- <td colspan="3" class="d-flex">
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                    data-bs-target="#article{{$rejected->id}}">
+                                                    Visualizza
+                                                </button> --}}
 
                                                 {{-- Aggiungi bottoni Elimina definitivamente e Ripristina --}}
-                                                @if(Auth::user()->is_revisor || Auth::user()->is_admin)
+                                                {{-- @if(Auth::user()->is_revisor || Auth::user()->is_admin)
                                                 <button wire:click="deleteArticle({{ $rejected->id }})" class="btn btn-danger">
                                                     Elimina definitivamente
                                                 </button>
@@ -169,7 +193,9 @@
                                                     Ripristina
                                                 </button>
                                                 @endif
-                                            </td>
+                                            </td> --}}
+
+
                                         </tr>
                                         {{-- article modal --}}
                                         <div class="modal fade" id="article{{$rejected->id}}" tabindex="-1"
