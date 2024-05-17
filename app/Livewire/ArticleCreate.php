@@ -5,9 +5,11 @@ namespace App\Livewire;
 use App\Models\Article;
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class ArticleCreate extends Component
 {
@@ -25,6 +27,8 @@ class ArticleCreate extends Component
     public $body = "";
     #[Validate('required', message: 'La categoria è necessaria')]
     public $category = "";
+    public $article;
+
     
   
     public $temp_images = [];
@@ -51,9 +55,16 @@ class ArticleCreate extends Component
         ]);
 
         foreach ($this->images as $image) {
-            $path = $image->store('img', 'public');
-            $article->images()->create(['path' => $path]);
+            // $article->images()->create(['path' => $path]); OLD
+            // dd($article);
+            $newFileName= "article/{$article->id}";
+            $path = $image->store($newFileName, 'public');
+            $newImage= $article->images()->create(["path"=>$path]);
+
+            dispatch(new ResizeImage($newImage->path, 286, 286));
         }
+
+        File::deleteDirectory(storage_path("/app/livewire-tmp"));
        
         $this->dispatch('category-update');
         
