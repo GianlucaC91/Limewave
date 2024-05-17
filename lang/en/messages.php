@@ -1,9 +1,7 @@
 <?php
 
 return [
-    "localization" => "Localization",
-    "gallery" => "Gallery",
-    "contact" => "Contact",
+
     "allArticles" => "Here's our announcements",
     "welcome" => "Welcome",//benvenuto
     "RecentAnnouncements"=> " Recent announcements",//Annunci recennti

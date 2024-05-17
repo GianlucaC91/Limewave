@@ -19,9 +19,25 @@
                                 href="{{ route('user.profile', ['user' => $article->user]) }}"> {{ $article->user->name }}</a>
                             </span>
                         </p>
+                        {{-- Inserire carosello --}}
                         <div class="overflow-hidden">
-                            <img src="https://picsum.photos/20{{ $article->id }}" class="card-img-top rounded-0 divImg"
-                            alt="...">
+                            <div id="carousel-{{ $article->id }}" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    @foreach ($article->images as $key => $image)
+                                        <div class="carousel-item @if ($key == 0) active @endif">
+                                            <img src="{{ $image->getUrl(600, 600) }}" class="d-block w-100" alt="...">
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ $article->id }}" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ $article->id }}" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
                         </div>
 
                         <div class="card-body">
