@@ -5,7 +5,7 @@ return [
     "gallery" => "Gallery",
     "contact" => "Contact",
     "allArticles" => "Aquí están nuestros anuncios",
-    "welcome"=> "Cienvenido a Limeware"
+    "welcome"=> "Bienvenido a Limeware",
 
 ];
 

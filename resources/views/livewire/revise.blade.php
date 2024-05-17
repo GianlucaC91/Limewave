@@ -8,9 +8,9 @@
                 <div class="col-12 col-md-10 my-5 bg-white p-5 shadow-sm">
                     <p class="">     
                         <a href="{{ route('user.profile', ['user' => Auth::user()->id]) }}"><img src="{{Storage::url(Auth::user()->img)}}" class="card-img avatars mb-2"></a>
-                        <span class="ps-2 fs-3">Benvenuto {{Auth::user()->name}}</span>
+                        <span class="ps-2 fs-3">{{__("messages.welcome")}} {{Auth::user()->name}}</span>
                     </p>
-                    <h2 class="display-6 fw-bold text-body-emphasis ps-3 lh-1 mb-3 underline-colors">Annunci da approvare</h2>
+                    <h2 class="display-6 fw-bold text-body-emphasis ps-3 lh-1 mb-3 underline-colors">{{__("messages.adsToBeApproved")}} </h2>
                 </div>
         
 
@@ -21,15 +21,15 @@
                             <thead>
                                 <tr class="text-center">
                                     <th scope="col">#</th>
-                                    <th scope="col">Id Articolo</th>
-                                    <th scope="col">Categoria</th>
-                                    <th scope="col">Utente</th>
-                                    <th scope="col">Titolo</th>
-                                    <th scope="col">Prezzo</th>
-                                    <th scope="col">Descrizione</th>
-                                    <th scope="col">Immagini</th>
+                                    <th scope="col">{{__("messages.idArticle")}}</th>
+                                    <th scope="col">{{__("messages.category")}}</th>
+                                    <th scope="col">{{__("messages.user")}}</th>
+                                    <th scope="col">{{__("messages.title")}}</th>
+                                    <th scope="col">{{__("messages.price")}}</th>
+                                    <th scope="col">{{__("messages.description")}}</th>
+                                    <th scope="col">{{__("messages.image")}}</th>
                                     <th scope="col"></th>
-                                    <th scope="col">Azioni</th>
+                                    <th scope="col">{{__("messages.actions")}}</th>
                                     <th scope="col"></th>
                                     {{-- <th colspan="3" scope="col">Azioni</th> --}}
                                 </tr>
@@ -66,15 +66,15 @@
                                     </td> --}}
                                     <td><button type="button" class="btn py-2 mt-1 btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#article{{$pending->id}}">
-                                        Visualizza
+                                        {{__("messages.view")}}
                                     </button></td>
                                     <td><button wire:click='rejectArticle({{$pending}})' class="btn py-2 mt-1 btn-danger"
                                         wire:confirm="Sei sicuro di voler rifiutare l'annuncio?">
-                                        Rifiuta
+                                        {{__("messages.refuse")}}
                                     </button></td>
                                     <td><button wire:click='acceptArticle({{$pending}})' class="btn py-2 mt-1 btn-success"
                                         wire:confirm="Sei sicuro di voler accettare l'annuncio?">
-                                        Accetta
+                                        {{__("messages.accept")}}
                                     </button></td>
 
                                 </tr>
@@ -89,8 +89,8 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <p class="card-text">Categoria: {{ $pending->category->name }}</p>
-                                                <p class="card-text">Prezzo: {{ $pending->price }} €</p>
+                                                <p class="card-text">{{__("messages.category")}}: {{ $pending->category->name }}</p>
+                                                <p class="card-text">{{__("messages.price")}}: {{ $pending->price }} €</p>
                                                 <p class="card-text">{{ Str::limit($pending->body, 50) }}</p>
 
                                             </div>
@@ -98,13 +98,13 @@
                                                 <button data-bs-dismiss="modal" wire:click='rejectArticle({{$pending}})'
                                                     wire:confirm="Sei sicuro di voler rifiutare l'annuncio?"
                                                     class="btn btn-danger">
-                                                    Rifiuta
+                                                    {{__("messages.refuse")}}
                                                 </button>
 
                                                 <button data-bs-dismiss="modal" wire:click='acceptArticle({{$pending}})'
                                                     wire:confirm="Sei sicuro di voler accettare l'annuncio?"
                                                     class="btn btn-success">
-                                                    Accetta
+                                                    {{__("messages.accept")}}
                                                 </button>
                                             </div>
                                         </div>
@@ -123,7 +123,7 @@
                 <div class="row justify-content-center ">
 
                     <div class="col-12 col-md-10 my-5 bg-white p-5 shadow-sm">
-                        <h2 class="display-6 fw-bold text-body-emphasis ps-3 lh-1 mb-3 underline-colors">Annunci da approvare</h2>
+                        <h2 class="display-6 fw-bold text-body-emphasis ps-3 lh-1 mb-3 underline-colors"> {{__("messages.adsToBeApproved")}}</h2>
                     </div>
 
                         <div class="col-12 col-md-10">
@@ -132,14 +132,14 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">Id Articolo</th>
-                                            <th scope="col">Utente</th>
-                                            <th scope="col">Titolo</th>
-                                            <th scope="col">Prezzo</th>
-                                            <th scope="col">Descrizione</th>
-                                            <th scope="col">Immagini</th>
+                                            <th scope="col"> {{__("messages.idArticle")}}</th>
+                                            <th scope="col"> {{__("messages.user")}}</th>
+                                            <th scope="col"> {{__("messages.image")}}</th>
+                                            <th scope="col"> {{__("messages.actions")}}</th>
+                                            <th scope="col"> {{__("messages.view")}}</th>
+                                            <th scope="col"> {{__("messages.refuse")}}</th>
                                             <th scope="col"></th>
-                                            <th class="text-center" scope="col">Azioni</th>
+                                            <th class="text-center" scope="col"> {{__("messages.accept")}}</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
@@ -159,19 +159,19 @@
                                             <td>
                                                 <button type="button" class="btn py-2 mt-1 btn-primary" data-bs-toggle="modal"
                                                     data-bs-target="#article{{$rejected->id}}">
-                                                    Visualizza
+                                                    {{__("messages.view")}}
                                                 </button>
                                             </td>
 
                                             @if(Auth::user()->is_revisor || Auth::user()->is_admin)
                                             <td>
                                                 <button wire:click="deleteArticle({{ $rejected->id }})" class="btn py-2 mt-1 btn-danger">
-                                                    Elimina
+                                                    {{__("messages.delete")}}
                                                 </button>
                                             </td>
                                             <td>
                                                 <button wire:click="restoreArticle({{ $rejected->id }})" class="btn py-2 mt-1 btn-warning">
-                                                    Ripristina
+                                                    {{__("messages.restore")}}
                                                 </button>
                                             </td>
                                             @endif
@@ -208,20 +208,20 @@
                                                             aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <p class="card-text">Categoria: {{ $rejected->category->name }}</p>
-                                                        <p class="card-text">Prezzo: {{ $rejected->price }} €</p>
+                                                        <p class="card-text">{{__("messages.category")}}: {{ $rejected->category->name }}</p>
+                                                        <p class="card-text">{{__("messages.price")}}: {{ $rejected->price }} €</p>
                                                         <p class="card-text">{{ Str::limit($rejected->body, 50) }}</p>
 
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button data-bs-dismiss="modal" wire:click='rejectArticle({{$rejected}})'                                            
                                                             class="btn btn-danger">
-                                                            Rifiuta
+                                                            {{__("messages.refuse")}}
                                                         </button>
 
                                                         <button data-bs-dismiss="modal" wire:click='acceptArticle({{$rejected}})'                                            
                                                             class="btn btn-success">
-                                                            Accetta
+                                                            {{__("messages.accept")}}
                                                         </button>
                                                     </div>
                                                 </div>
@@ -229,7 +229,7 @@
                                         </div>
                                         @empty
                                         <tr>
-                                            <td colspan="8" class="text-center">Non ci sono annunci rifiutati.</td>
+                                            <td colspan="8" class="text-center">{{__("messages.adsReject")}}</td>
                                         </tr>
                                         @endforelse
                                     </tbody>

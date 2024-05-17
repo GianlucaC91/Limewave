@@ -1,7 +1,8 @@
 <div class="d-flex flex-column justify-content-center ">
 
     {{-- INITIAL WELCOME WITH USER NAME --}}
-    <h1 class="text-center">Benvenuto nel profilo di {{ $user->name }}</h1>
+    <h1 class="text-center">{{__("messages.welcomeProfile")}}
+        {{ $user->name }}</h1>
     <div class="text-center">
         {{-- DISPLAY MESSAGE --}}
         <x-status />
@@ -12,7 +13,7 @@
             @auth
                 @if (Auth::id() == $user->id)
                     <div class="col-10 col-md-4 d-flex flex-column justify-content-center">
-                        <label for="oldimg" class="form-label">Avatar attuale:</label>
+                        <label for="oldimg" class="form-label">{{__("messages.avatarCurrent")}}:</label>
                         @if ($imgPreview)
                             <img src="{{ $imgPreview }}" id="imgPreview" class="img-fluid my-3" alt="Preview">
                         @else
@@ -66,7 +67,8 @@
                         </div> --}}
                             {{-- MODIFY IMG --}}
                             <div class="mb-3">
-                                <label for="img" class="form-label">Modifica Avatar</label>
+                                <label for="img" class="form-label">{{__("messages.editAvatar")}}
+                                </label>
                                 <input type="file" wire:model="img" class="form-control" id="img">
                             </div>
                             <div class="text-danger">
@@ -75,11 +77,11 @@
                                 @enderror
                             </div>
                             {{-- SEND BUTTON --}}
-                            <button type="submit" class="btn btn-accent fw-bold shadow">Modifica dati utente</button>
+                            <button type="submit" class="btn btn-accent fw-bold shadow">{{__("messages.changeDate")}}</button>
                         </form>
                         {{-- LOADING TEXT --}}
                         <div wire:loading>
-                            <p>Sto aggiornando i dati...</p>
+                            <p> {{__("messages.updateDati")}}...</p>
                         </div>
                 @endif
             @endauth
@@ -89,15 +91,15 @@
                 <div class="d-flex justify-content-center my-3">
                     <img src="{{ Storage::url($user->img) }}" alt="" class="img-fluid" width="300px">
                 </div>
-                <h3>Gli annunci di {{ $user->name }}</h3>
+                <h3>{{__("messages.announcementsOf")}} {{ $user->name }}</h3>
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Creato il</th>
-                            <th scope="col">Titolo Annuncio</th>
-                            <th scope="col">Descrizione annuncio</th>
+                            <th scope="col">>{{__("messages.created_at")}} </th>
+                            <th scope="col">{{__("messages.annuoncementTitle")}}</th>
+                            <th scope="col">{{__("messages.annuoncementDescription")}} </th>
                             {{-- <th scope="col">Immagine Annuncio</th> --}}
-                            <th scope="col">Dettaglio Annuncio</th>
+                            <th scope="col"> {{__("messages.annuoncementDetail")}} </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -109,7 +111,7 @@
                                     <td>{{ Str::limit($article->body, 20) }}</td>
                                     {{-- <td><img src="{{Storage::url($article->img)}}" alt=""></td> --}}
                                     <td class="mx-auto"><a href="{{ route('article.detail', compact('article')) }}"
-                                            class="btn btn-s">Leggi di più</a></td>
+                                            class="btn btn-s">{{__("messages.readMore")}}</a></td>
                                 </tr>
                             @endif
                         @endforeach

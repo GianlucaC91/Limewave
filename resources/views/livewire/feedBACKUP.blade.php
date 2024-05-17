@@ -6,8 +6,8 @@
 <div class="container">
     <div class="row bg-white shadow justify-content-evenly ">        
         <div class="col-12 ps-5 pb-5 mt-5">
-            <h2 class="display-6 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">Annunci Recenti</h2>
-            <p class="lead">Più di 100 nuovi annunci ogni ora</p>
+            <h2 class="display-6 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">{{__("messages.RecentAnnouncements")}}</h2>
+            <p class="lead">{{__("messages.ads")}}</p>
         </div>
         {{-- OLD FEED --}}
         
@@ -21,11 +21,11 @@
         alt="...">
         <div class="card-body h-75">
             <h5 class="card-title">{{ Str::limit($article->title, 20)}}</h5>
-            <p class="card-text">Categoria: {{ $article->category->name }}</p>
-            <p class="card-text">Prezzo: {{ $article->price }} €</p>
+            <p class="card-text">{{__("messages.category")}}: {{ $article->category->name }}</p>
+            <p class="card-text">{{__("messages.price")}}: {{ $article->price }}: {{ $article->price }} €</p>
             <p class="card-text">{{ Str::limit($article->body, 50) }}</p>
             <a href="{{ route('article.detail', compact('article')) }}"
-            class="btn btn-accent rounded-0 fw-bold shadow">Dettaglio</a>
+            class="btn btn-accent rounded-0 fw-bold shadow">{{__("messages.detail")}}</a>
         </div>
 </div>            
 @endforeach            
