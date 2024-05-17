@@ -8,15 +8,17 @@
                 <form method="POST" action="register">
                     @csrf
                     <div class="mb-3">
-                        <label for="name" class="form-label log-1">Username </label>
+                        <label for="name" class="form-label log-1">{{__("messages.name")}}
+                        </label>
                         <input type="text" name="name" class="form-control" id="name">
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
+                        <label for="email" class="form-label">{{__("messages.email")}}
+                        </h1></label>
                         <input type="email" name="email" class="form-control" id="email">
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
+                        <label for="password" class="form-label">{{__("messages.password")}}</label>
                         <input type="password" name="password" class="form-control" id="password">
                     <div class="mb-3">
                         <label for="password_confirmation" class="form-label">{{__("messages.confirmPassword")}}</label>
