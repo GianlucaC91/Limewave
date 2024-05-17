@@ -38,8 +38,16 @@ use App\Models\Article;
             {{-- NAVBAR USER AND LANG PANEL --}}
             <div class="collapse navbar-collapse d-flex">
                 {{-- LANG PANEL --}}
-                <div class="ms-auto dropdown">
-                    
+                <div class="ms-auto dropdown d-flex list-unstyled ">
+                    <li>
+                        <x-_locale lang="en"></x-_locale>
+                    </li>
+                    <li>
+                        <x-_locale lang="it"></x-_locale>
+                    </li>
+                    <li>
+                        <x-_locale lang="es"></x-_locale>
+                    </li>
                 </div>
                 {{-- USER PANEL --}}
                 <div class="ms-auto dropdown">
