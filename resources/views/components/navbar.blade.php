@@ -38,20 +38,34 @@ use App\Models\Article;
             
             {{-- NAVBAR USER AND LANG PANEL --}}
             <div class="collapse navbar-collapse d-flex">
+
                 {{-- LANG PANEL --}}
-                <div class="ms-auto dropdown d-flex list-unstyled ">
-                    <li>
-                        <x-_locale lang="en"></x-_locale>
-                    </li>
-                    <li>
-                        <x-_locale lang="it"></x-_locale>
-                    </li>
-                    <li>
-                        <x-_locale lang="es"></x-_locale>
-                    </li>
+                <div class="dropdown ms-auto mx-4">
+                    <a class="nav-link dropdown-toggle text-p" href="#" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-translate text-a"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end bg-s">
+                        <li class="link-custom">
+                            <x-_locale lang="en"></x-_locale> 
+                        </li>
+                        <li class="link-custom">
+                            <x-_locale lang="it"></x-_locale> 
+                        </li>
+                        <li class="link-custom">
+                            <x-_locale lang="es"></x-_locale> 
+                        </li>
+                     
+                    </ul>
                 </div>
+
+
+
+
+                {{-- <div class="ms-auto dropdown d-flex list-unstyled">
+                </div> --}}
                 {{-- USER PANEL --}}
-                <div class="ms-auto dropdown">
+                <div class=" dropdown">
                     {{-- USER ICONS AND PROPIC --}}
                     <a class="nav-link dropdown-toggle text-p" href="#" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -233,6 +247,55 @@ use App\Models\Article;
 
         @endauth
 
+        {{-- ACCORDION LANGAUGES --}}
+        <div class="accordion accordion-flush border-0" id="accordionLanguages">
+            <div class="accordion-item border-0">
+                <h2 id="accordionH2Languages" class="accordion-header bg-s border-0 ">
+                    <button class="accordion-button accordionLanguages-button border-0 collapsed text-p bg-s ps-0 mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        <i class="bi bi-translate text-a"></i>
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse border-0 collapse" data-bs-parent="#accordionLanguages">
+                    <div class="accordion-body border-0 bg-s text-p px-0">
+                        <ul class="bg-s list-unstyled">
+                            <li>
+                                <x-_locale lang="en"></x-_locale> 
+                            </li>
+                            <li>
+                                <x-_locale lang="it"></x-_locale> 
+                            </li>
+                            <li>
+                                <x-_locale lang="es"></x-_locale> 
+                            </li>       
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+                            
+
+
+
+
+        {{-- <div class="dropdown ms-auto mx-4">
+            <a class="nav-link dropdown-toggle text-p" href="#" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-translate text-a"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end bg-s">
+                <li class="link-custom">
+                    <x-_locale lang="en"></x-_locale> 
+                </li>
+                <li class="link-custom">
+                    <x-_locale lang="it"></x-_locale> 
+                </li>
+                <li class="link-custom">
+                    <x-_locale lang="es"></x-_locale> 
+                </li>
+             
+            </ul>
+        </div> --}}
+        {{-- FINE ACCORDION LANGAUGES --}}
 
         {{-- href="{{route('profile')}}">Profilo</a>  --}}
         {{-- href="{{route("revisor.dashboard")}}">Dashboard</a>  --}}
