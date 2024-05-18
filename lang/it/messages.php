@@ -58,7 +58,7 @@ return [
 
     //FOOTER
     "postOne" => "Pubblicane uno", //Pubblicane uno
-    "workWithUs" => "lavora con noi", //lavora con noi
+    "workWithUs" => "Lavora con noi", //lavora con noi
     "sustainability" => " Sostenibilità", //Sostenibilità
     "press" => "Stampa", //stampa
     "youDiscover" => "Scopri", //scopri
@@ -72,7 +72,7 @@ return [
     "sell" => "Vendere", //Vendere
     "acquire" => "Acquistare", //Acquistare
     "reliability" => "Affidabilità", //Affidabilità
-    "safety" => "sicurezza", //sicurezza
+    "safety" => "Sicurezza", //sicurezza
     
     //HERO
     "hero" => "È arrivato il momento di liberare casa da quello che non usi più! Oppure compra di seconda mano per rispettare un favore all'ambiente", //   È arrivato il momento di liberare casa da quello che non usi più! Oppure compra di seconda mano per rispettare un favore all'ambiente! Comincia subito a fare affari! 
