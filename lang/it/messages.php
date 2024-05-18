@@ -16,6 +16,7 @@ return [
     "insertImage" => "Inserisci immagine",//Inserisci immagine
     "create" => "Crea",//crea
     "adsToBeApproved" => "Annunci da approvare",//Annunci da approvare
+    "adsRejected" => "Annunci rifiutati",// Annunci rifiutati
     "idArticle" => "Id Articolo",//id articolo
     "user"=> "User", //utente
     "image"=> "Immagine", //immagine

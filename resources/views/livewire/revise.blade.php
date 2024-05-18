@@ -123,7 +123,7 @@
                 <div class="row justify-content-center ">
 
                     <div class="col-12 col-md-10 my-5 bg-white p-5 shadow-sm">
-                        <h2 class="display-6 fw-bold text-body-emphasis ps-3 lh-1 mb-3 underline-colors"> {{__("messages.adsToBeApproved")}}</h2>
+                        <h2 class="display-6 fw-bold text-body-emphasis ps-3 lh-1 mb-3 underline-colors"> {{__("messages.adsRejected")}}</h2>
                     </div>
 
                         <div class="col-12 col-md-10">
