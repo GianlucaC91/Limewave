@@ -69,8 +69,37 @@
                         <label for="images" class="form-label">{{__("messages.insertImage")}}</label>
                         <input type="file" wire:model="temp_images" multiple class="form-control" id="images" name="images">
                     </div>
+
                     {{-- IMAGES PREVIEW --}}
-                    @if (!empty($images))
+
+                    {{-- CAROUSEL CREATE --}}
+                    <div id="carouselExampleIndicators" class="detailCarousel carousel slide w-100">
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <p>Immagini che hai selezionati</p>
+                        <div class="carousel-inner">
+                            @foreach ($images as $key => $img)  
+                            <div class="carousel-item active">
+                                <img src="{{$img->temporaryUrl()}}" class="d-block w-100 carouselImgSize" alt="...">
+                                <button type="button"  class="btn my-3 fw-bold w-25 btnDelete" wire:click="removeImage({{$key}})">Elimina</button>
+                            </div>
+                            @endforeach
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">{{__("messages.previous")}}
+                          </span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="visually-hidden">{{__("messages.next")}}</span>
+                        </button>
+                    </div>
+                    {{--FINE CAROUSEL CREATE --}}
+                    {{-- @if (!empty($images))
                     <div class="row">
                         <div class="col-12">
                             <p>Photo Preview:</p>
@@ -87,7 +116,7 @@
                         @error('images')
                         {{ $message }}
                         @enderror
-                    </div>
+                    </div> --}}
                     
                     {{-- SEND BUTTON --}}
                     <button type="submit"
