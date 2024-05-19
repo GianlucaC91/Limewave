@@ -39,7 +39,7 @@
                                     aria-label="Default select example">
                                     <option selected value="{{ null }}">{{__("messages.selectCategory")}}</option>
                                     @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    <option value="{{ $category->id }}">{{__("messages." . $category->name) }}</option>
                                     @endforeach
                                 </select>
                                 <div class="text-danger">

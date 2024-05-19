@@ -42,7 +42,7 @@
 
                         <div class="card-body">
                             <h5 class="card-title">{{ Str::limit($article->title, 20)}}</h5>
-                            <p class="card-text">{{__("messages.category")}}: {{ $article->category->name }}</p>
+                            <p class="card-text">{{__("messages.category")}}: {{__("messages." . $article->category->name) }}</p>
                             <p class="card-text">{{ Str::limit($article->body, 20) }}</p>
                         </div>
                         <div class="card-body">

@@ -80,9 +80,9 @@
                             <button type="submit" class="btn btn-accent fw-bold shadow">{{__("messages.changeDate")}}</button>
                         </form>
                         {{-- LOADING TEXT --}}
-                        <div wire:loading>
+                        {{-- <div wire:loading>
                             <p> {{__("messages.updateDati")}}...</p>
-                        </div>
+                        </div> --}}
                 @endif
             @endauth
             @if (Auth::id() !== $user->id)

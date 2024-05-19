@@ -40,5 +40,4 @@ Route::get('/ricerca/annuncio', [PublicController::class, 'searchArticles'])->na
 Route::post("/lingua/{lang}", [PublicController::class,"setLanguage"])->name("setLocale");
 
 // Test
-Route::post('/livewire/message/article-create.image-cropped', ArticleCreate::class)
-    ->name('livewire.message.article-create.image-cropped');
+Route::post('/livewire/message/article-create.image-cropped', ArticleCreate::class)->name('livewire.message.article-create.image-cropped');

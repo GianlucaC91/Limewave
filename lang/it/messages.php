@@ -93,7 +93,17 @@ return [
 "postedBy"  => "Inserito da", //Inserito da
 "password" => "Password",
 
-    
+//Categorie
+"Immobili" => "Immobili",
+"Veicoli" => "Veicoli",
+"Elettronica" => "Elettronica",
+"Casa e Giardino" => "Casa e Giardino",
+"Lavori" => "Lavori",
+"Servizi" => "Servizi",
+"Moda e Bellezza" => "Moda e Bellezza",
+"Sport e Tempo Libero" => "Sport e Tempo Libero",
+"Animali Domestici" => "Animali Domestici",
+"Libri e Cinema" => "Libri e Cinema"
 ];
 
 ?>

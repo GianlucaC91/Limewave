@@ -95,7 +95,20 @@ return [
 "username"=> "Nombre de usuario",//password in spagnolo
 
 "previous" => "Previo",//Previous in spagnolo
-"next" => "Next",//Previous in spagnolo
+"next" => "Próximo",//Next in spagnolo
+
+//Categoria
+
+"Immobili" => "Inmuebles",
+"Veicoli" => "Vehículos",
+"Elettronica" => "Eletrónica",
+"Casa e Giardino" => "Casa y Jardín",
+"Lavori" => "Trabajos",
+"Servizi" => "Servicios",
+"Moda e Bellezza" => "Moda y Belleza",
+"Sport e Tempo Libero" => " Deportes y Tiempo Libre",
+"Animali Domestici" => " Mascotas",
+"Libri e Cinema" => " Libros y Cine"
 ];
 
 ?>

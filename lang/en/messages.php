@@ -92,7 +92,18 @@ return [
 "confirmPassword"  => "Confirm password", //conferma password
 "postedBy"  => "Posted by", //Inserito da
 
+//Categorie
 
+"Immobili" => "Real Estate",
+"Veicoli" => "Vehicles",
+"Elettronica" => "Electronics",
+"Casa e Giardino" => "Home and Garden",
+"Lavori" => "Jobs",
+"Servizi" => "Services",
+"Moda e Bellezza" => "Fashion and Beauty",
+"Sport e Tempo Libero" => "Sports and Leisure",
+"Animali Domestici" => "Pets",
+"Libri e Cinema" => "Books and Movies"
 
 
     
