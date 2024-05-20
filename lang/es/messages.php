@@ -86,18 +86,6 @@ return [
     "newAnnouncement"  => "Nuevo anuncio", //Nuovo annuncio
     //
 
-<<<<<<< HEAD
-    // LOGIN E REGISTER
-    "emailAddress"  => "Dirección de correo electrónico", //Indirizzo email
-    "rememberMe"  => "Acuérdate de mí", //ricordami
-    "confirmPassword"  => "Confirmar Contraseña", //conferma password
-    "postedBy"  => "Publicado por", //Inserito da
-    "password"=> "Contraseña",//password in spagnolo
-    "username"=> "Nombre de usuario",//password in spagnolo
-
-    "previous" => "Previo",//Previous in spagnolo
-    "next" => "Próximo",//Next in spagnolo
-=======
 // LOGIN E REGISTER
 "emailAddress"  => "Dirección de correo electrónico", //Indirizzo email
 "rememberMe"  => "Acuérdate de mí", //ricordami
@@ -108,7 +96,6 @@ return [
 "enterPassword"=> "Introducir la contraseña",// Inserisci password
 "previous" => "Previo",//Previous in spagnolo
 "next" => "Próximo",//Next in spagnolo
->>>>>>> b699ceee688666c1061344a3e6a087df02d70e13
 
     //Categoria
 
