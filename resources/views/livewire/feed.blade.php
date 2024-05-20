@@ -24,12 +24,21 @@
                         <div class="overflow-hidden">
                             <div id="carousel-{{ $article->id }}" class="carousel slide" style="height: 286px;" data-bs-ride="carousel">
                                 <div class="carousel-inner">
+                                    @if ($article->images()->count()>=1)
+                                        
+                                    
                                     @foreach ($article->images as $key => $image)
                                         <div class="carousel-item position-relative @if ($key == 0) active @endif" style="height: 286px;">
                                             <img src="{{ $image->getUrl(286, 286) }}" class="immagineCaroselloFeed w-100" alt="...">
                                         </div>
                                     @endforeach
+
+                                    @else 
+                                    
+                                    <img src="/media/logo2024.png" alt="" class="w-100">
+                                    @endif
                                 </div>
+                                @if ($article->images()->count()>1)
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ $article->id }}" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
@@ -38,6 +47,8 @@
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Next</span>
                                 </button>
+                                @endif
+                                
                             </div>
                         </div>
 

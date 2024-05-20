@@ -156,7 +156,7 @@ return [
     ],'Il campo :attribute deve iniziare con uno dei seguenti: :values.',
     'string' => 'Il campo :attribute deve essere una stringa.',
     'timezone' =>'Il campo :attribute deve essere un fuso orario valido.',
-    'unique' => "L':attributo è già stato utilizzato.",
+    'unique' => "L'indirizzo mail è già stato utilizzato.",
     'uploaded' => 'Impossibile caricare:attribute.',
     'uppercase' =>'Il campo :attribute deve essere in maiuscolo.',
     'url' =>'Il campo :attribute deve essere un URL valido.',
