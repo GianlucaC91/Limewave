@@ -1,5 +1,24 @@
-.rowMainCategories{
-    background-image: url("/public/media/lemonsWallpaper.webp") !important;
-    background-position: center !important;
+.rowMainCategories {
+    position: relative;
+    overflow: hidden; /* Assicurati che i contenuti all'interno non escano dal container */
+}
 
+.blur-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("/public/media/categoryBandSuper.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(8px);
+    z-index: 1;
+}
+
+.rowMainCategories .row {
+    position: relative;
+    z-index: 2;
 }
