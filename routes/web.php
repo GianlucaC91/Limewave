@@ -19,6 +19,11 @@ Route::get("/profile/{user}", [UserController::class, "userProfile"])->name("use
 Route::get("/dashboard/revisor", [RevisorController::class,"dashboard"])->name("revisor.dashboard")->middleware("isRevisor");
 Route::patch("/accept/article/{article}", [RevisorController::class,"acceptArticle"])->name("revisor.accept")->middleware("isRevisor");
 Route::patch("/reject/article/{article}", [RevisorController::class,"rejectArticle"])->name("revisor.reject")->middleware("isRevisor");
+// aggiungere middleware test
+Route::get('/revisor/candidates', [RevisorController::class, 'showCandidates'])->name('revisor.candidates');
+Route::post('/revisor/candidates/accept/{user}', [RevisorController::class, 'acceptCandidate'])->name('revisor.candidates.accept');
+Route::post('/revisor/candidates/reject/{user}', [RevisorController::class, 'rejectCandidate'])->name('revisor.candidates.reject');
+
 
 // Work with us
 Route::get("/revisor/form", [RevisorController::class, "revisorForm"])->name('revisor.form')->middleware('auth');

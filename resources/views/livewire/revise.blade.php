@@ -97,13 +97,13 @@
                                             <div class="modal-footer">
                                                 <button data-bs-dismiss="modal" wire:click='rejectArticle({{$pending}})'
                                                     wire:confirm="Sei sicuro di voler rifiutare l'annuncio?"
-                                                    class="btn btn-danger">
+                                                    class="btn btnDelete">
                                                     {{__("messages.refuse")}}
                                                 </button>
 
                                                 <button data-bs-dismiss="modal" wire:click='acceptArticle({{$pending}})'
                                                     wire:confirm="Sei sicuro di voler accettare l'annuncio?"
-                                                    class="btn btn-success">
+                                                    class="btn btnAccept">
                                                     {{__("messages.accept")}}
                                                 </button>
                                             </div>
@@ -215,12 +215,12 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button data-bs-dismiss="modal" wire:click='rejectArticle({{$rejected}})'                                            
-                                                            class="btn btn-danger">
+                                                            class="btn btnDelete">
                                                             {{__("messages.refuse")}}
                                                         </button>
 
                                                         <button data-bs-dismiss="modal" wire:click='acceptArticle({{$rejected}})'                                            
-                                                            class="btn btn-success">
+                                                            class="btn btnAccept">
                                                             {{__("messages.accept")}}
                                                         </button>
                                                     </div>
