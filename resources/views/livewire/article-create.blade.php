@@ -71,15 +71,28 @@
                     </div>
 
                     {{-- IMAGES PREVIEW --}}
+                    
+                    <div class="container bg-s mb-2 @if ($images) borderCreate @endif">
+                        <div class="row justify-content-center justify-content-md-between bg-white">
+                            @foreach ($images as $key => $img) 
+                                <div class="col-10 col-md-3 m-2 d-flex align-content-center">
+                                    <div class="d-flex flex-column justify-content-between">
+                                        <img src="{{$img->temporaryUrl()}}" class="d-block w-100" alt="...">
+                                        <button type="button"  class="btn fw-bold w-25 btnDelete border-0" wire:click="removeImage({{$key}})">Elimina</button>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
 
                     {{-- CAROUSEL CREATE --}}
-                    <div id="carouselExampleIndicators" class="detailCarousel carousel slide w-100">
+                    {{-- <div id="carouselExampleIndicators" class="detailCarousel carousel slide w-100">
                         <div class="carousel-indicators">
                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
-                        <p>Immagini che hai selezionati</p>
+                        <p>Immagini che hai selezionato</p>
                         <div class="carousel-inner">
                             @foreach ($images as $key => $img)  
                             <div class="carousel-item active">
@@ -97,26 +110,8 @@
                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
                           <span class="visually-hidden">{{__("messages.next")}}</span>
                         </button>
-                    </div>
-                    {{--FINE CAROUSEL CREATE --}}
-                    {{-- @if (!empty($images))
-                    <div class="row">
-                        <div class="col-12">
-                            <p>Photo Preview:</p>
-                            @foreach ($images as $key => $img)                            
-                            <div>
-                                <img src="{{$img->temporaryUrl()}}" alt="">                                    
-                                <button type="button" class="btn btn-danger" wire:click="removeImage({{$key}})">X</button>
-                            </div>
-                            @endforeach
-                        </div>
-                    </div>
-                    @endif
-                    <div class="text-danger">
-                        @error('images')
-                        {{ $message }}
-                        @enderror
                     </div> --}}
+                    {{--FINE CAROUSEL CREATE --}}
                     
                     {{-- SEND BUTTON --}}
                     <button type="submit"
