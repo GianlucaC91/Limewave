@@ -86,7 +86,7 @@
                     </div>
                     <div class="d-flex">
                         <p class="text-danger">*</p>
-                        <p class="mx-2">Campi obbligatori</p>
+                        <p class="mx-2">{{__("messages.requiredField")}}</p>
                     </div>
 
                     {{-- CAROUSEL CREATE --}}
