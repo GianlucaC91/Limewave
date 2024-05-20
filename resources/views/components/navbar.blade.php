@@ -1,134 +1,131 @@
 @php
 use App\Models\Article;
 @endphp
-<nav class="navbar fixed-top navbar-expand-lg bg-s text-p shadow-sm pb-3">
-    <div class="container-fluid w-100">
+<nav class="navbar fixed-top navbar-expand-lg bg-s text-p shadow-sm">
+    <div class="container-fluid w-100 ps-0 pe-0">
         <div class="row w-100  m-0">
             <div class="col-12 d-flex justify-content-between">
-                <a class="navbar-brand link-custom text-a mt-1" href="{{ route('homepage') }}">Limewave</a>
+                <a class="navbar-brand limewaveTitle text-a mt-2" href="{{ route('homepage') }}"><img src="/media/logo2024.png" style="width: 60px;" alt="">Limewave</a>
                 <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <i class="bi bi-list-nested fs-1 text-a"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                {{-- NAVBAR NAV LINKS --}}
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link text-p link-custom" aria-current="page"
-                        href="{{ route('homepage') }}">Home</a>
-                    </li>
-                    {{-- CATEGORY DROPDOWN --}}
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-p link-custom" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        {{__("messages.categories")}}
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    {{-- NAVBAR NAV LINKS --}}
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-p link-custom" aria-current="page"
+                            href="{{ route('homepage') }}">Home</a>
+                        </li>
+                        {{-- CATEGORY DROPDOWN --}}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-p link-custom" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {{__("messages.categories")}}
 
-                    </a>
-                    <ul class="dropdown-menu shadow bg-s">
-                        <livewire:category-counter/>
+                            </a>
+                            <ul class="dropdown-menu shadow bg-s">
+                                <livewire:category-counter/>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-            {{-- SEARCHBAR --}}
-            <form action="{{route("article.search")}}" method="GET" class="d-flex mt-3 w-50 mx-4 me-auto" role="search" type="search">
-                <input id="navbarSearchbar" name="searched" class="form-control rounded-0  border-0" type="search" placeholder="Cerca qui..." aria-label="Search">
-                <button class="btn btn-accent border-0 rounded-0" type="submit"><i class="bi bi-search"></i></button>
-            </form>                   
-            
-            {{-- NAVBAR USER AND LANG PANEL --}}
-            <div class="collapse navbar-collapse d-flex">
+                    {{-- SEARCHBAR --}}
+                    <form action="{{route("article.search")}}" method="GET" class="d-flex mt-3 w-50 mx-4 me-auto mb-2" role="search" type="search">
+                        <input id="navbarSearchbar" name="searched" class="form-control rounded-0  border-0" type="search" placeholder="Cerca qui..." aria-label="Search">
+                        <button class="btn btn-accent border-0 rounded-0" type="submit"><i class="bi bi-search"></i></button>
+                    </form>                   
+                
+                    {{-- NAVBAR USER AND LANG PANEL --}}
+                    <div class="collapse navbar-collapse d-flex">
 
-                {{-- LANG PANEL --}}
-                <div class="dropdown ms-auto mx-4">
-                    <a class="nav-link dropdown-toggle text-p" href="#" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-translate text-a"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end bg-s">
-                        <li class="link-custom">
-                            <x-_locale lang="en"></x-_locale> 
-                        </li>
-                        <li class="link-custom">
-                            <x-_locale lang="it"></x-_locale> 
-                        </li>
-                        <li class="link-custom">
-                            <x-_locale lang="es"></x-_locale> 
-                        </li>
-                     
-                    </ul>
+                        {{-- LANG PANEL --}}
+                        <div class="dropdown ms-auto mx-4">
+                            <a class="nav-link dropdown-toggle text-p" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-translate text-a"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end bg-s">
+                                <li class="link-custom">
+                                    <x-_locale lang="en"></x-_locale> 
+                                </li>
+                                <li class="link-custom">
+                                    <x-_locale lang="it"></x-_locale> 
+                                </li>
+                                <li class="link-custom">
+                                    <x-_locale lang="es"></x-_locale> 
+                                </li>
+                            
+                            </ul>
+                        </div>
+
+
+                        {{-- <div class="ms-auto dropdown d-flex list-unstyled">
+                        </div> --}}
+                        {{-- USER PANEL --}}
+                        <div class=" dropdown">
+                            {{-- USER ICONS AND PROPIC --}}
+                            <a class="nav-link dropdown-toggle text-p" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            @auth
+                            {{-- WHEN IMPLEMENTED, PROPIC HERE (IF NULL, CURRENT ICON OR DEFAULT PROPIC) --}}
+                            <i class="bi bi-person-circle text-a fs-5"></i>
+                            @endauth
+                            @guest
+                            <i class="bi bi-person text-a"></i>
+                            @endguest
+                            </a>
+                            {{-- USER LOGIN AND LOGOUT --}}
+                            <ul class="dropdown-menu dropdown-menu-end bg-s shadow">
+                                @guest
+                                <li><a class="dropdown-item text-p link-custom" href="{{ route('login') }}"><i class="bi bi-box-arrow-in-right"></i> {{__("messages.login")}}
+                                </a></li>
+                                <li><a class="dropdown-item text-p link-custom" href="{{ route('register') }}"><i class="bi bi-plus"></i> {{__("messages.register")}}
+                                </a></li>
+                                @endguest
+                                @auth
+                                {{-- PROFILE PAGE --}}
+                                
+                                <li>
+                                    <a class="dropdown-item text-p link-custom" href="{{route('profile')}}"><i class="bi bi-person-bounding-box"></i> {{__("messages.profile")}}
+                                    </a>
+                                </li>
+                                @if(Auth::user()->is_revisor || Auth::user()->is_admin)
+                                <li class="d-flex">
+                                    <a class="dropdown-item text-p link-custom" href="{{route("revisor.dashboard")}}"><i class="bi bi-speedometer2"></i> Dashboard</a>
+                                    <span class="text-s mx-2 badge rounded-pill bg-a pt-2">{{Article::reviseNotification()}}</span>
+                                </li>
+                                @endif
+                                <li>
+                                    <a class="dropdown-item text-p link-custom" href="{{ route('article.create') }}"><i class="bi bi-megaphone"></i> {{__("messages.newAnnouncement")}}</a>
+                                </li>
+                                
+                                <li>
+                                    <hr class="dropdown-divider mx-5 mt-3 mb-2 bg-p">
+                                </li>
+                                
+                                <li>
+                                    <form class="dropdown-item link-custom" method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <button class="nav-link btn bg-s text-p ">
+                                            <i class="bi bi-box-arrow-in-left text-danger"></i> Logout
+                                        </button>
+                                    </form>
+                                </li>
+                                @endauth
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-
-
-
-
-                {{-- <div class="ms-auto dropdown d-flex list-unstyled">
-                </div> --}}
-                {{-- USER PANEL --}}
-                <div class=" dropdown">
-                    {{-- USER ICONS AND PROPIC --}}
-                    <a class="nav-link dropdown-toggle text-p" href="#" role="button"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    @auth
-                    {{-- WHEN IMPLEMENTED, PROPIC HERE (IF NULL, CURRENT ICON OR DEFAULT PROPIC) --}}
-                    <i class="bi bi-person-circle text-a fs-5"></i>
-                    @endauth
-                    @guest
-                    <i class="bi bi-person text-a"></i>
-                    @endguest
-                </a>
-                {{-- USER LOGIN AND LOGOUT --}}
-                <ul class="dropdown-menu dropdown-menu-end bg-s shadow">
-                    @guest
-                    <li><a class="dropdown-item text-p link-custom" href="{{ route('login') }}"><i class="bi bi-box-arrow-in-right"></i> {{__("messages.login")}}
-                    </a></li>
-                    <li><a class="dropdown-item text-p link-custom" href="{{ route('register') }}"><i class="bi bi-plus"></i> {{__("messages.register")}}
-                    </a></li>
-                    @endguest
-                    @auth
-                    {{-- PROFILE PAGE --}}
-                    
-                    <li>
-                        <a class="dropdown-item text-p link-custom" href="{{route('profile')}}"><i class="bi bi-person-bounding-box"></i> {{__("messages.profile")}}
-                        </a>
-                    </li>
-                    @if(Auth::user()->is_revisor || Auth::user()->is_admin)
-                    <li class="d-flex">
-                        <a class="dropdown-item text-p link-custom" href="{{route("revisor.dashboard")}}"><i class="bi bi-speedometer2"></i> Dashboard</a>
-                        <span class="text-s mx-2 badge rounded-pill bg-a pt-2">{{Article::reviseNotification()}}</span>
-                    </li>
-                    @endif
-                    <li>
-                        <a class="dropdown-item text-p link-custom" href="{{ route('article.create') }}"><i class="bi bi-megaphone"></i> {{__("messages.newAnnouncement")}}</a>
-                    </li>
-                    
-                    <li>
-                        <hr class="dropdown-divider mx-5 mt-3 mb-2 bg-p">
-                    </li>
-                    
-                    <li>
-                        <form class="dropdown-item link-custom" method="POST" action="{{ route('logout') }}">
-                            @csrf
-                            <button class="nav-link btn bg-s text-p ">
-                                <i class="bi bi-box-arrow-in-left text-danger"></i> Logout
-                            </button>
-                        </form>
-                    </li>
-                    @endauth
-                </ul>
             </div>
         </div>
-        
     </div>
-</div>
-</div>
-</div>
 </nav>
 
 {{-- OFFCANVAS --}}
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header bg-s">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel"><img src="..." alt="logo"></h5>
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel"><img style="width: 50px;" src="/media/logo2024.png" alt="logo"></h5>
         <button type="button" class="btn btn-s ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"><i
             class="bi bi-x-lg text-a fs-2"></i>
         </button>
