@@ -86,20 +86,12 @@ return [
     "newAnnouncement"  => "New announcement", //Nuovo annuncio
     //
 
-<<<<<<< HEAD
-    // LOGIN E REGISTER
-    "emailAddress"  => "Email address", //Indirizzo email
-    "rememberMe"  => "Remember me", //ricordami
-    "confirmPassword"  => "Confirm password", //conferma password
-    "postedBy"  => "Posted by", //Inserito da
-=======
 // LOGIN E REGISTER
 "emailAddress"  => "Email address", //Indirizzo email
 "rememberMe"  => "Remember me", //ricordami
 "confirmPassword"  => "Confirm password", //conferma password
 "postedBy"  => "Posted by", //Inserito da
 "enterPassword"=> "Enter password",// Inserisci password
->>>>>>> b699ceee688666c1061344a3e6a087df02d70e13
 
     //Categorie
 
