@@ -25,7 +25,7 @@ class Image extends Model
 
         $path = dirname($filePath);
         $fileName = basename($filePath);
-        $file = "{$path}/resize_{$w}x{$h}_{$fileName}"; // Usa "resize" anziché "crop" se usi "resize" nei nomi dei file ridimensionati
+        $file = "{$path}/resize_{$w}x{$h}_{$fileName}";
 
         return Storage::url($file);
     }
