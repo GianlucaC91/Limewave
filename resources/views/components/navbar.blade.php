@@ -65,26 +65,7 @@ use App\Models\Article;
                             
                             </ul>
                         </div>
-                            {{-- LANG PANEL --}}
-                            <div class="dropdown ms-auto mx-4">
-                                <a class="nav-link dropdown-toggle text-p" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="bi bi-translate text-a"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end bg-s">
-                                    <li class="link-custom">
-                                        <x-_locale lang="en"></x-_locale> 
-                                    </li>
-                                    <li class="link-custom">
-                                        <x-_locale lang="it"></x-_locale> 
-                                    </li>
-                                    <li class="link-custom">
-                                        <x-_locale lang="es"></x-_locale> 
-                                    </li>
-                                
-                                </ul>
-                            </div>
-
+         
                             {{-- USER PANEL --}}
                             <div class=" dropdown">
                                 {{-- USER ICONS AND PROPIC --}}

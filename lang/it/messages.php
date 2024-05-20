@@ -86,14 +86,6 @@ return [
     "newAnnouncement"  => "Nuovo annuncio", //Nuovo annuncio
     //
 
-<<<<<<< HEAD
-    // LOGIN E REGISTER
-    "emailAddress"  => "Indirizzo email", //Indirizzo email
-    "rememberMe"  => "Ricordami", //ricordami
-    "confirmPassword"  => "Conferma password", //conferma password
-    "postedBy"  => "Inserito da", //Inserito da
-    "password" => "Password",
-=======
 // LOGIN E REGISTER
 "emailAddress"  => "Indirizzo email", //Indirizzo email
 "rememberMe"  => "Ricordami", //ricordami
@@ -101,7 +93,6 @@ return [
 "postedBy"  => "Inserito da", //Inserito da
 "password" => "Password",
 "enterPassword"=> " Inserisci la password",// Inserisci password
->>>>>>> b699ceee688666c1061344a3e6a087df02d70e13
 
     //Categorie
     "Immobili" => "Immobili",
