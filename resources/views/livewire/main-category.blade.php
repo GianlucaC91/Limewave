@@ -5,7 +5,7 @@
         <div class="row position-relative">
             @foreach ($categories as $category)
             <div class="col-6 col-md-3 my-5 d-flex justify-content-center">
-                <div class="card shadow rounded-4 my-2 my-md-5 category-card" style="width: 18rem;">
+                <div class="card shadow rounded-4 my-2 my-md-5 category-card" style="width: 20rem;">
                     <div class="card-body p-0">
                         <a class="text-s fw-bold fs-3 text-decoration-none" href="{{ route('categoryShow', compact('category')) }}">
                             @if($category->name == 'Immobili')
