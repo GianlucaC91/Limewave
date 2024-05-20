@@ -7,7 +7,7 @@
                     <div class="row bg-white shadow justify-content-evenly">
                         <div class="col-12 ps-5 pb-5 mt-5">
                             <h1 class="display-6 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">{{__("messages.category")}}
-                                {{ $category->name }}</h1>
+                                {{__("messages." . $category->name) }}</h1>
                         </div>
 
                         @forelse ($category->acceptedArticles as $article)
@@ -24,8 +24,8 @@
                                         <p class="card-text">Creato il: {{ $article->created_at->format('d/m/Y') }}</p>
                                     </div>
                                     <div class="card-body">
-                                        <p class="card-text"{{__("messages.price")}}
-                                        : {{ $article->price }}</p>
+                                        <p class="card-text">{{__("messages.price")}}
+                                        : {{ $article->price }}€</p>
                                         <a href="{{ route('article.detail', compact('article')) }}"
                                             class="btn btn-accent rounded-0 fw-bold shadow mb-1">{{__("messages.details")}}
                                         </a>

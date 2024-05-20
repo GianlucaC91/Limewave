@@ -33,17 +33,38 @@ use App\Models\Article;
                         </ul>
                     </div>
                     {{-- SEARCHBAR --}}
+          
                     <div class="col-6">
                         <form action="{{route("article.search")}}" method="GET" class="d-flex mt-3 ms-5 mb-2" role="search" type="search">
-                        <input id="navbarSearchbar" name="searched" class="form-control rounded-0  border-0" type="search" placeholder="Cerca qui..." aria-label="Search">
+                        <input id="navbarSearchbar" name="searched" class="form-control rounded-0  border-0" type="search" placeholder="{{__("messages.search")}}" aria-label="Search">
                         <button class="btn btn-accent border-0 rounded-0" type="submit"><i class="bi bi-search"></i></button>
                     </form>                   
-                </div>
+                    </div>
+                    
                     
                     {{-- NAVBAR USER AND LANG PANEL --}}
                     <div class="col-3">
                         <div class="collapse navbar-collapse d-flex">
 
+                        {{-- LANG PANEL --}}
+                        <div class="dropdown ms-auto mx-4">
+                            <a class="nav-link dropdown-toggle text-p" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-translate text-a"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end bg-s">
+                                <li class="link-custom">
+                                    <x-_locale lang="it"></x-_locale> 
+                                </li>
+                                <li class="link-custom">
+                                    <x-_locale lang="en"></x-_locale> 
+                                </li>
+                                <li class="link-custom">
+                                    <x-_locale lang="es"></x-_locale> 
+                                </li>
+                            
+                            </ul>
+                        </div>
                             {{-- LANG PANEL --}}
                             <div class="dropdown ms-auto mx-4">
                                 <a class="nav-link dropdown-toggle text-p" href="#" role="button"
