@@ -1,6 +1,6 @@
 .rowMainCategories {
     position: relative;
-    overflow: hidden; /* Assicurati che i contenuti all'interno non escano dal container */
+    overflow: hidden;
 }
 
 .blur-background {
@@ -22,3 +22,26 @@
     position: relative;
     z-index: 2;
 }
+
+
+.category-card:hover {
+    background-color: var(--color-aLight);
+    transform: scale(110%);
+    transition: 1s;
+    box-shadow: 0px 10px 15px var(--color-s) !important;
+}
+
+.category-card:hover .category-text{
+    /* transform: scale(105%); */
+    translate: 0px -10px;
+    transition: 0.8s;
+   
+}
+
+.category-text {
+    transition: 0.5s;
+}
+
+.category-card {    
+    transition: 0.5s;    
+} 

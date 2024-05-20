@@ -4,13 +4,16 @@
     --color-p:#e3e3e3;
     --color-a:#e0ff00;
     --color-aHover:#cfeb00;
+    --color-aLight:#d0eb0081;
 }
+
 
 
 body{
     background-color: var(--color-p);/*ADDED FOR TESTING */
     
     margin-top: 100px;
+    
 }
 
 main {

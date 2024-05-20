@@ -13,7 +13,7 @@
                     @foreach ($articles as $article)
                     @if ($article->is_accepted || $article->user->is_admin)
                     {{-- article card --}}
-                    <div class="card col-3 rounded-4 shadow-sm mx-2 mt-2 mb-5 px-0" style="width: 18rem;">
+                    <div class="card col-3 rounded-4 shadow-sm mx-2 mt-2 mb-5 px-0" style="width: 20rem;">
                         <p class="pt-2 ps-3 fw-bold d-flex align-items-center"><a
                             href="{{ route('user.profile', ['user' => $article->user]) }}"><img src="{{Storage::url($article->user->img)}}" class="card-img avatars me-2 mt-2"></a>
                             <span class="mt-1 cardName"><a class="cardName"
