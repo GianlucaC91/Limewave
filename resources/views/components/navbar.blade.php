@@ -54,13 +54,13 @@ use App\Models\Article;
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end bg-s">
                                 <li class="link-custom">
-                                    <x-_locale lang="it"></x-_locale> 
+                                    <x-_locale lang="IT"></x-_locale> 
                                 </li>
                                 <li class="link-custom">
-                                    <x-_locale lang="en"></x-_locale> 
+                                    <x-_locale lang="EN"></x-_locale> 
                                 </li>
                                 <li class="link-custom">
-                                    <x-_locale lang="es"></x-_locale> 
+                                    <x-_locale lang="ES"></x-_locale> 
                                 </li>
                             
                             </ul>
