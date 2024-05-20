@@ -13,7 +13,7 @@
                         <input type="email" name="email" class="form-control" id="email">
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">{{__("messages.password")}}
+                        <label for="password" class="form-label">{{__("messages.enterPassword")}}
                         </label>
                         <input type="password" name="password" class="form-control" id="password">
                     </div>

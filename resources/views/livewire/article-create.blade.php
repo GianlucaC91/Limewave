@@ -8,7 +8,7 @@
                 <form class="" wire:submit="store">
                     {{-- TITLE --}}
                     <div class="mb-3">
-                        <label for="title" class="form-label">{{__("messages.title")}}</label>
+                        <label for="title" class="form-label">{{__("messages.title")}}</label><span class="text-danger mx-1">*</span>
                         <input wire:model="title" type="text" class="form-control" id="title"
                         aria-describedby="emailHelp">
                         <div class="text-danger">
@@ -22,7 +22,7 @@
                             <div class="col-4 ps-0">
                                 {{-- PRICE --}}
                                 <div class="mb-3">
-                                    <label for="price" class="form-label">{{__("messages.price")}}</label>
+                                    <label for="price" class="form-label">{{__("messages.price")}}</label><span class="text-danger mx-1">*</span>
                                     <input wire:model="price" type="text" class="form-control" id="price">
                                     <div class="text-danger">
                                         @error('price')
@@ -34,7 +34,7 @@
                             <div class="col-8 pe-0">
                                 {{-- CATEGORY SELECT --}}
                                 <div class="mb-3">
-                                    <label for="category" class="form-label">{{__("messages.category")}}</label>
+                                    <label for="category" class="form-label">{{__("messages.category")}}</label><span class="text-danger mx-1">*</span>
                                     <select wire:model="category" class="form-select"
                                     aria-label="Default select example">
                                     <option selected value="{{ null }}">{{__("messages.selectCategory")}}</option>
@@ -54,7 +54,7 @@
                     </div>
                     {{-- DESCRIPTION --}}
                     <div class="mb-3">
-                        <label for="body" class="form-label">{{__("messages.description")}}</label>
+                        <label for="body" class="form-label">{{__("messages.description")}}</label><span class="text-danger mx-1">*</span>
                         <textarea wire:model="body" type="text" class="form-control" id="body" cols="30" rows="5"></textarea>
                         <div class="text-danger">
                             @error('body')
@@ -66,7 +66,7 @@
                     {{-- IMAGES  --}}
                     
                     <div class="mb-3">
-                        <label for="images" class="form-label">{{__("messages.insertImage")}}</label>
+                        <label for="images" class="form-label">{{__("messages.insertImage")}}</label><span class="text-danger mx-1">*</span>
                         <input type="file" wire:model="temp_images" multiple class="form-control" id="images" name="images">
                     </div>
 
@@ -83,6 +83,10 @@
                                 </div>
                             @endforeach
                         </div>
+                    </div>
+                    <div class="d-flex">
+                        <p class="text-danger">*</p>
+                        <p class="mx-2">Campi obbligatori</p>
                     </div>
 
                     {{-- CAROUSEL CREATE --}}

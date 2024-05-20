@@ -18,7 +18,7 @@
                         @csrf
                       
                         <div class="mb-3">
-                            <label for="name" class="form-label log-1">  {{__("messages.name")}} </label>
+                            <label for="name" class="form-label log-1">  {{__("messages.name")}} </label><span class="text-danger mx-1">*</span>
                             <input type="text" name="name" value="{{$user->name}}" class="form-control" id="name">
                             <div class="text-danger">
                                 @error('name')
@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">  {{__("messages.email")}} </label>
+                            <label for="email" class="form-label">  {{__("messages.email")}} </label><span class="text-danger mx-1">*</span>
                             <input type="email" name="email" value="{{$user->email}}" class="form-control" id="email">
                             <div class="text-danger">
                                 @error('email')
@@ -42,7 +42,7 @@
                         </div> --}}
     
                         <div class="mb-3">
-                            <label for="description" class="form-label">{{__("messages.workUs")}}</label>
+                            <label for="description" class="form-label">{{__("messages.workUs")}}</label><span class="text-danger mx-1">*</span>
                             <textarea name="description" id="description" type="text" class="form-control" cols="30" rows="5"></textarea>
                             <div class="text-danger">
                                 @error('description')
@@ -50,7 +50,10 @@
                                 @enderror
                             </div>
                         </div>
-    
+                        <div class="d-flex">
+                            <p class="text-danger">*</p>
+                            <p class="mx-2">Campi obbligatori</p>
+                        </div>
                         <div class="text-end">
                             <button type="submit" class="btn btn-accent fw-bold px-4 shadow btn-hero-login mt-4">{{__("messages.sendInquiry")}}</button>
                         </div>
