@@ -12,6 +12,7 @@
                         <p class="fw-bold ms-4">{{__("messages.allArticles")}}</p>                
                     @foreach ($articles as $article)
                     @if ($article->is_accepted || $article->user->is_admin)
+                    {{-- article card --}}
                     <div class="card col-3 rounded-4 shadow-sm mx-2 mt-2 mb-5 px-0" style="width: 18rem;">
                         <p class="pt-2 ps-3 fw-bold d-flex align-items-center"><a
                             href="{{ route('user.profile', ['user' => $article->user]) }}"><img src="{{Storage::url($article->user->img)}}" class="card-img avatars me-2 mt-2"></a>
@@ -21,11 +22,11 @@
                         </p>
                         {{-- Inserire carosello --}}
                         <div class="overflow-hidden">
-                            <div id="carousel-{{ $article->id }}" class="carousel slide" data-bs-ride="carousel">
-                                <div class="carousel-inner">
+                            <div id="carousel-{{ $article->id }}" class="carousel slide" style="height: 286px;" data-bs-ride="carousel">
+                                <div class="carousel-inner" style="height: 286px;">
                                     @foreach ($article->images as $key => $image)
-                                        <div class="carousel-item @if ($key == 0) active @endif">
-                                            <img src="{{ $image->getUrl(600, 600) }}" class="d-block w-100" alt="...">
+                                        <div class="carousel-item position-relative @if ($key == 0) active @endif" style="height: 286px;">
+                                            <img src="{{ $image->getUrl(600, 600) }}" class="d-block w-100 immagineCaroselloFeed" alt="...">
                                         </div>
                                     @endforeach
                                 </div>
@@ -56,6 +57,7 @@
                             @endif
                         </div>
                     </div>
+                    {{-- article card --}}
                     @endif      
                     @endforeach            
                 </div>        
