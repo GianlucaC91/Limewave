@@ -22,6 +22,7 @@ textarea {
   color: var(--color-s)
 }
 
+/* BOTTONI DASHBOARD ADMIN/REVISOR */
 .btnDelete{
   background-color: white;
   border-radius: 0px;
@@ -29,6 +30,45 @@ textarea {
   border-color: rgb(203, 0, 0);
   border-width: 2px;
 }
+.btnDelete:hover{
+  background-color: white;
+  border-radius: 0px;
+  color: rgb(203, 0, 0);
+  border-color: rgb(203, 0, 0);
+  border-width: 2px;
+}
+
+.btnView{
+  background-color: var(--color-s);
+  border-radius: 0px;
+  color: var(--color-p);
+  border-color: var(--color-s);
+  border-width: 2px;
+}
+.btnView:hover{
+  background-color: var(--color-s);
+  border-radius: 0px;
+  color: var(--color-p);
+  border-color: var(--color-s);
+  border-width: 2px;
+}
+
+.btnAccept{
+  background-color: var(--color-a);
+  border-radius: 0px;
+  color: var(--color-s);
+  border-color: var(--color-a);
+  border-width: 2px;
+}
+.btnAccept:hover{
+  background-color: var(--color-a);
+  border-radius: 0px;
+  color: var(--color-s);
+  border-color: var(--color-a);
+  border-width: 2px;
+}
+
+/* ---------------------------------------------------------------------- */
 
 .carouselImgSize{
   height: 300px !important;
