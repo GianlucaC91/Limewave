@@ -93,7 +93,7 @@ return [
 "postedBy"  => "Publicado por", //Inserito da
 "password"=> "Contraseña",//password in spagnolo
 "username"=> "Nombre de usuario",//password in spagnolo
-
+"enterPassword"=> "Introducir la contraseña",// Inserisci password
 "previous" => "Previo",//Previous in spagnolo
 "next" => "Próximo",//Next in spagnolo
 

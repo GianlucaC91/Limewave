@@ -92,6 +92,7 @@ return [
 "confirmPassword"  => "Conferma password", //conferma password
 "postedBy"  => "Inserito da", //Inserito da
 "password" => "Password",
+"enterPassword"=> " Inserisci la password",// Inserisci password
 
 //Categorie
 "Immobili" => "Immobili",

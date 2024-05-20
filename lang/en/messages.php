@@ -91,6 +91,7 @@ return [
 "rememberMe"  => "Remember me", //ricordami
 "confirmPassword"  => "Confirm password", //conferma password
 "postedBy"  => "Posted by", //Inserito da
+"enterPassword"=> "Enter password",// Inserisci password
 
 //Categorie
 
