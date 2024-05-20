@@ -32,7 +32,7 @@ use App\Models\Article;
                     </ul>
                     {{-- SEARCHBAR --}}
                     <form action="{{route("article.search")}}" method="GET" class="d-flex mt-3 w-50 mx-4 me-auto mb-2" role="search" type="search">
-                        <input id="navbarSearchbar" name="searched" class="form-control rounded-0  border-0" type="search" placeholder="Cerca qui..." aria-label="Search">
+                        <input id="navbarSearchbar" name="searched" class="form-control rounded-0  border-0" type="search" placeholder="{{__("messages.search")}}" aria-label="Search">
                         <button class="btn btn-accent border-0 rounded-0" type="submit"><i class="bi bi-search"></i></button>
                     </form>                   
                 
@@ -47,10 +47,10 @@ use App\Models\Article;
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end bg-s">
                                 <li class="link-custom">
-                                    <x-_locale lang="en"></x-_locale> 
+                                    <x-_locale lang="it"></x-_locale> 
                                 </li>
                                 <li class="link-custom">
-                                    <x-_locale lang="it"></x-_locale> 
+                                    <x-_locale lang="en"></x-_locale> 
                                 </li>
                                 <li class="link-custom">
                                     <x-_locale lang="es"></x-_locale> 

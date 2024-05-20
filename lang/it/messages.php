@@ -81,29 +81,29 @@ return [
     "login" => "Accedi", //login
     "register" => "Registrati", // Registrati
     "uploadAnAd"  => "Carica un annuncio", // Carica un annuncio
-    "search"  => "Cerca", // Cerca
+    "search"  => "Cerca qui...", // Cerca
     "profile"  => "Profilo", // Profilo
     "newAnnouncement"  => "Nuovo annuncio", //Nuovo annuncio
     //
 
-// LOGIN E REGISTER
-"emailAddress"  => "Indirizzo email", //Indirizzo email
-"rememberMe"  => "Ricordami", //ricordami
-"confirmPassword"  => "Conferma password", //conferma password
-"postedBy"  => "Inserito da", //Inserito da
-"password" => "Password",
+    // LOGIN E REGISTER
+    "emailAddress"  => "Indirizzo email", //Indirizzo email
+    "rememberMe"  => "Ricordami", //ricordami
+    "confirmPassword"  => "Conferma password", //conferma password
+    "postedBy"  => "Inserito da", //Inserito da
+    "password" => "Password",
 
-//Categorie
-"Immobili" => "Immobili",
-"Veicoli" => "Veicoli",
-"Elettronica" => "Elettronica",
-"Casa e Giardino" => "Casa e Giardino",
-"Lavori" => "Lavori",
-"Servizi" => "Servizi",
-"Moda e Bellezza" => "Moda e Bellezza",
-"Sport e Tempo Libero" => "Sport e Tempo Libero",
-"Animali Domestici" => "Animali Domestici",
-"Libri e Cinema" => "Libri e Cinema"
+    //Categorie
+    "Immobili" => "Immobili",
+    "Veicoli" => "Veicoli",
+    "Elettronica" => "Elettronica",
+    "Casa e Giardino" => "Casa e Giardino",
+    "Lavori" => "Lavori",
+    "Servizi" => "Servizi",
+    "Moda e Bellezza" => "Moda e Bellezza",
+    "Sport e Tempo Libero" => "Sport e Tempo Libero",
+    "Animali Domestici" => "Animali Domestici",
+    "Libri e Cinema" => "Libri e Cinema"
 ];
 
 ?>

@@ -86,24 +86,24 @@ return [
     "newAnnouncement"  => "New announcement", //Nuovo annuncio
     //
 
-// LOGIN E REGISTER
-"emailAddress"  => "Email address", //Indirizzo email
-"rememberMe"  => "Remember me", //ricordami
-"confirmPassword"  => "Confirm password", //conferma password
-"postedBy"  => "Posted by", //Inserito da
+    // LOGIN E REGISTER
+    "emailAddress"  => "Email address", //Indirizzo email
+    "rememberMe"  => "Remember me", //ricordami
+    "confirmPassword"  => "Confirm password", //conferma password
+    "postedBy"  => "Posted by", //Inserito da
 
-//Categorie
+    //Categorie
 
-"Immobili" => "Real Estate",
-"Veicoli" => "Vehicles",
-"Elettronica" => "Electronics",
-"Casa e Giardino" => "Home and Garden",
-"Lavori" => "Jobs",
-"Servizi" => "Services",
-"Moda e Bellezza" => "Fashion and Beauty",
-"Sport e Tempo Libero" => "Sports and Leisure",
-"Animali Domestici" => "Pets",
-"Libri e Cinema" => "Books and Movies"
+    "Immobili" => "Real Estate",
+    "Veicoli" => "Vehicles",
+    "Elettronica" => "Electronics",
+    "Casa e Giardino" => "Home and Garden",
+    "Lavori" => "Jobs",
+    "Servizi" => "Services",
+    "Moda e Bellezza" => "Fashion and Beauty",
+    "Sport e Tempo Libero" => "Sports and Leisure",
+    "Animali Domestici" => "Pets",
+    "Libri e Cinema" => "Books and Movies"
 
 
     
