@@ -60,6 +60,7 @@ return [
     //FOOTER
     "postOne" => "Pubblicane uno", //Pubblicane uno
     "workWithUs" => "Lavora con noi", //lavora con noi
+
     "sustainability" => " Sostenibilità", //Sostenibilità
     "press" => "Stampa", //stampa
     "youDiscover" => "Scopri", //scopri
