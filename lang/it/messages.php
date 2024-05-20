@@ -74,14 +74,19 @@ return [
     "acquire" => "Acquistare", //Acquistare
     "reliability" => "Affidabilità", //Affidabilità
     "safety" => "Sicurezza", //sicurezza
-    
+    "requiredField" => "I campi sono obbligatori",
+
+    // Lavora con noi
+    "joins"=> "Entra a far parte",
+
+
     //HERO
     "hero" => "È arrivato il momento di liberare casa da quello che non usi più! Oppure compra di seconda mano per rispettare un favore all'ambiente", //   È arrivato il momento di liberare casa da quello che non usi più! Oppure compra di seconda mano per rispettare un favore all'ambiente! Comincia subito a fare affari! 
     "business" => "Comincia subito a fare affari!", // Comincia subito a fare affari!
     "login" => "Accedi", //login
     "register" => "Registrati", // Registrati
     "uploadAnAd"  => "Carica un annuncio", // Carica un annuncio
-    "search"  => "Cerca", // Cerca
+    "search"  => "Cerca qui...", // Cerca
     "profile"  => "Profilo", // Profilo
     "newAnnouncement"  => "Nuovo annuncio", //Nuovo annuncio
     //
@@ -92,18 +97,19 @@ return [
 "confirmPassword"  => "Conferma password", //conferma password
 "postedBy"  => "Inserito da", //Inserito da
 "password" => "Password",
+"enterPassword"=> " Inserisci la password",// Inserisci password
 
-//Categorie
-"Immobili" => "Immobili",
-"Veicoli" => "Veicoli",
-"Elettronica" => "Elettronica",
-"Casa e Giardino" => "Casa e Giardino",
-"Lavori" => "Lavori",
-"Servizi" => "Servizi",
-"Moda e Bellezza" => "Moda e Bellezza",
-"Sport e Tempo Libero" => "Sport e Tempo Libero",
-"Animali Domestici" => "Animali Domestici",
-"Libri e Cinema" => "Libri e Cinema"
+    //Categorie
+    "Immobili" => "Immobili",
+    "Veicoli" => "Veicoli",
+    "Elettronica" => "Elettronica",
+    "Casa e Giardino" => "Casa e Giardino",
+    "Lavori" => "Lavori",
+    "Servizi" => "Servizi",
+    "Moda e Bellezza" => "Moda e Bellezza",
+    "Sport e Tempo Libero" => "Sport e Tempo Libero",
+    "Animali Domestici" => "Animali Domestici",
+    "Libri e Cinema" => "Libri e Cinema"
 ];
 
 ?>

@@ -114,6 +114,12 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 0 0 0rem !important;
 }
 
+.borderCreate{
+  border-width: 2px;
+  border-radius: 0px;
+  border-style: solid;
+  border-color: var(--color-s);
 
+}
 
 /* box-shadow: [horizontal offset] [vertical offset] [blur radius] [spread radius] [color]; */

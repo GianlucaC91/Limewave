@@ -23,10 +23,10 @@
                         {{-- Inserire carosello --}}
                         <div class="overflow-hidden">
                             <div id="carousel-{{ $article->id }}" class="carousel slide" style="height: 286px;" data-bs-ride="carousel">
-                                <div class="carousel-inner" style="height: 286px;">
+                                <div class="carousel-inner">
                                     @foreach ($article->images as $key => $image)
                                         <div class="carousel-item position-relative @if ($key == 0) active @endif" style="height: 286px;">
-                                            <img src="{{ $image->getUrl(600, 600) }}" class="d-block w-100 immagineCaroselloFeed" alt="...">
+                                            <img src="{{ $image->getUrl(286, 286) }}" class="immagineCaroselloFeed w-100" alt="...">
                                         </div>
                                     @endforeach
                                 </div>
