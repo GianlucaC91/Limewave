@@ -1,3 +1,9 @@
+
+.limewaveTitle:hover{
+  color: var(--color-a);
+  /* margin-bottom: 10px; */
+}
+
 /* LINK CUSTOM */
 .link-custom{
     position: relative;

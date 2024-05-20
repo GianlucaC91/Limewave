@@ -56,14 +56,11 @@ class ArticleCreate extends Component
         ]);
 
         foreach ($this->images as $image) {
-            // $article->images()->create(['path' => $path]); OLD
-            // dd($article);
             $newFileName= "article/{$article->id}";
             $path = $image->store($newFileName, 'public');
             $newImage= $article->images()->create(["path"=>$path]);
 
-            dispatch(new ResizeImage($newImage->path, 600, 600));
-            dispatch(new CropImage($newImage->path, 300, 300));
+            dispatch(new ResizeImage($newImage->path, 286, 286));
         }
 
         File::deleteDirectory(storage_path("/app/livewire-tmp"));
