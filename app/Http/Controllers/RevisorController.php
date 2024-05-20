@@ -70,4 +70,25 @@ class RevisorController extends Controller
     //     return redirect()->back()->with("status","Annuncio rifiutato");
     // }
 
+    public function showCandidates()
+    {
+        $candidates = User::where('is_revisor', null)->get();
+        return view('revisor.candidates', compact('candidates'));
+    }
+
+    public function acceptCandidate(User $user)
+    {
+        $user->is_revisor = true;
+        $user->save();
+
+        return redirect()->route('revisor.candidates')->with('success', 'User accepted as revisor');
+    }
+
+    public function rejectCandidate(User $user)
+    {
+        $user->is_revisor = false;
+        $user->save();
+
+        return redirect()->route('revisor.candidates')->with('success', 'User rejected');
+    }
 }
