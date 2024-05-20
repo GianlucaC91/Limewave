@@ -27,7 +27,7 @@
                     </div>
                     <div class="d-flex">
                         <p class="text-danger">*</p>
-                        <p class="mx-2">Campi obbligatori</p>
+                        <p class="mx-2">{{__("messages.requiredField")}}</p>
                     </div>
                     <button type="submit"
                         class="btn btn-accent btn-lg fw-bold pt-3 px-4 shadow btn-hero-login pb-3 mt-4">{{__("messages.register")}}</button>

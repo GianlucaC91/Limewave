@@ -56,6 +56,8 @@ return [
     "searchResults" => "The search did not return any results", //La ricerca non ha prodotto risultati
     "browseCategories" => "Browse categories", //Sfoglia le categorie
     "noAds" => "There are no ads in this category", //Non sono presenti annunci in questa categoria
+    "requiredField" => "All fields are mandatory", //i campi sono obbligatori
+
 
     //FOOTER
     "postOne" => "Post one", //Pubblicane uno
@@ -75,6 +77,10 @@ return [
     "reliability" => "Reliability", //Affidabilità
     "safety" => "Safety", //sicurezza
     
+    //Lavora con noi
+    "joins"=> "Joins",//Entra a far parte
+    "team" => "of our team",//del nostro team
+    "textWorkUs" => "We are a dynamic and inclusive team, happy to welcome people who are an added value for us and who really want to make a difference in the sector. For us, people represent an important heritage of skills and experience, to be cultivated every day. At Limewave it is essential to take care of the well-being and professional growth of the team, ensuring the right balance between private and work life, career paths and continuous training. We are constantly looking for new colleagues who promote our value proposition and our mission, aware of the ethical impact on the lives of those who choose them.",//"Siamo un team dinamico e inclusivo, felice di accogliere persone che siano per noi un valore aggiunto e vogliano davvero fare la differenza nel settore. Le persone per noi rappresentano un patrimonio importante di competenze ed esperienze, da coltivare ogni giorno. In Limewave è fondamentale prendersi cura del benessere e della crescita professionale del team, assicurando il giusto equilibrio tra vita privata e lavorativa, percorsi di carriera e formazione continua. Siamo alla costante ricerca di nuovi colleghi che promuovano la nostra value proposition e la nostra mission, consapevoli dell’impatto etico nella vita di chi li sceglie."
     //HERO
     "hero" => "The time has come to free your home from what you no longer use! Or buy second hand to respect the environment", //   È arrivato il momento di liberare casa da quello che non usi più! Oppure compra di seconda mano per rispettare un favore all'ambiente! Comincia subito a fare affari! 
     "business" => "Start doing business now!", // Comincia subito a fare affari!

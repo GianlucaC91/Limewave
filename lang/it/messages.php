@@ -74,7 +74,12 @@ return [
     "acquire" => "Acquistare", //Acquistare
     "reliability" => "Affidabilità", //Affidabilità
     "safety" => "Sicurezza", //sicurezza
-    
+    "requiredField" => "I campi sono obbligatori",
+
+    // Lavora con noi
+    "joins"=> "Entra a far parte",
+
+
     //HERO
     "hero" => "È arrivato il momento di liberare casa da quello che non usi più! Oppure compra di seconda mano per rispettare un favore all'ambiente", //   È arrivato il momento di liberare casa da quello che non usi più! Oppure compra di seconda mano per rispettare un favore all'ambiente! Comincia subito a fare affari! 
     "business" => "Comincia subito a fare affari!", // Comincia subito a fare affari!
