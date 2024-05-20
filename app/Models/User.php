@@ -50,4 +50,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Article::class);
     }
+
+    
+    public static function countPendingRevisors()
+    {
+        return self::where('is_revisor', null)->count();
+    }
 }

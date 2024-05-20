@@ -1,5 +1,6 @@
 @php
 use App\Models\Article;
+use App\Models\User;
 @endphp
 <nav class="navbar fixed-top navbar-expand-lg bg-s text-p shadow-sm">
     <div class="container-fluid w-100 ps-0 pe-0">
@@ -100,6 +101,14 @@ use App\Models\Article;
                                         <span class="text-s mx-2 badge rounded-pill bg-a pt-2">{{Article::reviseNotification()}}</span>
                                     </li>
                                     @endif
+                                    <li class="d-flex">
+                                        <a class="dropdown-item text-p link-custom" href="{{route("revisor.candidates")}}">
+                                            <i class="bi bi-person-check"></i> Candidati
+                                        </a>
+                                        <span class="text-s mx-2 badge rounded-pill bg-a pt-2">
+                                            {{User::countPendingRevisors()}}
+                                        </span>
+                                    </li>
                                     <li>
                                         <a class="dropdown-item text-p link-custom" href="{{ route('article.create') }}"><i class="bi bi-megaphone"></i> {{__("messages.newAnnouncement")}}</a>
                                     </li>
