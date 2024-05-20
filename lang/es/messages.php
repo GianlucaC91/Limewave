@@ -74,7 +74,13 @@ return [
     "acquire" => "Adquirir", //Acquistare
     "reliability" => "Fiabilidad", //Affidabilità
     "safety" => "Seguridad", //sicurezza
+    "requiredField" => "Todos los campos son obligatorios",//i campi sono obbligatori 
     
+    //Lavora con noi
+    "joins"=> "Entra a una parte lejana",//Entra a far parte
+    "team" => "de nuestro equipo",//del nostro team
+    "textWorkUs" => "Somos un equipo dinámico e inclusivo, encantados de recibir a personas que suponen un valor añadido para nosotros y que realmente quieren marcar la diferencia en el sector. Para nosotros, las personas representan un importante patrimonio de habilidades y experiencias que debemos cultivar cada día. En Limewave es fundamental cuidar el bienestar y el crecimiento profesional del equipo, asegurando el equilibrio adecuado entre la vida privada y laboral, las trayectorias profesionales y la formación continua. Buscamos constantemente nuevos colegas que impulsen nuestra propuesta de valor y nuestra misión, conscientes del impacto ético en la vida de quienes los eligen.",//"Siamo un team dinamico e inclusivo, felice di accogliere persone che siano per noi un valore aggiunto e vogliano davvero fare la differenza nel settore. Le persone per noi rappresentano un patrimonio importante di competenze ed esperienze, da coltivare ogni giorno. In Limewave è fondamentale prendersi cura del benessere e della crescita professionale del team, assicurando il giusto equilibrio tra vita privata e lavorativa, percorsi di carriera e formazione continua. Siamo alla costante ricerca di nuovi colleghi che promuovano la nostra value proposition e la nostra mission, consapevoli dell’impatto etico nella vita di chi li sceglie."
+
     //HERO
     "hero" => "¡Ha llegado el momento de liberar tu hogar de aquello que ya no utilizas! O comprar de segunda mano para respetar el medio ambiente", //   È arrivato il momento di liberare casa da quello che non usi più! Oppure compra di seconda mano per rispettare un favore all'ambiente! Comincia subito a fare affari! 
     "business" => "Comience a hacer negocios ahora!", // Comincia subito a fare affari!

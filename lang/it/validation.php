@@ -10,12 +10,11 @@ return [
     | The following language lines contain the default error messages used by
     | the validator class. Some of these rules have multiple versions such
     | as the size rules. Feel free to tweak each of these messages here.
-    |
+    
     */
 
     'accepted' => 'Il campo :attributo deve essere accettato.',
-    'accepted_if' => '
-    Il campo :attribute deve essere accettato quando :other è :value.',//
+    'accepted_if' => 'Il campo :attribute deve essere accettato quando :other è :value.',//
     'active_url' =>'Il campo :attribute deve essere un URL valido.',//
     'after' => 'Il campo :attribute deve essere una data successiva a :date.',//
     'after_or_equal' => 'Il campo :attribute deve essere una data successiva o uguale a :date.',
@@ -34,7 +33,7 @@ return [
     ],
     'boolean' => 'Il campo :attribute deve essere true o false.',
     'can' => 'Il campo :attribute contiene un valore non autorizzato.',
-    'confirmed' => 'La conferma del campo :attribute non corrisponde.',
+    'confirmed' => 'La conferma della password non corrisponde.',
     'current_password' => 'La password non è corretta.',
     'date' => 'Il campo :attribute deve essere una data valida.',
     'date_equals' => 'Il campo :attribute deve essere una data uguale a :date.',
@@ -50,12 +49,12 @@ return [
     'distinct' => 'Il campo :attribute ha un valore duplicato.',
     'doesnt_end_with' => 'Il campo :attribute non deve terminare con uno dei seguenti: :values.',
     'doesnt_start_with' =>  'Il campo :attribute non deve iniziare con uno dei seguenti: :values.',
-    'email' => 'Il campo :attribute deve essere un indirizzo email valido',
+    'email' => 'Il campo Indirizzo email deve essere un indirizzo email valido',
     'ends_with' => 'Il campo :attribute deve terminare con uno dei seguenti: :values.',
     'enum' =>" L'attributo selezionato non è valido.",
     'exists' => "L'attributo selezionato non è valido.",
     'extensions' => 'Il campo :attribute deve avere una delle seguenti estensioni: :values.',
-    'file' => 'Il campo :attribute deve essere un file.',
+    'file' => 'Il campo file deve essere un file.',
     'filled' => 'Il campo :attribute deve avere un valore.',
     'gt' => [
         'array' => 'Il campo :attribute deve contenere più di :value elementi.',
@@ -119,11 +118,11 @@ return [
     'not_regex' => 'Il formato del campo :attribute non è valido.',
     'numeric' => 'Il campo :attribute deve essere un numero.',
     'password' => [
-        'letters' =>'Il campo :attribute deve contenere almeno una lettera.',
-        'mixed' =>'Il campo :attribute deve contenere almeno una lettera maiuscola e una minuscola.',
-        'numbers' => 'Il campo :attribute deve contenere almeno un numero.',
-        'symbols' => 'Il campo :attribute deve contenere almeno un simbolo.',
-        'uncompromised' => 'Il dato :attributo è apparso in una fuga di dati. Scegli un :attributo diverso.',
+        'letters' =>'Il campo password deve contenere almeno una lettera.',
+        'mixed' =>'Il campo password deve contenere almeno una lettera maiuscola e una minuscola.',
+        'numbers' => 'Il campo password deve contenere almeno un numero.',
+        'symbols' => 'Il campo password deve contenere almeno un simbolo.',
+        'uncompromised' => 'Il dato password è apparso in una fuga di dati. Scegli una password diversa.',
     ],
     'present' => 'Il campo :attribute deve essere presente.',
     'present_if' => 'Il campo :attribute deve essere presente quando :other è :value.',
@@ -135,7 +134,7 @@ return [
     'prohibited_unless' => 'Il campo :attribute impedisce a :other di essere presente.',
     'prohibits' => 'Il campo :attribute impedisce a :other di essere presente.',
     'regex' => 'Il formato del campo :attribute non è valido.',
-    'required' =>'Il campo :attributo è obbligatorio.',
+    'required' =>'Il campo :attribute è obbligatorio.',
     'required_array_keys' => 'Il campo :attribute deve contenere voci per: :values.',
     'required_if' => 'Il campo :attribute è obbligatorio quando :other è :value.',
     'required_if_accepted' => 'Il campo :attribute è obbligatorio quando :other è accettato.',

@@ -2,7 +2,7 @@
 
     <x-hero/>
 
-    <livewire:four-main-categories />
+    <livewire:main-category />
     
     <livewire:feed />
 
