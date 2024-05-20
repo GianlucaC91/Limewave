@@ -6,7 +6,7 @@
             <div class="container shadow d-none d-md-block">
                 <div class="row bg-white overflow-hidden">
                     <div class="col-12 col-md-6 order-1 position-relative">
-                        <img src="./media/hero-image.png" class="heroImg position-absolute bottom-0 " loading="lazy">
+                        <img src="./media/hero-image.png" class="heroImg position-absolute bottom-0 slideUp" id="immagine" loading="lazy">
                     </div>
                     <div class="col-12 col-md-6 p-5">
                         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">LimeWave desktop</h1>

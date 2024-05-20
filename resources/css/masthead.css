@@ -54,3 +54,17 @@ DELETE IF DEPRECATED? */
     height: 65px;
     border-radius: 0px;
 }
+
+/* per animazione immagine hero  */
+#immagine{
+  /* height: 400px; */
+  position: absolute;
+  top: 0%;
+  /* left: 35%; */
+  transition: transform 1s ease-out;
+}
+
+.slideUp{
+  transform:  translateY(100%);
+}
+/* per animazione immagine hero  */
