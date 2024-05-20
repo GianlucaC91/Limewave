@@ -78,7 +78,7 @@
                                 <div class="col-10 col-md-3 m-2 d-flex align-content-center">
                                     <div class="d-flex flex-column justify-content-between">
                                         <img src="{{$img->temporaryUrl()}}" class="d-block w-100" alt="...">
-                                        <button type="button"  class="btn fw-bold w-25 btnDelete border-0" wire:click="removeImage({{$key}})">Elimina</button>
+                                        <button type="button"  class="btn fw-bold w-25 btnDelete border-0" wire:click="removeImage({{$key}})">{{__("messages.delete")}}</button>
                                     </div>
                                 </div>
                             @endforeach

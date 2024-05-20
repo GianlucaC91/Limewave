@@ -24,7 +24,7 @@ return [
     "view"=> "Visualizza", //visualizza
     "refuse"=> "Rifiuta", //rifiuta
     "accept"=> "Accetta", //accetta
-    "delete" => "Cancella", //cancella
+    "delete" => "Elimina", //cancella
     "restore" => "Ripristina", // ripristina
     "adsReject" => "Non ci sono articoli rifiutati",//Non ci sono articoli rifiutati
     "welcomeProfile" => "Benvenuto nel profilo di",//benvenuto nel profilo di 
@@ -77,12 +77,12 @@ return [
     "safety" => "Sicurezza", //sicurezza
     "requiredField" => "I campi sono obbligatori",
 
-    // Lavora con noi
-    "joins"=> "Entra a far parte",
+
     //Lavora con noi
     "joins"=> "Entra a far parte",
     "team" => "del nostro team",//del nostro team
     "textWorkUs" => "Siamo un team dinamico e inclusivo, felice di accogliere persone che siano per noi un valore aggiunto e vogliano davvero fare la differenza nel settore. Le persone per noi rappresentano un patrimonio importante di competenze ed esperienze, da coltivare ogni giorno. In Limewave è fondamentale prendersi cura del benessere e della crescita professionale del team, assicurando il giusto equilibrio tra vita privata e lavorativa, percorsi di carriera e formazione continua. Siamo alla costante ricerca di nuovi colleghi che promuovano la nostra value proposition e la nostra mission, consapevoli dell’impatto etico nella vita di chi li sceglie.",
+  
 
 
     //HERO

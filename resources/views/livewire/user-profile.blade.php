@@ -36,7 +36,7 @@
                             </div>
                             {{-- EMAIL --}}
                             <div class="mb-3">
-                                <label for="email" class="form-label">Email:</label>
+                                <label for="email" class="form-label">{{__("messages.emailAddress")}}:</label>
                                 <input type="email" wire:model="email" class="form-control" id="email">
                                 <div class="text-danger">
                                     @error('email')
@@ -46,7 +46,7 @@
                             </div>
                             {{-- PASSWORD --}}
                             <div class="mb-3">
-                                <label for="password" class="form-label">Password:</label>
+                                <label for="password" class="form-label">{{__("messages.password")}}:</label>
                                 <input type="password" wire:model="password" class="form-control" id="password">
                             </div>
                             <div class="text-danger">
