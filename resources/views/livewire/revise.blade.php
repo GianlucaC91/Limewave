@@ -36,7 +36,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($pending_articles as $pending)
-                                <tr class="text-start">
+                                <tr class="text-center">
                                     <th scope="row" class="p-3">{{$loop->iteration}}</th>
                                     <td>{{$pending->id}}</td>
                                     <td>{{$pending->category->name}}</td>
@@ -64,15 +64,15 @@
                                         </button>
 
                                     </td> --}}
-                                    <td><button type="button" class="btn py-2 mt-1 btn-primary" data-bs-toggle="modal"
+                                    <td><button type="button" class="btn py-2 mt-1 btnView" data-bs-toggle="modal"
                                         data-bs-target="#article{{$pending->id}}">
                                         {{__("messages.view")}}
                                     </button></td>
-                                    <td><button wire:click='rejectArticle({{$pending}})' class="btn py-2 mt-1 btn-danger"
+                                    <td><button wire:click='rejectArticle({{$pending}})' class="btn py-2 mt-1 btnDelete"
                                         wire:confirm="Sei sicuro di voler rifiutare l'annuncio?">
                                         {{__("messages.refuse")}}
                                     </button></td>
-                                    <td><button wire:click='acceptArticle({{$pending}})' class="btn py-2 mt-1 btn-success"
+                                    <td><button wire:click='acceptArticle({{$pending}})' class="btn py-2 mt-1 btnAccept"
                                         wire:confirm="Sei sicuro di voler accettare l'annuncio?">
                                         {{__("messages.accept")}}
                                     </button></td>
@@ -130,16 +130,16 @@
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
-                                        <tr>
+                                        <tr class="text-center">
                                             <th scope="col">#</th>
                                             <th scope="col"> {{__("messages.idArticle")}}</th>
                                             <th scope="col"> {{__("messages.user")}}</th>
+                                            <th scope="col"> {{__("messages.title")}}</th>
+                                            <th scope="col">{{__("messages.price")}}</th>
+                                            <th scope="col">{{__("messages.description")}}</th>
                                             <th scope="col"> {{__("messages.image")}}</th>
-                                            <th scope="col"> {{__("messages.actions")}}</th>
-                                            <th scope="col"> {{__("messages.view")}}</th>
-                                            <th scope="col"> {{__("messages.refuse")}}</th>
                                             <th scope="col"></th>
-                                            <th class="text-center" scope="col"> {{__("messages.accept")}}</th>
+                                            <th class="text-center" scope="col"> {{__("messages.actions")}}</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
@@ -157,7 +157,7 @@
                                             </td>
 
                                             <td>
-                                                <button type="button" class="btn py-2 mt-1 btn-primary" data-bs-toggle="modal"
+                                                <button type="button" class="btn py-2 mt-1 btnView" data-bs-toggle="modal"
                                                     data-bs-target="#article{{$rejected->id}}">
                                                     {{__("messages.view")}}
                                                 </button>
@@ -165,12 +165,12 @@
 
                                             @if(Auth::user()->is_revisor || Auth::user()->is_admin)
                                             <td>
-                                                <button wire:click="deleteArticle({{ $rejected->id }})" class="btn py-2 mt-1 btn-danger">
+                                                <button wire:click="deleteArticle({{ $rejected->id }})" class="btn py-2 mt-1 btnDelete">
                                                     {{__("messages.delete")}}
                                                 </button>
                                             </td>
                                             <td>
-                                                <button wire:click="restoreArticle({{ $rejected->id }})" class="btn py-2 mt-1 btn-warning">
+                                                <button wire:click="restoreArticle({{ $rejected->id }})" class="btn py-2 mt-1 btnAccept">
                                                     {{__("messages.restore")}}
                                                 </button>
                                             </td>

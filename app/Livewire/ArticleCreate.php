@@ -39,6 +39,7 @@ class ArticleCreate extends Component
 
     public function store()
     {
+    
         $this->validate();
 
         $adminAccept = null ;
