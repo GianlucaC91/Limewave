@@ -58,6 +58,7 @@ return [
     "noAds" => "There are no ads in this category", //Non sono presenti annunci in questa categoria
     "requiredField" => "All fields are mandatory", //i campi sono obbligatori
     "previewMessage" => "Only the first image will be visible in the preview",
+    "status"=>"Article inserted successfully",//articolo inserito con successo
 
 
     //FOOTER
@@ -78,6 +79,7 @@ return [
     "reliability" => "Reliability", //Affidabilità
     "safety" => "Safety", //sicurezza
     "revisorApplicants" => "Candidates",
+    "revisorCandidates"=>"Candidate reviewer",//Revisore candidati
     
     //Lavora con noi
     "joins"=> "Joins",//Entra a far parte
