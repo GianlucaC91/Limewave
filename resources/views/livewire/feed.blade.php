@@ -1,7 +1,7 @@
   
 <div class="container-fluid pt-md-5 hero">
-    <div class="row justify-content-center ">
-        <div class="col-12 col-md-11 col-xl-9"> 
+    <div class="row justify-content-center mx-0">
+        <div class="col-12 col-md-11 col-xl-9 "> 
             
             <div class="container">
                 <div class="row bg-white shadow justify-content-evenly ">        
