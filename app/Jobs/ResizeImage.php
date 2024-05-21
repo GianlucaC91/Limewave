@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use Spatie\Image\Image;
+use Spatie\Image\Enums\Fit;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -37,12 +38,10 @@ class ResizeImage implements ShouldQueue
         $w = $this->w;
         $h = $this->h;
         $srcPath = storage_path("app/public/{$this->path}/{$this->fileName}");
-        // $destPath = storage_path("app/public/{$this->path}/resize_{$w}x{$h}_{$this->fileName}");
-        $destPath= $srcPath;
+        $destPath = storage_path("app/public/{$this->path}/crop_{$w}x{$h}_{$this->fileName}");
+        
+        $resizedImage = Image::load($srcPath)->fit(Fit::Crop, $w, $h)->save($destPath);           
 
-        $resizedImage = Image::load($srcPath)
-                            ->width($w)
-                            ->height($h)
-                            ->save($destPath);
+        
     }
 }
