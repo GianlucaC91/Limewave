@@ -55,7 +55,7 @@ use App\Models\User;
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end bg-s">
                                 <li class="link-custom">
-                                    <x-_locale lang="IT" ></x-_locale> 
+                                    <x-_locale lang="IT"></x-_locale> 
                                 </li>
                                 <li class="link-custom">
                                     <x-_locale lang="EN"></x-_locale> 
@@ -103,7 +103,7 @@ use App\Models\User;
                                     @endif
                                     <li class="d-flex">
                                         <a class="dropdown-item text-p link-custom" href="{{route("revisor.candidates")}}">
-                                            <i class="bi bi-person-check"></i> {{__("messages.revisorApplicants")}}
+                                            <i class="bi bi-person-check"></i> Candidati
                                         </a>
                                         <span class="text-s mx-2 badge rounded-pill bg-a pt-2">
                                             {{User::countPendingRevisors()}}
@@ -151,7 +151,9 @@ use App\Models\User;
             <li class="nav-item">
                 <a class="nav-link text-p" aria-current="page" href="{{ route('homepage') }}">Home</a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link text-p" href="#">Link</a>
+            </li>
             
             {{-- CATEGORY DROPDOWN --}}
             <li class="nav-item dropdown border-0">
