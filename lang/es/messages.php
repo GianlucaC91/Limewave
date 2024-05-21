@@ -56,6 +56,7 @@ return [
     "searchResults" => "The search did not return any results", //La ricerca non ha prodotto risultati
     "browseCategories" => "Browse categories", //Sfoglia le categorie
     "noAds" => "No hay anuncios en esta categoría.", //Non sono presenti annunci in questa categoria
+    "revisorApplicants" => "Candidatos",
 
     //FOOTER
     "postOne" => "Publicar uno", //Pubblicane uno

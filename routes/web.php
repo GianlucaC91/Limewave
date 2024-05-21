@@ -27,7 +27,7 @@ Route::post('/revisor/candidates/reject/{user}', [RevisorController::class, 'rej
 
 // Work with us
 Route::get("/revisor/form", [RevisorController::class, "revisorForm"])->name('revisor.form')->middleware('auth');
-Route::post("/revisor/send", [RevisorController::class, "sendEmail"])->name('send.email');
+Route::post("/revisor/send", [RevisorController::class, "sendEmail"])->name('send.email')->middleware("auth");
 Route::get('/revisor/make/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
 // CategoryController

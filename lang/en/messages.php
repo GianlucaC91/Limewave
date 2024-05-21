@@ -76,6 +76,7 @@ return [
     "acquire" => "Acquire", //Acquistare
     "reliability" => "Reliability", //Affidabilità
     "safety" => "Safety", //sicurezza
+    "revisorApplicants" => "Candidates",
     
     //Lavora con noi
     "joins"=> "Joins",//Entra a far parte

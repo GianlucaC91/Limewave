@@ -56,6 +56,7 @@ return [
     "searchResults" => "La ricerca non ha prodotto risultati", //La ricerca non ha prodotto risultati
     "browseCategories" => "Sfoglia le categorie", //Sfoglia le categorie
     "noAds" => "Non sono presenti annunci in questa categoria", //Non sono presenti annunci in questa categoria
+    "revisorApplicants" => "Candidati",
 
     //FOOTER
     "postOne" => "Pubblicane uno", //Pubblicane uno
