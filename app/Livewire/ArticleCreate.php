@@ -75,7 +75,7 @@ class ArticleCreate extends Component
         
         $this->reset();
 
-        session()->flash('status', "Annuncio inserito con successo");
+        session()->flash('status', ("messages.status"));
     }
 
     // TEMPORARY IMAGES SHOWN

@@ -58,7 +58,8 @@ return [
     "noAds" => "Non sono presenti annunci in questa categoria", //Non sono presenti annunci in questa categoria
     "revisorApplicants" => "Candidati",
     "previewMessage" => "Solo la prima immagine caricata sarà disponibile nell'anteprima dell'annuncio",
-
+    "status"=>"Articolo inserito con successo",//articolo inserito con successo
+    "revisorCandidates"=>"Revisore Candidati",//Revisore candidati
     //FOOTER
     "postOne" => "Pubblicane uno", //Pubblicane uno
     "workWithUs" => "Lavora con noi", //lavora con noi
