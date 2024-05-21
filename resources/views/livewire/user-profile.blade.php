@@ -1,19 +1,50 @@
-<div class="d-flex flex-column justify-content-center ">
+<div class="container-fluid pt-md-5 hero">
+    <div class="row justify-content-center  mx-0">
+        <div class="col-12 col-md-11 col-xl-9 ">
 
-    {{-- INITIAL WELCOME WITH USER NAME --}}
-    <h1 class="text-center">{{__("messages.welcomeProfile")}}
-        {{ $user->name }}</h1>
-    <div class="text-center">
-        {{-- DISPLAY MESSAGE --}}
-        <x-status />
-    </div>
+            
+            @if (Auth::id() == $user->id)
+            {{-- INITIAL WELCOME WITH USER NAME --}}
+            <div class="container shadow mt-5">
+                <div class="row bg-white">
+                    <div class="col-12 p-5">
+
+                        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">Benvenuto nel tuo profilo</h1>
+                        <div class="text-center">
+                            {{-- DISPLAY MESSAGE --}}
+                            <x-status />
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            @else
+            <div class="container shadow mt-5">
+                <div class="row bg-white">
+                    <div class="col-12 p-5">
+
+                        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">{{__("messages.welcomeProfile")}}
+                            {{ $user->name }}</h1>
+                        <div class="text-center">
+                            {{-- DISPLAY MESSAGE --}}
+                            <x-status />
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            @endif
+            
+
+
     <div class="container mt-5">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center bg-white shadow">
             {{-- COL IMG --}}
             @auth
                 @if (Auth::id() == $user->id)
-                    <div class="col-10 col-md-4 d-flex flex-column justify-content-center">
-                        <label for="oldimg" class="form-label">{{__("messages.avatarCurrent")}}:</label>
+                <div class="d-flex">
+                    <div class="col-10 col-md-4 d-flex flex-column justify-content-center bg-white mx-auto me-0">
+                        <label for="oldimg" class=" text-center form-label">{{__("messages.avatarCurrent")}}:</label>
                         @if ($imgPreview)
                             <img src="{{ $imgPreview }}" id="imgPreview" class="img-fluid my-3" alt="Preview">
                         @else
@@ -21,7 +52,7 @@
                         @endif
                     </div>
                     {{-- COL FORM --}}
-                    <div class="col-10 col-md-8 col-xl-6 border-p bg-p shadow-sm p-4">
+                    <div class="col-10 col-md-8 col-xl-6 p-4 bg-white mx-auto ms-0">
                         <form enctype="multipart/form-data" wire:submit.prevent="updateUser" wire:loading.remove>
                             @csrf
                             {{-- NAME --}}
@@ -83,15 +114,17 @@
                         {{-- <div wire:loading>
                             <p> {{__("messages.updateDati")}}...</p>
                         </div> --}}
+                    </div>
                 @endif
             @endauth
             @if (Auth::id() !== $user->id)
                         
 
-                <div class="d-flex justify-content-center my-3">
+                <div class="d-flex justify-content-center my-4">
                     <img src="{{ Storage::url($user->img) }}" alt="" class="img-fluid" width="300px">
                 </div>
-                <h3>{{__("messages.announcementsOf")}} {{ $user->name }}</h3>
+                <h3 class="px-5">{{__("messages.announcementsOf")}} {{ $user->name }}</h3>
+                <div class="px-5 pb-5 table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
@@ -117,6 +150,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                </div>
             @endif
 
         </div>
@@ -124,4 +158,11 @@
 
 </div>
 
+
+
+
+
+
+</div>
+</div>
 </div>
