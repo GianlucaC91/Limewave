@@ -22,7 +22,7 @@
                         </p>
                         {{-- Inserire carosello --}}
                         <div class="overflow-hidden">
-                            <div id="carousel-{{ $article->id }}" class="carousel slide" style="height: 286px;" data-bs-ride="carousel" data-bs-interval="2000">
+                            <div id="carousel-{{ $article->id }}" class="carousel slide" style="height: 286px;" >
                                 <div class="carousel-inner">
                                     @if ($article->images()->count()>=1)
                                         
