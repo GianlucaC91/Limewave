@@ -57,6 +57,7 @@ return [
     "browseCategories" => "Browse categories", //Sfoglia le categorie
     "noAds" => "There are no ads in this category", //Non sono presenti annunci in questa categoria
     "requiredField" => "All fields are mandatory", //i campi sono obbligatori
+    "previewMessage" => "Only the first image will be visible in the preview",
 
 
     //FOOTER

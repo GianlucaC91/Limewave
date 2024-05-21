@@ -74,7 +74,10 @@
                     
                     <div class="container bg-s mb-2 @if ($images) borderCreate @endif">
                         <div class="row justify-content-center justify-content-md-between bg-white">
-                            @foreach ($images as $key => $img) 
+                            @foreach ($images as $key => $img)
+                                    @if ($key == 0)
+                                        <p class="fs-6 fw-bold">{{__("messages.previewMessage")}}</p>
+                                    @endif
                                 <div class="col-10 col-md-3 m-2 d-flex align-content-center">
                                     <div class="d-flex flex-column justify-content-between">
                                         <img src="{{$img->temporaryUrl()}}" class="d-block w-100" alt="...">
