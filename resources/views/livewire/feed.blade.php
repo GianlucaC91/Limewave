@@ -29,8 +29,8 @@
                                     
                                     @foreach ($article->images as $key => $image)
                                         <div class="carousel-item position-relative @if ($key == 0) active @endif" style="height: 286px;">
-                                            
-                                            <img src="{{ $image->getCropUrl(720, 720) }}" class="immagineCaroselloFeed w-100" alt="...">
+                                            <img src="{{ $image->getCropUrl(300, 300) }}" class="immagineCaroselloFeed w-100" alt="...">
+                                            <img src="{{ $image->getCropUrl(512, 512) }}" class="immagineCaroselloFeed w-100" alt="...">
                                         </div>
                                     @endforeach
 
