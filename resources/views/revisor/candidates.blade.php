@@ -1,7 +1,7 @@
 <x-layout>
 
     <div class="container">
-        <h1 class="mb-4">Revisor Candidates</h1>
+        <h1 class="mb-4">{{__("messages.revisorCandidates")}}</h1>
         @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
@@ -10,10 +10,10 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Email</th>
+                    <th scope="col">{{__("messages.name")}}</th>
+                    <th scope="col">{{__("messages.email")}}</th>
                     @if (Auth::user()->is_admin)
-                    <th scope="col">Actions</th>
+                    <th scope="col">{{__("messages.actions")}}</th>
                     @endif
                 </tr>
             </thead>

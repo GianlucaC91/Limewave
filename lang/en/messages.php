@@ -79,6 +79,7 @@ return [
     "reliability" => "Reliability", //Affidabilità
     "safety" => "Safety", //sicurezza
     "revisorApplicants" => "Candidates",
+    "revisorCandidates"=>"Candidate reviewer",//Revisore candidati
     
     //Lavora con noi
     "joins"=> "Joins",//Entra a far parte

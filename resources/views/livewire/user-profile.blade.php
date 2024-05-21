@@ -42,9 +42,9 @@
             {{-- COL IMG --}}
             @auth
                 @if (Auth::id() == $user->id)
-                <div class="d-flex">
-                    <div class="col-10 col-md-4 d-flex flex-column justify-content-center bg-white mx-auto me-0">
-                        <label for="oldimg" class=" text-center form-label">{{__("messages.avatarCurrent")}}:</label>
+                <div class="row">
+                    <div class="col-12 col-md-4 d-flex flex-column justify-content-center bg-white mx-auto me-0">
+                        <label for="oldimg" class="mt-4 mt-md-0 text-center form-label">{{__("messages.avatarCurrent")}}:</label>
                         @if ($imgPreview)
                             <img src="{{ $imgPreview }}" id="imgPreview" class="img-fluid my-3" alt="Preview">
                         @else
@@ -52,11 +52,11 @@
                         @endif
                     </div>
                     {{-- COL FORM --}}
-                    <div class="col-10 col-md-8 col-xl-6 p-4 bg-white mx-auto ms-0">
+                    <div class="col-12 col-md-8 col-xl-6 p-4 bg-white mx-auto ms-0">
                         <form enctype="multipart/form-data" wire:submit.prevent="updateUser" wire:loading.remove>
                             @csrf
                             {{-- NAME --}}
-                            <div class="mb-3">
+                            <div class="my-3">
                                 <label for="name" class="form-label">Username:</label>
                                 <input type="text" class="form-control" id="name" wire:model="name">
                                 <div class="text-danger">
@@ -108,7 +108,7 @@
                                 @enderror
                             </div>
                             {{-- SEND BUTTON --}}
-                            <button type="submit" class="btn btn-accent fw-bold shadow">{{__("messages.changeDate")}}</button>
+                            <button type="submit" class="btn btn-accent fw-bold shadow mt-2 mb-3">{{__("messages.changeDate")}}</button>
                         </form>
                         {{-- LOADING TEXT --}}
                         {{-- <div wire:loading>
