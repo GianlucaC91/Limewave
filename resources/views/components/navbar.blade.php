@@ -151,9 +151,6 @@ use App\Models\User;
             <li class="nav-item">
                 <a class="nav-link text-p" aria-current="page" href="{{ route('homepage') }}">Home</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-p" href="#">Link</a>
-            </li>
             
             {{-- CATEGORY DROPDOWN --}}
             <li class="nav-item dropdown border-0">
