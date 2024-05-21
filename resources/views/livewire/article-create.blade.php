@@ -13,7 +13,7 @@
                         aria-describedby="emailHelp">
                         <div class="text-danger">
                             @error('title')
-                            {{ $message }}
+                            <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                                     <input wire:model="price" type="text" class="form-control" id="price">
                                     <div class="text-danger">
                                         @error('price')
-                                        {{ $message }}
+                                        <div class="text-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>                                
@@ -44,7 +44,7 @@
                                 </select>
                                 <div class="text-danger">
                                     @error('category')
-                                    {{ $message }}
+                                    <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
                         <textarea wire:model="body" type="text" class="form-control" id="body" cols="30" rows="5"></textarea>
                         <div class="text-danger">
                             @error('body')
-                            {{ $message }}
+                            <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                     {{-- IMAGES  --}}
                     
                     <div class="mb-3">
-                        <label for="images" class="form-label">{{__("messages.insertImage")}}</label><span class="text-danger mx-1">*</span>
+                        <label for="images" class="form-label">{{__("messages.insertImage")}}</label>
                         <input type="file" wire:model="temp_images" multiple class="form-control" id="images" name="images">
                     </div>
 
