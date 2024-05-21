@@ -37,11 +37,11 @@ class CropImage implements ShouldQueue
     {
         $w = $this->w;
         $h = $this->h;
-        $scrPath = storage_path("app/public/{$this->path}/{$this->fileName}");
+        $srcPath = storage_path("app/public/{$this->path}/{$this->fileName}");
         $destPath = storage_path("app/public/{$this->path}/crop_{$w}x{$h}_{$this->fileName}");
 
-        $croppedImage = Image::load($scrPath)
-                        ->crop(300, 300, CropPosition::Center)
+        $croppedImage = Image::load($srcPath)
+                        ->crop($w, $h, CropPosition::Center)
                         ->save($destPath);
     }
 

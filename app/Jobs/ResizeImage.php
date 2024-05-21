@@ -37,7 +37,8 @@ class ResizeImage implements ShouldQueue
         $w = $this->w;
         $h = $this->h;
         $srcPath = storage_path("app/public/{$this->path}/{$this->fileName}");
-        $destPath = storage_path("app/public/{$this->path}/resize_{$w}x{$h}_{$this->fileName}");
+        // $destPath = storage_path("app/public/{$this->path}/resize_{$w}x{$h}_{$this->fileName}");
+        $destPath= $srcPath;
 
         $resizedImage = Image::load($srcPath)
                             ->width($w)

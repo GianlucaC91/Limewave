@@ -30,8 +30,11 @@ class Image extends Model
         return Storage::url($file);
     }
 
-    public function getUrl($w = null, $h = null)
+    public function getCropUrl($width, $height)
     {
-        return Image::getUrlByFilePath($this->path, $w, $h);
+        $path = dirname($this->path);
+        $croppedFileName = "crop_{$width}x{$height}_" . basename($this->path);
+        $croppedFilePath = "{$path}/{$croppedFileName}";
+        return asset("storage/{$croppedFilePath}");
     }
 }
