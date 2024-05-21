@@ -66,9 +66,9 @@ class ArticleCreate extends Component
             $path = $image->store($newFileName, 'public');
             $newImage= $article->images()->create(["path"=>$path]);
 
-            dispatch(new ResizeImage($newImage->path, 300, 300))->chain([
+            dispatch(new ResizeImage($newImage->path, 720, 720))->chain([
 
-                new CropImage($newImage->path, 300, 300)
+                new CropImage($newImage->path, 720, 720)
             ]);
         }
 
