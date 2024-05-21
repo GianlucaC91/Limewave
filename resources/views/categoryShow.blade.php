@@ -12,7 +12,7 @@
                         </div>
 
                         @forelse ($category->acceptedArticles()->latest()->get() as $article)
-                        <div class="col-3 card rounded-4 shadow-sm mx-2 mt-2 mb-5 px-0" style="width: 18rem;">
+                        <div class="col-3 card rounded-4 shadow-sm mx-2 mt-2 mb-5 px-0" style="width: 20rem;">
                             <p class="pt-2 ps-3 fw-bold d-flex align-items-center">
                                 <a href="{{ route('user.profile', ['user' => $article->user]) }}">
                                     <img src="{{ Storage::url($article->user->img) }}" class="card-img avatars me-2 mt-2">
@@ -42,10 +42,10 @@
                                 </a>
                             </div>
                         </div>
-                    @empty
+                        @empty
                         <p>{{ __("messages.noAds") }}</p>
                         <p><a href="{{ route('article.create') }}">{{ __("messages.postOne") }}</a></p>
-                    @endforelse
+                        @endforelse
 
                     </div>
                 </div>

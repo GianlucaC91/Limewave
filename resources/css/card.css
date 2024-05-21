@@ -13,7 +13,7 @@
 }
 
 .card:hover > div > .divImg {
-  transform: scale(1.2) !important;
+  transform: scale(1.1) !important;
 }
 
 .cardName{

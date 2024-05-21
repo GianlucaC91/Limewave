@@ -22,35 +22,12 @@
                         </p>
                         {{-- Inserire carosello --}}
                         <div class="overflow-hidden">
-                            <div id="carousel-{{ $article->id }}" class="carousel slide" style="height: 286px;" >
-                                <div class="carousel-inner">
-                                    @if ($article->images()->count()>=1)
-                                        
-                                    
-                                    @foreach ($article->images as $key => $image)
-                                        <div class="carousel-item position-relative @if ($key == 0) active @endif" style="height: 286px;">
-                                            
-                                            <img src="{{ $image->getCropUrl(720, 720) }}" class="immagineCaroselloFeed w-100" alt="...">
-                                        </div>
-                                    @endforeach
-
-                                    @else 
-                                    
-                                    <img src="/media/logo2024.png" alt="" class="w-100">
-                                    @endif
-                                </div>
-                                @if ($article->images()->count()>1)
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-{{ $article->id }}" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carousel-{{ $article->id }}" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
-                                @endif
-                                
-                            </div>
+                            @if($article->images->isNotEmpty())
+                                <img src="{{ $article->images->first()->getCropUrl(720, 720) }}" class="card-img-top divImg rounded-0" alt="...">
+                            @else
+                            <img src="../media/logo2024.png" class="card-img-top divImg rounded-0 w-100" alt="...">
+                            
+                            @endif
                         </div>
 
                         <div class="card-body">
