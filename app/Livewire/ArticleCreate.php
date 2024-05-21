@@ -16,18 +16,12 @@ class ArticleCreate extends Component
 {
     use WithFileUploads;
     
-    #[Validate('required', message: 'Il titolo è necessario')]
-    #[Validate('min:5', message: 'Il titolo deve contenere almeno 5 caratteri')]
-    public $title = "";
-    #[Validate('required', message: 'Il prezzo è necessario')]
-    #[Validate('numeric', message: 'Il prezzo deve essere un numero')]
-    #[Validate('min:0.01', message: 'Il prezzo non può essere zero')]
-    public $price = "";
-    #[Validate('required', message: 'Una descrizione è necessaria')]
-    #[Validate('min:10', message: 'La descrizione deve contenere almeno 10 caratteri')]
-    public $body = "";
-    #[Validate('required', message: 'La categoria è necessaria')]
-    public $category = "";
+    // #[Validate('required', message: 'Il titolo è necessario')]
+    // #[Validate('min:5', message: 'Il titolo deve contenere almeno 5 caratteri')]
+    public $title;
+    public $price;
+    public $body;
+    public $category;
     public $article;
 
     
@@ -36,6 +30,17 @@ class ArticleCreate extends Component
   
     public $images = [];
 
+    protected $rules = [
+        "title" => "required|min:5",
+        'price' => 'required|numeric|min:0.01',
+        'body' => 'required|min:10',
+        'category' => 'required',
+    ];
+
+    public function rules()
+    {
+        return $this->rules;
+    }
 
     public function store()
     {
@@ -61,7 +66,10 @@ class ArticleCreate extends Component
             $path = $image->store($newFileName, 'public');
             $newImage= $article->images()->create(["path"=>$path]);
 
-            dispatch(new ResizeImage($newImage->path, 286, 286));
+            dispatch(new ResizeImage($newImage->path, 300, 300))->chain([
+
+                new CropImage($newImage->path, 300, 300)
+            ]);
         }
 
         File::deleteDirectory(storage_path("/app/livewire-tmp"));

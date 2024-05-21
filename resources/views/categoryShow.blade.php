@@ -11,7 +11,7 @@
                                 {{ __('messages.' . $category->name) }}</h1>
                         </div>
 
-                        @forelse ($category->acceptedArticles as $article)
+                        @forelse ($category->acceptedArticles()->latest()->get() as $article)
                         <div class="col-3 card rounded-4 shadow-sm mx-2 mt-2 mb-5 px-0" style="width: 18rem;">
                             <p class="pt-2 ps-3 fw-bold d-flex align-items-center">
                                 <a href="{{ route('user.profile', ['user' => $article->user]) }}">
@@ -25,7 +25,7 @@
                             </p>
                             <div class="overflow-hidden">
                                 @if($article->images->isNotEmpty())
-                                    <img src="{{ $article->images->first()->getUrl(286,286) }}" class="card-img-top divImg rounded-0" alt="...">
+                                    <img src="{{ $article->images->first()->getCropUrl(300, 300) }}" class="card-img-top divImg rounded-0" alt="...">
                                 @else
                                 <img src="../media/logo2024.png" class="card-img-top divImg rounded-0 w-100" alt="...">
                                 
