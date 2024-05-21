@@ -33,7 +33,7 @@
                             <div class="carousel-inner">
                                 @foreach($article->images as $index => $image)
                                     <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                        <img src="{{ $image->getCropUrl(300, 300) }}" class="d-block w-100" alt="...">
+                                        <img src="{{ $image->getCropUrl(720, 720) }}" class="d-block w-100" alt="...">
                                     </div>
                                 @endforeach
                             </div>

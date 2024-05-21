@@ -25,7 +25,7 @@
                             </p>
                             <div class="overflow-hidden">
                                 @if($article->images->isNotEmpty())
-                                    <img src="{{ $article->images->first()->getCropUrl(300, 300) }}" class="card-img-top divImg rounded-0" alt="...">
+                                    <img src="{{ $article->images->first()->getCropUrl(720, 720) }}" class="card-img-top divImg rounded-0" alt="...">
                                 @else
                                 <img src="../media/logo2024.png" class="card-img-top divImg rounded-0 w-100" alt="...">
                                 
