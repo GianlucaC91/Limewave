@@ -14,6 +14,7 @@ class Revise extends Component
     {
         $this->pending_articles = Article::where("is_accepted", null)->get();
         $this->rejected_articles = Article::onlyTrashed()->get();
+        
     }
 
     public function acceptArticle(Article $article)

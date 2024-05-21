@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Jobs\CropImage;
+use App\Jobs\GoogleVisionSafeSearch;
 use App\Models\Article;
 use Livewire\Component;
 use App\Models\Category;
@@ -16,20 +17,15 @@ class ArticleCreate extends Component
 {
     use WithFileUploads;
     
-    // #[Validate('required', message: 'Il titolo è necessario')]
-    // #[Validate('min:5', message: 'Il titolo deve contenere almeno 5 caratteri')]
     public $title;
     public $price;
     public $body;
     public $category;
     public $article;
-
-    
-  
     public $temp_images = [];
-  
     public $images = [];
 
+    
     protected $rules = [
         "title" => "required|min:5",
         'price' => 'required|numeric|min:0.01',
@@ -66,7 +62,10 @@ class ArticleCreate extends Component
             $path = $image->store($newFileName, 'public');
             $newImage= $article->images()->create(["path"=>$path]);
 
-            dispatch(new ResizeImage($newImage->path, 720, 720));
+            dispatch(new ResizeImage($newImage->path, 720, 720))->chain([
+                new GoogleVisionSafeSearch($newImage->id),
+
+            ]);
         }
 
         File::deleteDirectory(storage_path("/app/livewire-tmp"));
@@ -75,7 +74,7 @@ class ArticleCreate extends Component
         
         $this->reset();
 
-        session()->flash('status', "Annuncio inserito con successo");
+        session()->flash('status', __("messages.announcement_created"));
     }
 
     // TEMPORARY IMAGES SHOWN

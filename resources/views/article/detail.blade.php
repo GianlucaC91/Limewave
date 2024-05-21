@@ -30,14 +30,6 @@
                                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
                                 @endforeach
                             </div>
-                            {{-- <div class="carousel-inner"> --}}
-                              {{-- <div class="carousel-indicators">
-                                @forelse($article->images as $index => $image)
-                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
-                                @empty
-                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                @endforelse
-                            </div> --}}
                             <div class="carousel-inner">
                                 @forelse($article->images as $index => $image)
                                     <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">

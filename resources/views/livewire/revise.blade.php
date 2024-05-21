@@ -45,7 +45,36 @@
                                     <td>{{Str::limit($pending->price, 14)}}</td>
                                     <td>{{Str::limit($pending->body, 14)}}</td>
                                     <td>
-                                        <i class="bi bi-card-image"></i>
+                                        {{-- @dd($categories) --}}
+                                        {{-- @foreach($pending_articles as $article) --}}
+                                                @foreach($pending->images as $image)
+                                                    <div class="col-6">
+                                                        <div class="card">
+                                                            <div class="row">
+                                                                <div class="col-12 col-md-4">
+                                                                    <img src="{{ $image->getCropUrl(720, 720) }}" alt="" class="img-fluid rounded-start">
+                                                                </div>
+                                                                <div class="col-12 col-md-8">
+                                                                    <div class="card-body">
+                                                                        <h5>Ratings:</h5>
+                                                                        <div class="row justify-content-center">
+                                                                            <div class="col-2">
+                                                                                <div class="text-center mx-auto {{$image->adult}}"></div>
+                                                                                <div class="text-center mx-auto {{$image->violence}}"></div>
+                                                                                <div class="text-center mx-auto {{$image->spoof}}"></div>
+                                                                                <div class="text-center mx-auto {{$image->racy}}"></div>
+                                                                                <div class="text-center mx-auto {{$image->medical}}"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                        {{-- @endforeach --}}
+
+
                                     </td>
                                     {{-- <td colspan="3" class="d-flex" height="65px;">
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"

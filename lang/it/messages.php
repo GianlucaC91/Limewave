@@ -58,6 +58,7 @@ return [
     "noAds" => "Non sono presenti annunci in questa categoria", //Non sono presenti annunci in questa categoria
     "revisorApplicants" => "Candidati",
     "previewMessage" => "Solo la prima immagine caricata sarà disponibile nell'anteprima dell'annuncio",
+    "announcement_created" => "Annoncio creato",
 
     //FOOTER
     "postOne" => "Pubblicane uno", //Pubblicane uno
