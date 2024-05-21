@@ -57,6 +57,7 @@ return [
     "browseCategories" => "Sfoglia le categorie", //Sfoglia le categorie
     "noAds" => "Non sono presenti annunci in questa categoria", //Non sono presenti annunci in questa categoria
     "revisorApplicants" => "Candidati",
+    "previewMessage" => "Solo la prima immagine caricata sarà disponibile nell'anteprima dell'annuncio",
 
     //FOOTER
     "postOne" => "Pubblicane uno", //Pubblicane uno
