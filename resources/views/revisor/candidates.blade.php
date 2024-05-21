@@ -12,7 +12,9 @@
                 <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
+                    @if (Auth::user()->is_admin)
                     <th scope="col">Actions</th>
+                    @endif
                 </tr>
             </thead>
             <tbody>
@@ -20,6 +22,7 @@
                     <tr>
                         <td>{{ $candidate->name }}</td>
                         <td>{{ $candidate->email }}</td>
+                        @if (Auth::user()->is_admin)
                         <td>
                             <form action="{{ route('revisor.candidates.accept', $candidate->id) }}" method="POST" class="d-inline">
                                 @csrf
@@ -34,6 +37,7 @@
                                 </button>
                             </form>
                         </td>
+                        @endif
                     </tr>
                 @endforeach
             </tbody>

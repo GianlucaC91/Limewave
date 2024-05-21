@@ -9,7 +9,7 @@
                         <h2 class="display-6 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">{{__("messages.RecentAnnouncements")}}</h2>
                         <p class="lead">{{__("messages.ads")}}</p>
                     </div>
-                        <p class="fw-bold ms-4">{{__("messages.allArticles")}}</p>                
+                        {{-- <p class="fw-bold ms-3">{{__("messages.allArticles")}}</p>                 --}}
                     @foreach ($articles as $article)
                     @if ($article->is_accepted || $article->user->is_admin)
                     {{-- article card --}}
