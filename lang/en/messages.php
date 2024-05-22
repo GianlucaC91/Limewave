@@ -87,6 +87,11 @@ return [
     "revisorApplicants" => "Candidates",
     "revisorCandidates"=>"Candidate reviewer",//Revisore candidati
     "notAuthorized" =>"You are not authorized",//Non sei autorizzato
+    "adRejected"=>  "Annuncio rifiutato",//Annuncio rifiutato
+    "rating" =>"Giudizi",//giudizi
+    "adultContent" =>"Contenuto per adulti",
+    "violentContent" =>"Contenuti violenti",//
+
 
     //Lavora con noi
     "joins"=> "Joins",//Entra a far parte

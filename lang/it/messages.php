@@ -61,7 +61,7 @@ return [
     "announcement_created" => "Annuncio creato, in fase di revisione",
     "revisorCandidates"=>"Revisore candidati",
     "alreadyReviewer" =>"Sei già revisore o la tua richiesta è in attesa, attendi che venga elaborata",
-    "newMessage"=>"El mensaje fue enviado exitosamente.",//Il messaggio è stato inviato correttamente
+    "newMessage"=>"Il messaggio è stato inviato correttamente",//Il messaggio è stato inviato correttamente
     "nowAuditor" => "è ora revisore",
     "UserAccepted"  => "Utente accettato come revisore",
     'UserRejected' => "Utente rifiutato",//Utente rifiutato   

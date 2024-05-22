@@ -18,7 +18,7 @@
                         <input type="email" name="email" class="form-control" id="email">
                     </div>
                     <div class="mb-3">
-                        <label for="password" class="form-label">{{__("messages.password")}}</label><span class="text-danger mx-1">*</span>
+                        <label for="password" class="form-label">{{__("messages.enterPassword")}}</label><span class="text-danger mx-1">*</span>
                         <input type="password" name="password" class="form-control" id="password">
                     <div class="mb-3">
                         <label for="password_confirmation" class="form-label">{{__("messages.confirmPassword")}}</label><span class="text-danger mx-1">*</span>
