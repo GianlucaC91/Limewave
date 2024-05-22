@@ -45,8 +45,15 @@
                                     <td>{{Str::limit($pending->price, 14)}}</td>
                                     <td>{{Str::limit($pending->body, 14)}}</td>
                                     <td>
+                                        <button type="button" class="btn py-2 mt-1 btnView" data-bs-toggle="modal" data-bs-target="#articleImages{{$pending->id}}"
+
+                                        {{-- data-bs-target="#article{{$pending->id}}" --}}
+                                        >
+                                        pippo
+                                        </button>
+
                                         {{-- GOOGLE VISION --}}
-                                        @foreach($pending->images as $image)
+                                        {{-- @foreach($pending->images as $image)
                                             <div class="col-6">
                                                 <div class="card">
                                                     <div class="row">
@@ -70,7 +77,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        @endforeach                                        
+                                        @endforeach   --}}
+                                        {{-- GOOGLE VISION --}}
 
                                     </td>                                   
                                     <td><button type="button" class="btn py-2 mt-1 btnView" data-bs-toggle="modal"
@@ -230,6 +238,76 @@
                 </div>
             </div>
             {{-- fine secondo container  --}}
+
+
+
+            {{-- modale  per visualizza immagini--}}
+
+            <!-- Modal -->
+            <div class="modal fade" id="articleImages{{$pending->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">{{$pending->title}}</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{-- modal body  --}}
+                            <div class="container">
+                                <div class="row">
+                                    {{-- carosello immagini articolo  --}}
+                                    <div class="col-12">
+
+                                        <div id="carouselExampleIndicators" class="detailCarousel carousel slide w-100">
+                                            <div class="carousel-indicators">
+                                                @foreach($pending->images as $index => $image)
+                                                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
+                                                @endforeach
+                                            </div>
+                                            <div class="carousel-inner">
+                                                @forelse($pending->images as $index => $image)
+                                                    <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                                        <img src="{{ $image->getCropUrl(720, 720) }}" class="d-block w-100" alt="...">
+                                                    </div>
+                                                @empty
+                                                    <div class="carousel-item active">
+                                                        <img src="/media/logo2024.png" class="d-block w-100" alt="...">
+                                                    </div>
+                                                @endforelse
+                                            </div>
+                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                                <span class="visually-hidden">{{ __("messages.previous") }}</span>
+                                            </button>
+                                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                                <span class="visually-hidden">{{ __("messages.next") }}</span>
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                    {{-- fine carosello immagini articolo  --}}
+
+                                    {{-- altro  --}}
+                                    <div class="col-12">
+
+
+                                    </div>
+                                    {{-- fine altro  --}}
+
+                                </div>
+                            </div>
+
+
+                            {{-- fine modal body  --}}
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+
 
 
 </div>
