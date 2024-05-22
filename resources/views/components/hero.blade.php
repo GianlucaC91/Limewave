@@ -9,7 +9,7 @@
                         <img src="./media/hero-image.png" class="heroImg position-absolute bottom-0 slideUp" id="immagine" loading="lazy">
                     </div>
                     <div class="col-12 col-md-6 p-5">
-                        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">LimeWave desktop</h1>
+                        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">LimeWave</h1>
                         <p class="lead mt-2">{{__("messages.hero")}}
                             .</p>
                         <p class="lead fs-3">{{__("messages.business")}}</p>
@@ -31,7 +31,7 @@
             <div class="container-fluid shadow d-block d-md-none">
                 <div class=" row align-items-center bg-white">
                     <div class="col-12 pt-5">
-                        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">LimeWave mobile</h1>
+                        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">LimeWave</h1>
                         <p class="lead">{{__("messages.hero")}}</p>
                     </div>
                     <div class="hero-mobile d-flex align-items-end ">
