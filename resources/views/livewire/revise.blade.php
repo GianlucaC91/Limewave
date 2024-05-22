@@ -83,10 +83,10 @@
                                                             {{-- carosello immagini articolo  --}}
                                                             <div class="col-12">
                                                                 
-                                                                <div id="carouselExampleIndicators" class="detailCarousel carousel slide w-100">
+                                                                <div id="carouselExampleIndicators{{$pending->id}}" class="detailCarousel carousel slide w-100">
                                                                     <div class="carousel-indicators">
                                                                         @foreach($pending->images as $index => $image)
-                                                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
+                                                                        <button type="button" data-bs-target="#carouselExampleIndicators{{$pending->id}}" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
                                                                         @endforeach
                                                                     </div>
                                                                     <div class="carousel-inner">
@@ -153,10 +153,10 @@
 
                                                                         
                                                                     </div>
-                                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators{{$pending->id}}" data-bs-slide="prev">
                                                                         <span class="visually-hidden">{{ __("messages.previous") }}</span>
                                                                     </button>
-                                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators{{$pending->id}}" data-bs-slide="next">
                                                                         <span class="visually-hidden">{{ __("messages.next") }}</span>
                                                                     </button>
                                                                 </div>
@@ -338,10 +338,10 @@
                                             {{-- carosello immagini articolo  --}}
                                             <div class="col-12">
                                                 
-                                                <div id="carouselExampleIndicatorsRejected" class="detailCarousel carousel slide w-100">
+                                                <div id="carouselExampleIndicatorsRejected{{$rejected->id}}" class="detailCarousel carousel slide w-100">
                                                     <div class="carousel-indicators">
                                                         @foreach($rejected->images as $index => $image)
-                                                        <button type="button" data-bs-target="#carouselExampleIndicatorsRejected" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
+                                                        <button type="button" data-bs-target="#carouselExampleIndicatorsRejected{{$rejected->id}}" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
                                                         @endforeach
                                                     </div>
                                                     <div class="carousel-inner">
@@ -409,10 +409,10 @@
                                                         
                                                         
                                                     </div>
-                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicatorsRejected" data-bs-slide="prev">
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicatorsRejected{{$rejected->id}}" data-bs-slide="prev">
                                                         <span class="visually-hidden">{{ __("messages.previous") }}</span>
                                                     </button>
-                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicatorsRejected" data-bs-slide="next">
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicatorsRejected{{$rejected->id}}" data-bs-slide="next">
                                                         <span class="visually-hidden">{{ __("messages.next") }}</span>
                                                     </button>
                                                 </div>
