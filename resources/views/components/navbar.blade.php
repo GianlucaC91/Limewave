@@ -106,6 +106,7 @@ use App\Models\User;
                                         <span class="text-s mx-2 badge rounded-pill bg-a pt-2">{{Article::reviseNotification()}}</span>
                                     </li>
                                     @endif
+                                    @if(Auth::user()->is_admin)
                                     <li class="d-flex">
                                         <a class="dropdown-item text-p link-custom" href="{{route("revisor.candidates")}}">
                                             <i class="bi bi-person-check"></i>  {{__("messages.revisorApplicants")}}
@@ -114,6 +115,7 @@ use App\Models\User;
                                             {{User::countPendingRevisors()}}
                                         </span>
                                     </li>
+                                    @endif
                                     <li>
                                         <a class="dropdown-item text-p link-custom" href="{{ route('article.create') }}"><i class="bi bi-megaphone"></i> {{__("messages.newAnnouncement")}}</a>
                                     </li>

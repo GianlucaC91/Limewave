@@ -37,7 +37,7 @@ return [
     "annuoncementTitle" => " Titolo annuncio",//titolo annuncio
     "annuoncementDescription" => " Descrizione annunci",//descrizione annuncio
     "annuoncementDetail" => " Dettaglio annuncio",//dettaglio annuncio
-    "readMore" => " leggi di più",//leggi di più
+    "readMore" => "Leggi di più",//leggi di più
     "description" => " Descrizione",//Descrizione
     "becomeAuditor" => "Diventa revisore",// Diventa revisore
     "name" => "Nome",
