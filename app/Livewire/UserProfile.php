@@ -63,7 +63,7 @@ class UserProfile extends Component
         }
 
         $this->user->save();
-        session()->flash("status", "Profilo modificato correttamente");
+        session()->flash("status", __("messages.profileEdited"));
     }
 
     // REFRESH USER-PROFILE DATA

@@ -63,6 +63,9 @@ return [
     "nowAuditor" => "he is now an auditor",//è ora revisore
     "userAccepted"  => "User accepted as a reviewer",//"Utente accettato come revisore",
     'UserRejected' => "User rejected",//Utente rifiutato    
+    "adRejected"=>  "Ad rejected",//Annuncio rifiutato
+    "approval"=>"You must log in to cancel approval.",//Devi effettuare l\'accesso per annullare l\'approvazione.'
+    "adRestored" => "Ad restored",//Annuncio ripristinato
 
     //FOOTER
     "postOne" => "Post one", //Pubblicane uno

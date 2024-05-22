@@ -62,8 +62,14 @@ return [
     "status"=>"Artículo insertado con éxito",//articolo inserito con successo
     "revisorCandidates"=>"Revisor de candidatos",//Revisore candidati
     "notAuthorized" =>"Usted no está autorizado",//Non sei autorizzato
+    "adRejected"=>  "Anuncio rechazado",//Annuncio rifiutato
+    "approval"=>"Debe iniciar sesión para cancelar la aprobación.",//Devi effettuare l\'accesso per annullare l\'approvazione.'
+    "adRestored" => "Anuncio restaurado",//Annuncio ripristinato
+    "deletedP"=> "Anuncio eliminado permanentemente",//Annuncio eliminato definitivamente
+    "profileEdited" => "Perfil editado exitosamente",//Profilo modificato correttamente
+    "rating" =>"Calificaciones",//giudizi
+    "adultContent" =>"Adult content",
 
-    
     //FOOTER
     "postOne" => "Publicar uno", //Pubblicane uno
     "workWithUs" => "Trabaja con nosotros", //lavora con noi

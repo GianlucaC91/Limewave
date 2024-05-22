@@ -66,6 +66,10 @@ return [
     "UserAccepted"  => "Utente accettato come revisore",
     'UserRejected' => "Utente rifiutato",//Utente rifiutato   
     "notAuthorized" =>"Non sei autorizzato",//
+    "adRejected"=>  "Annuncio rifiutato",//Annuncio rifiutato
+    "rating" =>"Giudizi",//giudizi
+    "adultContent" =>"Contenuto per adulti",
+    "violentContent" =>"Contenuti violenti",//
 
     //FOOTER
     "postOne" => "Pubblicane uno", //Pubblicane uno
@@ -86,7 +90,10 @@ return [
     "reliability" => "Affidabilità", //Affidabilità
     "safety" => "Sicurezza", //sicurezza
     "requiredField" => "I campi sono obbligatori",
-
+    "approval"=>"Devi effettuare l'accesso per annullare l'approvazione.",
+    "adRestored" => "Annuncio ripristinato",//
+    "deletedP"=> "Annuncio eliminato definitivamente",//Annuncio eliminato definitivamente
+    "profileEdited" => "Profilo modificato correttamente",
 
     //Lavora con noi
     "joins"=> "Entra a far parte",

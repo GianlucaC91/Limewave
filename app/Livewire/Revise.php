@@ -26,7 +26,7 @@ class Revise extends Component
     public function rejectArticle(Article $article)
     {
         $article->delete();
-        session()->flash('status', 'Annuncio rifiutato');
+        session()->flash('status', __("messages.adRejected"));
         $this->mount();
     }
 
@@ -36,7 +36,7 @@ class Revise extends Component
             $article = Article::withTrashed()->find($articleId);
             if ($article) {
                 $article->restore();
-                session()->flash('status', 'Annuncio ripristinato.');
+                session()->flash('status', __("messages.adRestored"));
                 $this->mount();
             }
         }
@@ -47,7 +47,7 @@ class Revise extends Component
         $article = Article::withTrashed()->find($id);
         if ($article) {
             $article->forceDelete();
-            session()->flash("status", "Annuncio eliminato definitivamente");
+            session()->flash("status", __("messages.deletedP"));
             $this->mount();
         }
     }

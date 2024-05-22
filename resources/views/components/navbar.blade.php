@@ -108,7 +108,7 @@ use App\Models\User;
                                     @endif
                                     <li class="d-flex">
                                         <a class="dropdown-item text-p link-custom" href="{{route("revisor.candidates")}}">
-                                            <i class="bi bi-person-check"></i> Candidati
+                                            <i class="bi bi-person-check"></i>  {{__("messages.revisorApplicants")}}
                                         </a>
                                         <span class="text-s mx-2 badge rounded-pill bg-a pt-2">
                                             {{User::countPendingRevisors()}}

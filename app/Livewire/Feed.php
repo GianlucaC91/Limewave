@@ -31,11 +31,11 @@ class Feed extends Component
         $article = Article::find($articleId);
         if ($article) {
             $article->update(['is_accepted' => null]);
-            session()->flash('status', 'Annuncio rifiutato.');
+            session()->flash('status', __("messages.adRejected"));
             $this->mount(); // Reload the articles after undoing approval
         }
     } else {
-        session()->flash('status', 'Devi effettuare l\'accesso per annullare l\'approvazione.');
+        session()->flash('status', __("messages.approval"));
     }
 }
 }
