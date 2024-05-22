@@ -60,6 +60,9 @@ return [
     "previewMessage" => "Solo la primera imagen cargada estará disponible en la vista previa del anuncio",
     "status"=>"Artículo insertado con éxito",//articolo inserito con successo
     "revisorCandidates"=>"Revisor de candidatos",//Revisore candidati
+    "notAuthorized" =>"Usted no está autorizado",//Non sei autorizzato
+
+    
     //FOOTER
     "postOne" => "Publicar uno", //Pubblicane uno
     "workWithUs" => "Trabaja con nosotros", //lavora con noi
@@ -79,7 +82,11 @@ return [
     "safety" => "Seguridad", //sicurezza
     "requiredField" => "Todos los campos son obligatorios",//i campi sono obbligatori 
     "alreadyReviewer" =>"Ya eres revisor o tu solicitud está pendiente, espera a que sea procesada",//Sei già revisore o la tua richiesta è in attesa, attendi che venga elaborata
-    "newMessage"=>"",////Il messaggio è stato inviato correttamente
+    "newMessage"=>"El mensaje fue enviado exitosamente",////Il messaggio è stato inviato correttamente
+    "nowAuditor" => "ahora es auditor",//è ora revisore
+    "UserAccepted"  => "Usuario aceptado como revisor",//"Utente accettato come revisore",
+    'UserRejected' => "Usuario rechazada",//Utente rifiutato   
+
 
     //Lavora con noi
     "joins"=> "Entra a una parte lejana",//Entra a far parte

@@ -22,6 +22,6 @@ class IsRevisor
             return $next($request);
         }
     
-        return redirect(route('homepage'))->with('status', 'Non sei autorizzato');
+        return redirect(route('homepage'))->with('status', __("messages.notAuthorized"));
     }
 }

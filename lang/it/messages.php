@@ -62,7 +62,10 @@ return [
     "revisorCandidates"=>"Revisore candidati",
     "alreadyReviewer" =>"Sei già revisore o la tua richiesta è in attesa, attendi che venga elaborata",
     "newMessage"=>"El mensaje fue enviado exitosamente.",//Il messaggio è stato inviato correttamente
-
+    "nowAuditor" => "è ora revisore",
+    "UserAccepted"  => "Utente accettato come revisore",
+    'UserRejected' => "Utente rifiutato",//Utente rifiutato   
+    "notAuthorized" =>"Non sei autorizzato",//
 
     //FOOTER
     "postOne" => "Pubblicane uno", //Pubblicane uno

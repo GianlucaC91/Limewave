@@ -49,7 +49,7 @@ class RevisorController extends Controller
     
     public function makeRevisor(User $user) {
         Artisan::call('limewave:make-revisor', ['email'=>$user->email]);
-        return redirect('/')->with('status', 'Utente ' . $user->name . ' è ora revisore');
+        return redirect('/')->with('status', __('messages.user')  . $user->name .  __('messages.nowAuditor'));
     }
     
     
@@ -81,7 +81,7 @@ class RevisorController extends Controller
         $user->is_revisor = true;
         $user->save();
 
-        return redirect()->route('revisor.candidates')->with('success', 'User accepted as revisor');
+        return redirect()->route('revisor.candidates')->with('success', __('messages.userAccepted'));
     }
 
     public function rejectCandidate(User $user)
@@ -89,6 +89,6 @@ class RevisorController extends Controller
         $user->is_revisor = false;
         $user->save();
 
-        return redirect()->route('revisor.candidates')->with('success', 'User rejected');
+        return redirect()->route('revisor.candidates')->with('success', __('messages.UserRejected'));
     }
 }
