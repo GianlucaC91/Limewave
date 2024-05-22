@@ -58,8 +58,11 @@ return [
     "noAds" => "There are no ads in this category", //Non sono presenti annunci in questa categoria
     "requiredField" => "All fields are mandatory", //i campi sono obbligatori
     "previewMessage" => "Only the first image will be visible in the preview",
-    "announcement_created" => "Announcemente created",
-
+    "announcement_created" => "Announcement created, pending for revision",
+    "alreadyReviewer" =>"You are already a reviewer or your request is pending, please wait for it to be processed", //"Sei già revisore o la tua richiesta è in attesa, attendi che venga elaborata",
+    "nowAuditor" => "he is now an auditor",//è ora revisore
+    "userAccepted"  => "User accepted as a reviewer",//"Utente accettato come revisore",
+    'UserRejected' => "User rejected",//Utente rifiutato    
 
     //FOOTER
     "postOne" => "Post one", //Pubblicane uno
@@ -80,7 +83,8 @@ return [
     "safety" => "Safety", //sicurezza
     "revisorApplicants" => "Candidates",
     "revisorCandidates"=>"Candidate reviewer",//Revisore candidati
-    
+    "notAuthorized" =>"You are not authorized",//Non sei autorizzato
+
     //Lavora con noi
     "joins"=> "Joins",//Entra a far parte
     "team" => "of our team",//del nostro team

@@ -58,7 +58,14 @@ return [
     "noAds" => "Non sono presenti annunci in questa categoria", //Non sono presenti annunci in questa categoria
     "revisorApplicants" => "Candidati",
     "previewMessage" => "Solo la prima immagine caricata sarà disponibile nell'anteprima dell'annuncio",
-    "announcement_created" => "Annuncio creato",
+    "announcement_created" => "Annuncio creato, in fase di revisione",
+    "revisorCandidates"=>"Revisore candidati",
+    "alreadyReviewer" =>"Sei già revisore o la tua richiesta è in attesa, attendi che venga elaborata",
+    "newMessage"=>"El mensaje fue enviado exitosamente.",//Il messaggio è stato inviato correttamente
+    "nowAuditor" => "è ora revisore",
+    "UserAccepted"  => "Utente accettato come revisore",
+    'UserRejected' => "Utente rifiutato",//Utente rifiutato   
+    "notAuthorized" =>"Non sei autorizzato",//
 
     //FOOTER
     "postOne" => "Pubblicane uno", //Pubblicane uno

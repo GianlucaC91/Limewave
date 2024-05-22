@@ -17,7 +17,7 @@ class RevisorController extends Controller
     public function revisorForm (){
     $user = Auth::user();
     if ($user->is_revisor || $user->is_revisor === null) {
-        return redirect('/')->with('status', 'Sei già revisore o la tua richiesta è in attesa, attendi che venga elaborata');
+        return redirect('/')->with('status', __('messages.alreadyReviewer'));
     } else {
 
     return view('revisor.form', compact('user'));
@@ -43,13 +43,13 @@ class RevisorController extends Controller
         Mail::to('presto@noreply.com')->send (new AdminMail($contactMail, $user));
         $user->is_revisor = null;
         $user->save();
-        return redirect()->back()->with("status","Il messaggio è stato inviato correttamente");
+        return redirect()->back()->with("status" ,__('messages.newMessage'));
     }
 
     
     public function makeRevisor(User $user) {
         Artisan::call('limewave:make-revisor', ['email'=>$user->email]);
-        return redirect('/')->with('status', 'Utente ' . $user->name . ' è ora revisore');
+        return redirect('/')->with('status', __('messages.user')  . $user->name .  __('messages.nowAuditor'));
     }
     
     
@@ -81,7 +81,7 @@ class RevisorController extends Controller
         $user->is_revisor = true;
         $user->save();
 
-        return redirect()->route('revisor.candidates')->with('success', 'User accepted as revisor');
+        return redirect()->route('revisor.candidates')->with('success', __('messages.userAccepted'));
     }
 
     public function rejectCandidate(User $user)
@@ -89,6 +89,6 @@ class RevisorController extends Controller
         $user->is_revisor = false;
         $user->save();
 
-        return redirect()->route('revisor.candidates')->with('success', 'User rejected');
+        return redirect()->route('revisor.candidates')->with('success', __('messages.UserRejected'));
     }
 }
