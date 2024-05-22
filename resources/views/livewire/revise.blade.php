@@ -151,7 +151,6 @@
                                                                         </div>
                                                                         @endforelse
 
-                                                                        {{-- <span class="badge text-bg-dark">Dark</span> --}}
                                                                         
                                                                     </div>
                                                                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -380,8 +379,23 @@
                                                                 {{-- Fine google vision --}}
                                                                 
                                                                 {{-- Altro google vision --}}
-                                                                <div class="col-8">
-                                                                    
+                                                                <div class="col-8 ps-5 my-2 pe-4">
+                                                                    <h5>Labels:</h5>
+                                                                    {{-- Labels --}}
+                                                                    <div class="">
+                                                                        <?php
+                                                                        $image->labels = trim($image->labels,"[]");
+                                                                        $labels = explode(',' , $image->labels);
+                                                                        $labels= array_map(function($word) {
+                                                                            return str_replace('"', '', $word);
+                                                                        }, $labels);
+                                                                        ?>
+                                                                        {{-- End Labels Logic --}}
+                                                                        @foreach ($labels as $label)
+                                                                        <p class="badge rounded-pill bg-s fs-6 text-p">{{$label}}</p>
+                                                                        @endforeach
+                                                                    </div>
+                                                                    {{-- End Labels --}}
                                                                 </div>
                                                                 {{--Fine altro google vision --}}
                                                                 
@@ -416,17 +430,9 @@
                                     
                                 </div>
                                 <div class="modal-footer">
-                                    <button data-bs-dismiss="modal" wire:click='rejectArticle({{$rejected}})'                                            
-                                    class="btn btnDelete">
-                                    {{__("messages.refuse")}}
-                                </button>
-                                
-                                <button data-bs-dismiss="modal" wire:click='acceptArticle({{$rejected}})'                                            
-                                class="btn btnAccept">
-                                {{__("messages.accept")}}
-                            </button>
+                                    <button type="button" class="btn btnView" data-bs-dismiss="modal">Chiudi</button>
+                                </div>
                         </div>
-                    </div>
         </div>
     </div>
     @empty
