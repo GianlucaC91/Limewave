@@ -265,15 +265,44 @@
                                                 @endforeach
                                             </div>
                                             <div class="carousel-inner">
+
+
                                                 @forelse($pending->images as $index => $image)
                                                     <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                                                         <img src="{{ $image->getCropUrl(720, 720) }}" class="d-block w-100" alt="...">
+                                                        <div class="row pb-4">
+                                                            <div class="col-4 my-2 pe-0">
+                                                                <h5>Ratings:</h5>
+                                                                <div class="d-flex">
+                                                                    <p>Contenuti per adulti</p>
+                                                                    <span class="{{$image->adult}} mx-2"></span>
+                                                                </div>
+                                                                <div class="d-flex">
+                                                                    <p>Contenuti violenti</p>
+                                                                    <span class="{{$image->violence}} mx-2"></span>
+                                                                </div>
+                                                                <div class="d-flex">
+                                                                    <p>Contenuti ingannevoli</p>
+                                                                    <span class="{{$image->spoof}} mx-2"></span>
+                                                                </div>
+                                                                <div class="d-flex">
+                                                                    <p>Contenuti ammicanti</p>
+                                                                    <span class="{{$image->racy}} mx-2"></span>
+                                                                </div>
+                                                                <div class="d-flex">
+                                                                    <p>Contenuti meidici</p>
+                                                                    <span class="{{$image->medical}} mx-2"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 @empty
                                                     <div class="carousel-item active">
                                                         <img src="/media/logo2024.png" class="d-block w-100" alt="...">
                                                     </div>
                                                 @endforelse
+
+
                                             </div>
                                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                                                 <span class="visually-hidden">{{ __("messages.previous") }}</span>
@@ -287,11 +316,41 @@
                                     {{-- fine carosello immagini articolo  --}}
 
                                     {{-- altro  --}}
-                                    <div class="col-12">
-
+                                    <div class="col-4">
+                                        {{-- GOOGLE VISION --}}
+                                        {{-- @foreach($pending->images as $image)
+                                                <div class="card">
+                                                    <div class="row">
+                                                        <div class="col-12 col-md-4">
+                                                            <img src="{{ $image->getCropUrl(720, 720) }}" alt="" class="img-fluid rounded-start">
+                                                        </div>
+                                                        <div class="col-12 col-md-8">
+                                                            <div class="card-body">
+                                                                <h5>Ratings:</h5>
+                                                                <div class="row justify-content-center">
+                                                                    <div class="col-2">
+                                                                        <div class="text-center mx-auto {{$image->adult}}"></div>
+                                                                        <div class="text-center mx-auto {{$image->violence}}"></div>
+                                                                        <div class="text-center mx-auto {{$image->spoof}}"></div>
+                                                                        <div class="text-center mx-auto {{$image->racy}}"></div>
+                                                                        <div class="text-center mx-auto {{$image->medical}}"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        @endforeach   --}}
+                                        {{-- GOOGLE VISION --}}
 
                                     </div>
                                     {{-- fine altro  --}}
+
+                                    {{-- altro ancora --}}
+                                    <div class="col-8">
+
+                                    </div>
+                                    {{-- fine altro ancora --}}
 
                                 </div>
                             </div>
