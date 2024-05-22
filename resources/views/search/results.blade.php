@@ -12,7 +12,7 @@
                             </h1>
                         </div>
                         @forelse ($articles as $article)        
-                        <div class="card col-3 rounded-4 shadow-sm mx-2 mt-2 mb-5 px-0" style="width: 18rem;">
+                        <div class="card col-3 rounded-4 shadow-sm mx-2 mt-2 mb-5 px-0" style="width: 20rem;">
                             <p class="pt-2 ps-3 fw-bold d-flex align-items-center"><a
                                 href="{{ route('user.profile', ['user' => $article->user]) }}"><img src="{{Storage::url($article->user->img)}}" class="card-img avatars me-2 mt-2"></a>
                                 <span class="mt-1 cardName"><a class="cardName"
@@ -20,18 +20,22 @@
                                 </span>
                             </p>
                             <div class="overflow-hidden">
-                                <img src="https://picsum.photos/20{{ $article->id }}" class="card-img-top rounded-0 divImg"
-                                alt="...">
+                                @if($article->images->isNotEmpty())
+                                <img src="{{ $article->images->first()->getCropUrl(720, 720) }}" class="card-img-top divImg rounded-0" alt="...">
+                            @else
+                            <img src="../media/logo2024.png" class="card-img-top divImg rounded-0 w-100" alt="...">
+                            
+                            @endif
                             </div>
     
                             <div class="card-body">
                                 <h5 class="card-title">{{ Str::limit($article->title, 20)}}</h5>
                                 <p class="card-text">{{__("messages.category")}}
-                                    : {{ $article->category->name }}</p>
+                                    : {{__("messages." . $article->category->name) }}</p>
                                 <p class="card-text">{{ Str::limit($article->body, 20) }}</p>
                             </div>
                             <div class="card-body">
-                                <p class="card-text">{{__("messages.price")}}
+                                <p class="card-text h5">{{__("messages.price")}}
                                     : {{ $article->price }} €</p>
                                 <span class="mb-1"><a href="{{ route('article.detail', compact('article')) }}"
                                 class="btn btn-accent rounded-0 fw-bold shadow">{{__("messages.details")}}
