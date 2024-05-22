@@ -83,10 +83,10 @@
                                                             {{-- carosello immagini articolo  --}}
                                                             <div class="col-12">
                                                                 
-                                                                <div id="carouselExampleIndicators" class="detailCarousel carousel slide w-100">
+                                                                <div id="carouselExampleIndicators{{$pending->id}}" class="detailCarousel carousel slide w-100">
                                                                     <div class="carousel-indicators">
                                                                         @foreach($pending->images as $index => $image)
-                                                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
+                                                                        <button type="button" data-bs-target="#carouselExampleIndicators{{$pending->id}}" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
                                                                         @endforeach
                                                                     </div>
                                                                     <div class="carousel-inner">
@@ -102,26 +102,32 @@
                                                                                     <h5>Ratings:</h5>
                                                                                     <div class="d-flex">
                                                                                         <p>Contenuti per adulti</p>
-                                                                                        <span class="{{$image->adult}} mx-2"></span>
+                                                                                        <span class="{{$image->adult}} mt-2 mx-2"></span>
                                                                                     </div>
                                                                                     <div class="d-flex">
                                                                                         <p>Contenuti violenti</p>
-                                                                                        <span class="{{$image->violence}} mx-2"></span>
+                                                                                        <span class="{{$image->violence}} mt-2 mx-2"></span>
                                                                                     </div>
                                                                                     <div class="d-flex">
                                                                                         <p>Contenuti ingannevoli</p>
-                                                                                        <span class="{{$image->spoof}} mx-2"></span>
+                                                                                        <span class="{{$image->spoof}} mt-2 mx-2"></span>
                                                                                     </div>
                                                                                     <div class="d-flex">
                                                                                         <p>Contenuti ammicanti</p>
-                                                                                        <span class="{{$image->racy}} mx-2"></span>
+                                                                                        <span class="{{$image->racy}} mt-2 mx-2"></span>
                                                                                     </div>
                                                                                     <div class="d-flex">
                                                                                         <p>Contenuti medici</p>
-                                                                                        <span class="{{$image->medical}} mx-2"></span>
+                                                                                        <span class="{{$image->medical}} mt-2 mx-2"></span>
                                                                                     </div>
+                                                                                </div>
+                                                                                {{-- Fine google vision --}}
+                                                                                
+                                                                                {{-- Altro google vision --}}
+                                                                                <div class="col-8 ps-5 my-2 pe-4">
+                                                                                    <h5>Labels:</h5>
                                                                                     {{-- Labels --}}
-                                                                                    <div>
+                                                                                    <div class="">
                                                                                         <?php
                                                                                         $image->labels = trim($image->labels,"[]");
                                                                                         $labels = explode(',' , $image->labels);
@@ -131,19 +137,12 @@
                                                                                         ?>
                                                                                         {{-- End Labels Logic --}}
                                                                                         @foreach ($labels as $label)
-                                                                                        <p>{{$label}}</p>
+                                                                                        <p class="badge rounded-pill bg-s fs-6 text-p">{{$label}}</p>
                                                                                         @endforeach
                                                                                     </div>
                                                                                     {{-- End Labels --}}
                                                                                 </div>
-                                                                                {{-- Fine google vision --}}
-                                                                                
-                                                                                {{-- Altro google vision --}}
-                                                                                <div class="col-8">
-                                                                                    
-                                                                                </div>
                                                                                 {{--Fine altro google vision --}}
-                                                                                
                                                                             </div>
                                                                         </div>
                                                                         @empty
@@ -151,13 +150,13 @@
                                                                             <img src="/media/logo2024.png" class="d-block w-100" alt="...">
                                                                         </div>
                                                                         @endforelse
-                                                                        
+
                                                                         
                                                                     </div>
-                                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators{{$pending->id}}" data-bs-slide="prev">
                                                                         <span class="visually-hidden">{{ __("messages.previous") }}</span>
                                                                     </button>
-                                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators{{$pending->id}}" data-bs-slide="next">
                                                                         <span class="visually-hidden">{{ __("messages.next") }}</span>
                                                                     </button>
                                                                 </div>
@@ -339,10 +338,10 @@
                                             {{-- carosello immagini articolo  --}}
                                             <div class="col-12">
                                                 
-                                                <div id="carouselExampleIndicatorsRejected" class="detailCarousel carousel slide w-100">
+                                                <div id="carouselExampleIndicatorsRejected{{$rejected->id}}" class="detailCarousel carousel slide w-100">
                                                     <div class="carousel-indicators">
                                                         @foreach($rejected->images as $index => $image)
-                                                        <button type="button" data-bs-target="#carouselExampleIndicatorsRejected" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
+                                                        <button type="button" data-bs-target="#carouselExampleIndicatorsRejected{{$rejected->id}}" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
                                                         @endforeach
                                                     </div>
                                                     <div class="carousel-inner">
@@ -380,8 +379,23 @@
                                                                 {{-- Fine google vision --}}
                                                                 
                                                                 {{-- Altro google vision --}}
-                                                                <div class="col-8">
-                                                                    
+                                                                <div class="col-8 ps-5 my-2 pe-4">
+                                                                    <h5>Labels:</h5>
+                                                                    {{-- Labels --}}
+                                                                    <div class="">
+                                                                        <?php
+                                                                        $image->labels = trim($image->labels,"[]");
+                                                                        $labels = explode(',' , $image->labels);
+                                                                        $labels= array_map(function($word) {
+                                                                            return str_replace('"', '', $word);
+                                                                        }, $labels);
+                                                                        ?>
+                                                                        {{-- End Labels Logic --}}
+                                                                        @foreach ($labels as $label)
+                                                                        <p class="badge rounded-pill bg-s fs-6 text-p">{{$label}}</p>
+                                                                        @endforeach
+                                                                    </div>
+                                                                    {{-- End Labels --}}
                                                                 </div>
                                                                 {{--Fine altro google vision --}}
                                                                 
@@ -395,10 +409,10 @@
                                                         
                                                         
                                                     </div>
-                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicatorsRejected" data-bs-slide="prev">
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicatorsRejected{{$rejected->id}}" data-bs-slide="prev">
                                                         <span class="visually-hidden">{{ __("messages.previous") }}</span>
                                                     </button>
-                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicatorsRejected" data-bs-slide="next">
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicatorsRejected{{$rejected->id}}" data-bs-slide="next">
                                                         <span class="visually-hidden">{{ __("messages.next") }}</span>
                                                     </button>
                                                 </div>
@@ -416,17 +430,9 @@
                                     
                                 </div>
                                 <div class="modal-footer">
-                                    <button data-bs-dismiss="modal" wire:click='rejectArticle({{$rejected}})'                                            
-                                    class="btn btnDelete">
-                                    {{__("messages.refuse")}}
-                                </button>
-                                
-                                <button data-bs-dismiss="modal" wire:click='acceptArticle({{$rejected}})'                                            
-                                class="btn btnAccept">
-                                {{__("messages.accept")}}
-                            </button>
+                                    <button type="button" class="btn btnView" data-bs-dismiss="modal">Chiudi</button>
+                                </div>
                         </div>
-                    </div>
         </div>
     </div>
     @empty

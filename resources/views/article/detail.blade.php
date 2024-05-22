@@ -13,14 +13,18 @@
                 <div class="container-fluid shadow">
                     <div class="row bg-white justify-content-between ">
                         {{-- div per il testo a sinistra --}}
-                        <div class="col-12 col-md-6 px-5 py-4 order-2 order-md-1">
-                                {{-- ARTICLE TITLE --}}
-                            <h1 class="display-6 fw-bold">{{$article->title}}</h1>
-                                {{-- ARTICLE USER --}}
-                            <h3 class="fs-4 ">{{__("messages.postedBy")}}
-                              {{$article->user->name}}</h3>
-                                {{-- ARTICLE BODY --}}
-                            <p class="lead">{{$article->body}}</p>
+                        <div class="col-12 col-md-6 px-5 py-4 order-2 order-md-1 d-flex flex-column justify-content-between">
+                            <div>
+                                    {{-- ARTICLE TITLE --}}
+                                <h1 class="display-6 fw-bold">{{$article->title}}</h1>
+                                <h4 class="lead mt-2">{{__("messages.category")}}: {{__("messages." . $article->category->name) }}</h4>
+                                    {{-- ARTICLE USER --}}
+                                <h3 class="fs-4 mt-3">{{__("messages.postedBy")}}
+                                {{$article->user->name}}</h3>
+                                    {{-- ARTICLE BODY --}}
+                                <p class="lead">{{$article->body}}</p>
+                            </div>
+                            <h3>Prezzo: {{$article->price}}€</h3>
                         </div>
                             {{-- CAROUSEL a destra--}}
                         <div class="col-12 col-md-6 d-flex align-items-center justify-content-end order-1 order-md-2">
