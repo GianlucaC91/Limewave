@@ -20,6 +20,11 @@ use App\Models\User;
                                 <a class="nav-link text-p link-custom" aria-current="page"
                                 href="{{ route('homepage') }}">Home</a>
                             </li>
+                            @auth
+                            <li class="nav-item">
+                                <a href="{{ route('article.create') }}" class="nav-link text-p link-custom">{{__("messages.uploadAnAd")}}</a>
+                            </li>
+                            @endauth
                             {{-- CATEGORY DROPDOWN --}}
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle text-p link-custom" href="#" role="button"
@@ -151,7 +156,11 @@ use App\Models\User;
             <li class="nav-item">
                 <a class="nav-link text-p" aria-current="page" href="{{ route('homepage') }}">Home</a>
             </li>
-            
+            @auth
+            <li class="nav-item">
+                <a href="{{ route('article.create') }}" class="nav-link text-p">{{__("messages.uploadAnAd")}}</a>
+            </li>
+            @endauth
             {{-- CATEGORY DROPDOWN --}}
             <li class="nav-item dropdown border-0">
                 
