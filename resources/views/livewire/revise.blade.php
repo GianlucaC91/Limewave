@@ -45,11 +45,8 @@
                                     <td>{{Str::limit($pending->price, 14)}}</td>
                                     <td>{{Str::limit($pending->body, 14)}}</td>
                                     <td>
-                                        <button type="button" class="btn py-2 mt-1 btnView" data-bs-toggle="modal" data-bs-target="#articleImages{{$pending->id}}"
-
-                                        {{-- data-bs-target="#article{{$pending->id}}" --}}
-                                        >
-                                        pippo
+                                        <button type="button" class="btn py-2 mt-1 btnViewImg" data-bs-toggle="modal" data-bs-target="#articleImages{{$pending->id}}">
+                                            <i class="bi bi-image"></i>
                                         </button>
 
                                         {{-- GOOGLE VISION --}}
@@ -270,7 +267,9 @@
                                                 @forelse($pending->images as $index => $image)
                                                     <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
                                                         <img src="{{ $image->getCropUrl(720, 720) }}" class="d-block w-100" alt="...">
-                                                        <div class="row pb-4">
+                                                        <div class="row pb-5">
+
+                                                            {{-- Google vision --}}
                                                             <div class="col-4 my-2 pe-0">
                                                                 <h5>Ratings:</h5>
                                                                 <div class="d-flex">
@@ -294,6 +293,14 @@
                                                                     <span class="{{$image->medical}} mx-2"></span>
                                                                 </div>
                                                             </div>
+                                                            {{-- Fine google vision --}}
+
+                                                            {{-- Altro google vision --}}
+                                                            <div class="col-8">
+                                                            
+                                                            </div>
+                                                             {{--Fine altro google vision --}}
+
                                                         </div>
                                                     </div>
                                                 @empty
@@ -315,42 +322,8 @@
                                     </div>
                                     {{-- fine carosello immagini articolo  --}}
 
-                                    {{-- altro  --}}
-                                    <div class="col-4">
-                                        {{-- GOOGLE VISION --}}
-                                        {{-- @foreach($pending->images as $image)
-                                                <div class="card">
-                                                    <div class="row">
-                                                        <div class="col-12 col-md-4">
-                                                            <img src="{{ $image->getCropUrl(720, 720) }}" alt="" class="img-fluid rounded-start">
-                                                        </div>
-                                                        <div class="col-12 col-md-8">
-                                                            <div class="card-body">
-                                                                <h5>Ratings:</h5>
-                                                                <div class="row justify-content-center">
-                                                                    <div class="col-2">
-                                                                        <div class="text-center mx-auto {{$image->adult}}"></div>
-                                                                        <div class="text-center mx-auto {{$image->violence}}"></div>
-                                                                        <div class="text-center mx-auto {{$image->spoof}}"></div>
-                                                                        <div class="text-center mx-auto {{$image->racy}}"></div>
-                                                                        <div class="text-center mx-auto {{$image->medical}}"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                        @endforeach   --}}
-                                        {{-- GOOGLE VISION --}}
-
-                                    </div>
-                                    {{-- fine altro  --}}
-
-                                    {{-- altro ancora --}}
-                                    <div class="col-8">
-
-                                    </div>
-                                    {{-- fine altro ancora --}}
+                                    
+                                   
 
                                 </div>
                             </div>
@@ -359,8 +332,7 @@
                             {{-- fine modal body  --}}
                         </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btnView" data-bs-dismiss="modal">Chiudi</button>
                         </div>
                     </div>
                 </div>

@@ -68,6 +68,21 @@ textarea {
   border-width: 2px;
 }
 
+.btnViewImg{
+  background-color:white;
+  border-radius: 0px;
+  color: var(--color-s);
+  border-color: var(--color-s);
+  border-width: 2px;
+}
+.btnViewImg:hover{
+  background-color:white;
+  border-radius: 0px;
+  color: var(--color-s);
+  border-color: var(--color-s);
+  border-width: 2px;
+}
+
 /* ---------------------------------------------------------------------- */
 
 .carouselImgSize{
