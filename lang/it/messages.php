@@ -59,6 +59,10 @@ return [
     "revisorApplicants" => "Candidati",
     "previewMessage" => "Solo la prima immagine caricata sarà disponibile nell'anteprima dell'annuncio",
     "announcement_created" => "Annuncio creato",
+    "revisorCandidates"=>"Revisore candidati",
+    "alreadyReviewer" =>"Sei già revisore o la tua richiesta è in attesa, attendi che venga elaborata",
+    "newMessage"=>"El mensaje fue enviado exitosamente.",//Il messaggio è stato inviato correttamente
+
 
     //FOOTER
     "postOne" => "Pubblicane uno", //Pubblicane uno

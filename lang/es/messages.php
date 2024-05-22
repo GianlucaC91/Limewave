@@ -78,7 +78,9 @@ return [
     "reliability" => "Fiabilidad", //Affidabilità
     "safety" => "Seguridad", //sicurezza
     "requiredField" => "Todos los campos son obligatorios",//i campi sono obbligatori 
-    
+    "alreadyReviewer" =>"Ya eres revisor o tu solicitud está pendiente, espera a que sea procesada",//Sei già revisore o la tua richiesta è in attesa, attendi che venga elaborata
+    "newMessage"=>"",////Il messaggio è stato inviato correttamente
+
     //Lavora con noi
     "joins"=> "Entra a una parte lejana",//Entra a far parte
     "team" => "de nuestro equipo",//del nostro team

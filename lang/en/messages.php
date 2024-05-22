@@ -59,6 +59,7 @@ return [
     "requiredField" => "All fields are mandatory", //i campi sono obbligatori
     "previewMessage" => "Only the first image will be visible in the preview",
     "announcement_created" => "Announcemente created",
+    "alreadyReviewer" =>"You are already a reviewer or your request is pending, please wait for it to be processed", //"Sei già revisore o la tua richiesta è in attesa, attendi che venga elaborata",
 
 
     //FOOTER
