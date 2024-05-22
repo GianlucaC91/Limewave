@@ -79,6 +79,7 @@ return [
     "medicalContent" => "Contenuti medici",//Contenuti medici
     "labels" => "Etichette",//etichette
     "close"=> "Chiudi",
+    "wProfile"=> "Benvenuto nel tuo profilo", 
     //FOOTER
     "postOne" => "Pubblicane uno", //Pubblicane uno
     "workWithUs" => "Lavora con noi", //lavora con noi

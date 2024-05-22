@@ -95,7 +95,7 @@ return [
     "revisorCandidates"=>"Candidate reviewer",//Revisore candidati
     "notAuthorized" =>"You are not authorized",//Non sei autorizzato
     "close"=>"Close",//chiudi
-
+    "wProfile"=> "Welcome to your profile", 
     //Lavora con noi
     "joins"=> "Joins",//Entra a far parte
     "team" => "of our team",//del nostro team

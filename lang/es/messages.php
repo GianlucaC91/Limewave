@@ -68,7 +68,7 @@ return [
     "deletedP"=> "Anuncio eliminado permanentemente",//Annuncio eliminato definitivamente
     "profileEdited" => "Perfil editado exitosamente",//Profilo modificato correttamente
     "close"=> "Cerca",//chiudi
-
+    "wProfile"=> "Bienvenido a tu perfil", 
     "adRejected"=>  "Ad rejected",//Annuncio rifiutato
     //FOOTER
     "postOne" => "Publicar uno", //Pubblicane uno

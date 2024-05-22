@@ -9,7 +9,7 @@
                 <div class="row bg-white">
                     <div class="col-12 p-5">
 
-                        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">Benvenuto nel tuo profilo</h1>
+                        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3 underline-colors">{{__("messages.wProfile")}}</h1>
                         <div class="text-center">
                             {{-- DISPLAY MESSAGE --}}
                             <x-status />
