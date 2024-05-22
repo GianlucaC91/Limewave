@@ -293,9 +293,24 @@
                                                                     <span class="{{$image->racy}} mx-2"></span>
                                                                 </div>
                                                                 <div class="d-flex">
-                                                                    <p>Contenuti meidici</p>
+                                                                    <p>Contenuti medici</p>
                                                                     <span class="{{$image->medical}} mx-2"></span>
                                                                 </div>
+                                                                {{-- Labels --}}
+                                                                <div>
+                                                                    <?php
+                                                                    $image->labels = trim($image->labels,"[]");
+                                                                    $labels = explode(',' , $image->labels);
+                                                                    $labels= array_map(function($word) {
+                                                                                                    return str_replace('"', '', $word);
+                                                                                                }, $labels);
+                                                                    ?>
+                                                                    {{-- End Labels Logic --}}
+                                                                    @foreach ($labels as $label)
+                                                                        <p>{{$label}}</p>
+                                                                    @endforeach
+                                                                </div>
+                                                                {{-- End Labels --}}
                                                             </div>
                                                             {{-- Fine google vision --}}
 

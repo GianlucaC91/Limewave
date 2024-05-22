@@ -3,14 +3,15 @@
 namespace App\Livewire;
 
 
-use App\Jobs\GoogleVisionSafeSearch;
-use App\Jobs\RemoveFaces;
 use App\Models\Article;
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\RemoveFaces;
 use App\Jobs\ResizeImage;
 use Livewire\WithFileUploads;
 use Livewire\Attributes\Validate;
+use App\Jobs\GoogleVisionLabelImage;
+use App\Jobs\GoogleVisionSafeSearch;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
@@ -66,7 +67,7 @@ class ArticleCreate extends Component
             RemoveFaces::withChain([
                 new ResizeImage($newImage->path, 720, 720),
                 new GoogleVisionSafeSearch($newImage->id),
-
+                new GoogleVisionLabelImage($newImage->id),
             ])->dispatch($newImage->id);
 
         }
