@@ -144,7 +144,7 @@
                                     <td>{{ Str::limit($article->body, 20) }}</td>
                                     {{-- <td><img src="{{Storage::url($article->img)}}" alt=""></td> --}}
                                     <td class="mx-auto"><a href="{{ route('article.detail', compact('article')) }}"
-                                            class="btn btn-s">{{__("messages.readMore")}}</a></td>
+                                            class="btn btnView">{{__("messages.readMore")}}</a></td>
                                 </tr>
                             @endif
                         @endforeach
