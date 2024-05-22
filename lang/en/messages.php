@@ -30,7 +30,7 @@ return [
     "welcomeProfile" => "Welcome to the profile of",//benvenuto nel profilo di 
     "avatarCurrent" => "Current avatar",// avatar attuale
     "editAvatar" => "Edit avatar",// modifica avatar 
-    "changeDate" => "Change users date",// modifica avatar 
+    "changeDate" => "Update user data",// modifica avatar 
     "updateDati" => "I'm updating the data...",//sto aggiorando i dati
     "announcementsOf" => "The announcements of",//Gli annunci di
     "created_at" => " Created at",//Creato il
