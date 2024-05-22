@@ -58,7 +58,7 @@ return [
     "noAds" => "There are no ads in this category", //Non sono presenti annunci in questa categoria
     "requiredField" => "All fields are mandatory", //i campi sono obbligatori
     "previewMessage" => "Only the first image will be visible in the preview",
-    "announcement_created" => "Announcemente created",
+    "announcement_created" => "Announcement created, pending for revision",
     "alreadyReviewer" =>"You are already a reviewer or your request is pending, please wait for it to be processed", //"Sei già revisore o la tua richiesta è in attesa, attendi che venga elaborata",
     "nowAuditor" => "he is now an auditor",//è ora revisore
     "userAccepted"  => "User accepted as a reviewer",//"Utente accettato come revisore",

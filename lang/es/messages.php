@@ -58,6 +58,7 @@ return [
     "noAds" => "No hay anuncios en esta categoría.", //Non sono presenti annunci in questa categoria
     "revisorApplicants" => "Candidatos",
     "previewMessage" => "Solo la primera imagen cargada estará disponible en la vista previa del anuncio",
+    "announcement_created" => "El anuncio es creado, pendiente la revision",
     "status"=>"Artículo insertado con éxito",//articolo inserito con successo
     "revisorCandidates"=>"Revisor de candidatos",//Revisore candidati
     "notAuthorized" =>"Usted no está autorizado",//Non sei autorizzato
