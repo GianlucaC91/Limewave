@@ -30,8 +30,7 @@
                                 <th scope="col">{{__("messages.image")}}</th>
                                 <th scope="col"></th>
                                 <th scope="col">{{__("messages.actions")}}</th>
-                                <th scope="col"></th>
-                                {{-- <th colspan="3" scope="col">Azioni</th> --}}
+                                <th scope="col"></th>                                
                             </tr>
                         </thead>
                         <tbody>
@@ -48,206 +47,180 @@
                                     <button type="button" class="btn py-2 mt-1 btnViewImg" data-bs-toggle="modal" data-bs-target="#articleImages{{$pending->id}}">
                                         <i class="bi bi-image"></i>
                                     </button>
+                                </td>                                   
+                                <td>
+                                    <button type="button" class="btn py-2 mt-1 btnView" data-bs-toggle="modal"
+                                    data-bs-target="#article{{$pending->id}}">
+                                    {{__("messages.view")}}
+                                    </button>
+                                </td>
+                                <td>
+                                    <button wire:click='rejectArticle({{$pending}})' class="btn py-2 mt-1 btnDelete"
+                                    wire:confirm="Sei sicuro di voler rifiutare l'annuncio?">
+                                    {{__("messages.refuse")}}
+                                </button>
+                                </td>
+                                <td>
+                                    <button wire:click='acceptArticle({{$pending}})' class="btn py-2 mt-1 btnAccept"
+                                    wire:confirm="Sei sicuro di voler accettare l'annuncio?">
+                                    {{__("messages.accept")}}
+                                </button>
+                                </td>
+                            </tr>
+                                    <!-- Modal Images-->
                                     
-                                    {{-- GOOGLE VISION --}}
-                                    {{-- @foreach($pending->images as $image)
-                                        <div class="col-6">
-                                            <div class="card">
-                                                <div class="row">
-                                                    <div class="col-12 col-md-4">
-                                                        <img src="{{ $image->getCropUrl(720, 720) }}" alt="" class="img-fluid rounded-start">
-                                                    </div>
-                                                    <div class="col-12 col-md-8">
-                                                        <div class="card-body">
-                                                            <h5>Ratings:</h5>
-                                                            <div class="row justify-content-center">
-                                                                <div class="col-2">
-                                                                    <div class="text-center mx-auto {{$image->adult}}"></div>
-                                                                    <div class="text-center mx-auto {{$image->violence}}"></div>
-                                                                    <div class="text-center mx-auto {{$image->spoof}}"></div>
-                                                                    <div class="text-center mx-auto {{$image->racy}}"></div>
-                                                                    <div class="text-center mx-auto {{$image->medical}}"></div>
+                                    <div class="modal fade" id="articleImages{{$pending->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{$pending->title}}</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    {{-- modal body  --}}
+                                                    <div class="container">
+                                                        <div class="row">
+                                                            {{-- carosello immagini articolo  --}}
+                                                            <div class="col-12">
+                                                                
+                                                                <div id="carouselExampleIndicators" class="detailCarousel carousel slide w-100">
+                                                                    <div class="carousel-indicators">
+                                                                        @foreach($pending->images as $index => $image)
+                                                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
+                                                                        @endforeach
+                                                                    </div>
+                                                                    <div class="carousel-inner">
+                                                                        
+                                                                        
+                                                                        @forelse($pending->images as $index => $image)
+                                                                        <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                                                            <img src="{{ $image->getCropUrl(720, 720) }}" class="d-block w-100" alt="...">
+                                                                            <div class="row pb-5">
+                                                                                
+                                                                                {{-- Google vision --}}
+                                                                                <div class="col-4 my-2 pe-0">
+                                                                                    <h5>Ratings:</h5>
+                                                                                    <div class="d-flex">
+                                                                                        <p>Contenuti per adulti</p>
+                                                                                        <span class="{{$image->adult}} mx-2"></span>
+                                                                                    </div>
+                                                                                    <div class="d-flex">
+                                                                                        <p>Contenuti violenti</p>
+                                                                                        <span class="{{$image->violence}} mx-2"></span>
+                                                                                    </div>
+                                                                                    <div class="d-flex">
+                                                                                        <p>Contenuti ingannevoli</p>
+                                                                                        <span class="{{$image->spoof}} mx-2"></span>
+                                                                                    </div>
+                                                                                    <div class="d-flex">
+                                                                                        <p>Contenuti ammicanti</p>
+                                                                                        <span class="{{$image->racy}} mx-2"></span>
+                                                                                    </div>
+                                                                                    <div class="d-flex">
+                                                                                        <p>Contenuti medici</p>
+                                                                                        <span class="{{$image->medical}} mx-2"></span>
+                                                                                    </div>
+                                                                                    {{-- Labels --}}
+                                                                                    <div>
+                                                                                        <?php
+                                                                                        $image->labels = trim($image->labels,"[]");
+                                                                                        $labels = explode(',' , $image->labels);
+                                                                                        $labels= array_map(function($word) {
+                                                                                            return str_replace('"', '', $word);
+                                                                                        }, $labels);
+                                                                                        ?>
+                                                                                        {{-- End Labels Logic --}}
+                                                                                        @foreach ($labels as $label)
+                                                                                        <p>{{$label}}</p>
+                                                                                        @endforeach
+                                                                                    </div>
+                                                                                    {{-- End Labels --}}
+                                                                                </div>
+                                                                                {{-- Fine google vision --}}
+                                                                                
+                                                                                {{-- Altro google vision --}}
+                                                                                <div class="col-8">
+                                                                                    
+                                                                                </div>
+                                                                                {{--Fine altro google vision --}}
+                                                                                
+                                                                            </div>
+                                                                        </div>
+                                                                        @empty
+                                                                        <div class="carousel-item active">
+                                                                            <img src="/media/logo2024.png" class="d-block w-100" alt="...">
+                                                                        </div>
+                                                                        @endforelse
+                                                                        
+                                                                        
+                                                                    </div>
+                                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                                                        <span class="visually-hidden">{{ __("messages.previous") }}</span>
+                                                                    </button>
+                                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                                                        <span class="visually-hidden">{{ __("messages.next") }}</span>
+                                                                    </button>
                                                                 </div>
+                                                                
                                                             </div>
+                                                            {{-- fine carosello immagini articolo  --}}
                                                         </div>
-                                                    </div>
+                                                    </div>                                               
+                                                    
+                                                    {{-- fine modal body  --}}
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btnView" data-bs-dismiss="modal">Chiudi</button>
                                                 </div>
                                             </div>
                                         </div>
-                                        @endforeach   --}}
-                                        {{-- GOOGLE VISION --}}
-                                        
-                                    </td>                                   
-                                    <td><button type="button" class="btn py-2 mt-1 btnView" data-bs-toggle="modal"
-                                        data-bs-target="#article{{$pending->id}}">
-                                        {{__("messages.view")}}
-                                    </button></td>
-                                    <td><button wire:click='rejectArticle({{$pending}})' class="btn py-2 mt-1 btnDelete"
-                                        wire:confirm="Sei sicuro di voler rifiutare l'annuncio?">
-                                        {{__("messages.refuse")}}
-                                    </button></td>
-                                    <td><button wire:click='acceptArticle({{$pending}})' class="btn py-2 mt-1 btnAccept"
-                                        wire:confirm="Sei sicuro di voler accettare l'annuncio?">
-                                        {{__("messages.accept")}}
-                                    </button></td>
-                                </tr>
-                                {{-- article modal --}}
-                                <div class="modal fade" id="article{{$pending->id}}" tabindex="-1"
-                                    aria-labelledby="articleLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">{{$pending->title}}</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <p class="card-text">{{__("messages.category")}}: {{ $pending->category->name }}</p>
-                                                <p class="card-text">{{__("messages.price")}}: {{ $pending->price }} €</p>
-                                                <p class="card-text">{{ Str::limit($pending->body, 50) }}</p>
-                                                
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button data-bs-dismiss="modal" wire:click='rejectArticle({{$pending}})'
-                                                wire:confirm="Sei sicuro di voler rifiutare l'annuncio?"
-                                                class="btn btnDelete">
-                                                {{__("messages.refuse")}}
-                                            </button>
-                                            
-                                            <button data-bs-dismiss="modal" wire:click='acceptArticle({{$pending}})'
-                                            wire:confirm="Sei sicuro di voler accettare l'annuncio?"
-                                            class="btn btnAccept">
-                                            {{__("messages.accept")}}
-                                        </button>
-                                        <!-- Modal -->
-                                        
-                                        <div class="modal fade" id="articleImages{{$pending->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">{{$pending->title}}</h1>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        {{-- modal body  --}}
-                                                        <div class="container">
-                                                            <div class="row">
-                                                                {{-- carosello immagini articolo  --}}
-                                                                <div class="col-12">
-                                                                    
-                                                                    <div id="carouselExampleIndicators" class="detailCarousel carousel slide w-100">
-                                                                        <div class="carousel-indicators">
-                                                                            @foreach($pending->images as $index => $image)
-                                                                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
-                                                                            @endforeach
-                                                                        </div>
-                                                                        <div class="carousel-inner">
-                                                                            
-                                                                            
-                                                                            @forelse($pending->images as $index => $image)
-                                                                            <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                                                                <img src="{{ $image->getCropUrl(720, 720) }}" class="d-block w-100" alt="...">
-                                                                                <div class="row pb-5">
-                                                                                    
-                                                                                    {{-- Google vision --}}
-                                                                                    <div class="col-4 my-2 pe-0">
-                                                                                        <h5>Ratings:</h5>
-                                                                                        <div class="d-flex">
-                                                                                            <p>Contenuti per adulti</p>
-                                                                                            <span class="{{$image->adult}} mx-2"></span>
-                                                                                        </div>
-                                                                                        <div class="d-flex">
-                                                                                            <p>Contenuti violenti</p>
-                                                                                            <span class="{{$image->violence}} mx-2"></span>
-                                                                                        </div>
-                                                                                        <div class="d-flex">
-                                                                                            <p>Contenuti ingannevoli</p>
-                                                                                            <span class="{{$image->spoof}} mx-2"></span>
-                                                                                        </div>
-                                                                                        <div class="d-flex">
-                                                                                            <p>Contenuti ammicanti</p>
-                                                                                            <span class="{{$image->racy}} mx-2"></span>
-                                                                                        </div>
-                                                                                        <div class="d-flex">
-                                                                                            <p>Contenuti medici</p>
-                                                                                            <span class="{{$image->medical}} mx-2"></span>
-                                                                                        </div>
-                                                                                        {{-- Labels --}}
-                                                                                        <div>
-                                                                                            <?php
-                                                                                            $image->labels = trim($image->labels,"[]");
-                                                                                            $labels = explode(',' , $image->labels);
-                                                                                            $labels= array_map(function($word) {
-                                                                                                return str_replace('"', '', $word);
-                                                                                            }, $labels);
-                                                                                            ?>
-                                                                                            {{-- End Labels Logic --}}
-                                                                                            @foreach ($labels as $label)
-                                                                                            <p>{{$label}}</p>
-                                                                                            @endforeach
-                                                                                        </div>
-                                                                                        {{-- End Labels --}}
-                                                                                    </div>
-                                                                                    {{-- Fine google vision --}}
-                                                                                    
-                                                                                    {{-- Altro google vision --}}
-                                                                                    <div class="col-8">
-                                                                                        
-                                                                                    </div>
-                                                                                    {{--Fine altro google vision --}}
-                                                                                    
-                                                                                </div>
-                                                                            </div>
-                                                                            @empty
-                                                                            <div class="carousel-item active">
-                                                                                <img src="/media/logo2024.png" class="d-block w-100" alt="...">
-                                                                            </div>
-                                                                            @endforelse
-                                                                            
-                                                                            
-                                                                        </div>
-                                                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                                                            <span class="visually-hidden">{{ __("messages.previous") }}</span>
-                                                                        </button>
-                                                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                                                            <span class="visually-hidden">{{ __("messages.next") }}</span>
-                                                                        </button>
-                                                                    </div>
-                                                                    
-                                                                </div>
-                                                                {{-- fine carosello immagini articolo  --}}
-                                                                
-                                                                
-                                                                
-                                                                
-                                                            </div>
-                                                        </div>
-                                                        
-                                                        
-                                                        {{-- fine modal body  --}}
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btnView" data-bs-dismiss="modal">Chiudi</button>
-                                                    </div>
+                                    </div>                
+                                    {{-- Modal Images End --}}
+                                    {{-- article modal --}}
+                                    <div class="modal fade" id="article{{$pending->id}}" tabindex="-1"
+                                        aria-labelledby="articleLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{$pending->title}}</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
                                                 </div>
-                                            </div>
-                                        </div>                
-                                        
-                                        <!-- Modal End -->
+                                                <div class="modal-body">
+                                                    <p class="card-text">{{__("messages.category")}}: {{ $pending->category->name }}</p>
+                                                    <p class="card-text">{{__("messages.price")}}: {{ $pending->price }} €</p>
+                                                    <p class="card-text">{{ Str::limit($pending->body, 50) }}</p>
+                                                    
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button data-bs-dismiss="modal" wire:click='rejectArticle({{$pending}})'
+                                                    wire:confirm="Sei sicuro di voler rifiutare l'annuncio?"
+                                                    class="btn btnDelete">
+                                                    {{__("messages.refuse")}}
+                                                </button>
+                                                
+                                                <button data-bs-dismiss="modal" wire:click='acceptArticle({{$pending}})'
+                                                wire:confirm="Sei sicuro di voler accettare l'annuncio?"
+                                                class="btn btnAccept">
+                                                {{__("messages.accept")}}
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
+                                    <!-- Modal End -->
+                                    
+                                    
                             </div>
-                        </div>                                
-                        @empty
-                        <tr>
-                            <td colspan="11" class="text-center">{{__("messages.adsReject")}}</td>
-                        </tr>                                        
-                        @endforelse
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+                                               
+                            @empty
+                            <tr>
+                                <td colspan="11" class="text-center">{{__("messages.adsReject")}}</td>
+                            </tr>                                        
+                            @endforelse
+                            </tbody>
+</table>
+</div>
+</div>
+</div>
 </div>
 {{-- fine primo container  --}}
 {{-- Rejected Announcements Table --}}
@@ -344,116 +317,116 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            {{-- Modale carosello immagine articoli rifiutati --}}
-            <div class="modal fade" id="rejectedArticleImages{{$rejected->id}}" tabindex="-1"
-                aria-labelledby="articleLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">{{$rejected->title}}</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            {{-- <p class="card-text">{{__("messages.category")}}: {{ $rejected->category->name }}</p>
-                            <p class="card-text">{{__("messages.price")}}: {{ $rejected->price }} €</p>
-                            <p class="card-text">{{ Str::limit($rejected->body, 50) }}</p> --}}
-                            
-                            {{-- modal body  --}}
-                            <div class="container">
-                                <div class="row">
-                                    {{-- carosello immagini articolo  --}}
-                                    <div class="col-12">
-                                        
-                                        <div id="carouselExampleIndicatorsRejected" class="detailCarousel carousel slide w-100">
-                                            <div class="carousel-indicators">
-                                                @foreach($rejected->images as $index => $image)
-                                                <button type="button" data-bs-target="#carouselExampleIndicatorsRejected" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
-                                                @endforeach
-                                            </div>
-                                            <div class="carousel-inner">
+                    </div>
+                    {{-- Modale carosello immagine articoli rifiutati --}}
+                    <div class="modal fade" id="rejectedArticleImages{{$rejected->id}}" tabindex="-1"
+                        aria-labelledby="articleLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">{{$rejected->title}}</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    {{-- <p class="card-text">{{__("messages.category")}}: {{ $rejected->category->name }}</p>
+                                    <p class="card-text">{{__("messages.price")}}: {{ $rejected->price }} €</p>
+                                    <p class="card-text">{{ Str::limit($rejected->body, 50) }}</p> --}}
+                                    
+                                    {{-- modal body  --}}
+                                    <div class="container">
+                                        <div class="row">
+                                            {{-- carosello immagini articolo  --}}
+                                            <div class="col-12">
                                                 
-                                                
-                                                @forelse($rejected->images as $index => $image)
-                                                <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
-                                                    <img src="{{ $image->getCropUrl(720, 720) }}" class="d-block w-100" alt="...">
-                                                    <div class="row pb-5">
+                                                <div id="carouselExampleIndicatorsRejected" class="detailCarousel carousel slide w-100">
+                                                    <div class="carousel-indicators">
+                                                        @foreach($rejected->images as $index => $image)
+                                                        <button type="button" data-bs-target="#carouselExampleIndicatorsRejected" data-bs-slide-to="{{ $index }}" class="{{ $index === 0 ? 'active' : '' }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}" aria-label="Slide {{ $index + 1 }}"></button>
+                                                        @endforeach
+                                                    </div>
+                                                    <div class="carousel-inner">
                                                         
-                                                        {{-- Google vision --}}
-                                                        <div class="col-4 my-2 pe-0">
-                                                            <h5>Ratings:</h5>
-                                                            <div class="d-flex">
-                                                                <p>Contenuti per adulti</p>
-                                                                <span class="{{$image->adult}} mx-2"></span>
-                                                            </div>
-                                                            <div class="d-flex">
-                                                                <p>Contenuti violenti</p>
-                                                                <span class="{{$image->violence}} mx-2"></span>
-                                                            </div>
-                                                            <div class="d-flex">
-                                                                <p>Contenuti ingannevoli</p>
-                                                                <span class="{{$image->spoof}} mx-2"></span>
-                                                            </div>
-                                                            <div class="d-flex">
-                                                                <p>Contenuti ammicanti</p>
-                                                                <span class="{{$image->racy}} mx-2"></span>
-                                                            </div>
-                                                            <div class="d-flex">
-                                                                <p>Contenuti meidici</p>
-                                                                <span class="{{$image->medical}} mx-2"></span>
+                                                        
+                                                        @forelse($rejected->images as $index => $image)
+                                                        <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                                                            <img src="{{ $image->getCropUrl(720, 720) }}" class="d-block w-100" alt="...">
+                                                            <div class="row pb-5">
+                                                                
+                                                                {{-- Google vision --}}
+                                                                <div class="col-4 my-2 pe-0">
+                                                                    <h5>Ratings:</h5>
+                                                                    <div class="d-flex">
+                                                                        <p>Contenuti per adulti</p>
+                                                                        <span class="{{$image->adult}} mx-2"></span>
+                                                                    </div>
+                                                                    <div class="d-flex">
+                                                                        <p>Contenuti violenti</p>
+                                                                        <span class="{{$image->violence}} mx-2"></span>
+                                                                    </div>
+                                                                    <div class="d-flex">
+                                                                        <p>Contenuti ingannevoli</p>
+                                                                        <span class="{{$image->spoof}} mx-2"></span>
+                                                                    </div>
+                                                                    <div class="d-flex">
+                                                                        <p>Contenuti ammicanti</p>
+                                                                        <span class="{{$image->racy}} mx-2"></span>
+                                                                    </div>
+                                                                    <div class="d-flex">
+                                                                        <p>Contenuti meidici</p>
+                                                                        <span class="{{$image->medical}} mx-2"></span>
+                                                                    </div>
+                                                                </div>
+                                                                {{-- Fine google vision --}}
+                                                                
+                                                                {{-- Altro google vision --}}
+                                                                <div class="col-8">
+                                                                    
+                                                                </div>
+                                                                {{--Fine altro google vision --}}
+                                                                
                                                             </div>
                                                         </div>
-                                                        {{-- Fine google vision --}}
-                                                        
-                                                        {{-- Altro google vision --}}
-                                                        <div class="col-8">
-                                                            
+                                                        @empty
+                                                        <div class="carousel-item active">
+                                                            <img src="/media/logo2024.png" class="d-block w-100" alt="...">
                                                         </div>
-                                                        {{--Fine altro google vision --}}
+                                                        @endforelse
+                                                        
                                                         
                                                     </div>
+                                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicatorsRejected" data-bs-slide="prev">
+                                                        <span class="visually-hidden">{{ __("messages.previous") }}</span>
+                                                    </button>
+                                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicatorsRejected" data-bs-slide="next">
+                                                        <span class="visually-hidden">{{ __("messages.next") }}</span>
+                                                    </button>
                                                 </div>
-                                                @empty
-                                                <div class="carousel-item active">
-                                                    <img src="/media/logo2024.png" class="d-block w-100" alt="...">
-                                                </div>
-                                                @endforelse
-                                                
                                                 
                                             </div>
-                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicatorsRejected" data-bs-slide="prev">
-                                                <span class="visually-hidden">{{ __("messages.previous") }}</span>
-                                            </button>
-                                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicatorsRejected" data-bs-slide="next">
-                                                <span class="visually-hidden">{{ __("messages.next") }}</span>
-                                            </button>
+                                            {{-- fine carosello immagini articolo  --}}
+                                            
+                                            
+                                            
+                                            
                                         </div>
-                                        
                                     </div>
-                                    {{-- fine carosello immagini articolo  --}}
-                                    
                                     
                                     
                                     
                                 </div>
-                            </div>
-                            
-                            
-                            
+                                <div class="modal-footer">
+                                    <button data-bs-dismiss="modal" wire:click='rejectArticle({{$rejected}})'                                            
+                                    class="btn btnDelete">
+                                    {{__("messages.refuse")}}
+                                </button>
+                                
+                                <button data-bs-dismiss="modal" wire:click='acceptArticle({{$rejected}})'                                            
+                                class="btn btnAccept">
+                                {{__("messages.accept")}}
+                            </button>
                         </div>
-                        <div class="modal-footer">
-                            <button data-bs-dismiss="modal" wire:click='rejectArticle({{$rejected}})'                                            
-                            class="btn btnDelete">
-                            {{__("messages.refuse")}}
-                        </button>
-                        
-                        <button data-bs-dismiss="modal" wire:click='acceptArticle({{$rejected}})'                                            
-                        class="btn btnAccept">
-                        {{__("messages.accept")}}
-                    </button>
-                </div>
-            </div>
+                    </div>
         </div>
     </div>
     @empty
