@@ -70,6 +70,7 @@ return [
     "rating" =>"Giudizi",//giudizi
     "adultContent" =>"Contenuto per adulti",
     "violentContent" =>"Contenuti violenti",//
+    "deletedP"=> "Annuncio eliminato definitivamente",
 
     //FOOTER
     "postOne" => "Pubblicane uno", //Pubblicane uno

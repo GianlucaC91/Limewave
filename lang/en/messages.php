@@ -66,7 +66,8 @@ return [
     "adRejected"=>  "Ad rejected",//Annuncio rifiutato
     "approval"=>"You must log in to cancel approval.",//Devi effettuare l\'accesso per annullare l\'approvazione.'
     "adRestored" => "Ad restored",//Annuncio ripristinato
-
+    "deletedP"=> "Ad permanently deleted",//Annuncio eliminato definitivamente
+    
     //FOOTER
     "postOne" => "Post one", //Pubblicane uno
     "workWithUs" => "Work with us", //lavora con noi
