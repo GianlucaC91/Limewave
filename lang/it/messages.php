@@ -12,7 +12,7 @@ return [
     "details"=>"Dettagli",//Dettagli
     "insertAd" => "Inserisci Annuncio", //Inserisci Annuncio
     "title"=> "Titolo",//Titolo
-    "selectCategory" => "Selaziona la categoria",//selaziona la categoria
+    "selectCategory" => "Seleziona la categoria",//selaziona la categoria
     "insertImage" => "Inserisci immagine",//Inserisci immagine
     "create" => "Crea",//crea
     "adsToBeApproved" => "Annunci da approvare",//Annunci da approvare
@@ -71,7 +71,14 @@ return [
     "adultContent" =>"Contenuto per adulti",
     "violentContent" =>"Contenuti violenti",//
     "deletedP"=> "Annuncio eliminato definitivamente",
-
+    "ratings" => "Giudizi",//Giudizi
+    "adultContent" => "Contenuto per adulti",//contenuti per adulti
+    "violentContent" =>"Contenuto violento",//
+    "misleadingContent" => "Contenuti ingannevoli",// 
+    "compellingContent" => "Contenuti ammicanti",//Contenuti ammicanti
+    "medicalContent" => "Contenuti medici",//Contenuti medici
+    "labels" => "Etichette",//etichette
+    "close"=> "Chiudi",
     //FOOTER
     "postOne" => "Pubblicane uno", //Pubblicane uno
     "workWithUs" => "Lavora con noi", //lavora con noi

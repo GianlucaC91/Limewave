@@ -67,7 +67,13 @@ return [
     "approval"=>"You must log in to cancel approval.",//Devi effettuare l\'accesso per annullare l\'approvazione.'
     "adRestored" => "Ad restored",//Annuncio ripristinato
     "deletedP"=> "Ad permanently deleted",//Annuncio eliminato definitivamente
-    
+    "ratings" => "Ratings",//giudizi
+    "violentContent" =>"Violent Content",//
+    "adultContent" => " Adult Content",//contenuti per adulti
+    "misleadingContent" => "Misleading content",//Contenuti ingannevoli 
+    "compellingContent" => "Compelling content",//Contenuti ammicanti
+    "medicalContent" => "Medical content",//Contenuti medici
+    "labels" => "Lables",//etichette
     //FOOTER
     "postOne" => "Post one", //Pubblicane uno
     "workWithUs" => "Work with us", //lavora con noi
@@ -88,11 +94,7 @@ return [
     "revisorApplicants" => "Candidates",
     "revisorCandidates"=>"Candidate reviewer",//Revisore candidati
     "notAuthorized" =>"You are not authorized",//Non sei autorizzato
-    "adRejected"=>  "Annuncio rifiutato",//Annuncio rifiutato
-    "rating" =>"Giudizi",//giudizi
-    "adultContent" =>"Contenuto per adulti",
-    "violentContent" =>"Contenuti violenti",//
-
+    "close"=>"Close",//chiudi
 
     //Lavora con noi
     "joins"=> "Joins",//Entra a far parte

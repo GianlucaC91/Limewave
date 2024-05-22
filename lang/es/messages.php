@@ -67,9 +67,9 @@ return [
     "adRestored" => "Anuncio restaurado",//Annuncio ripristinato
     "deletedP"=> "Anuncio eliminado permanentemente",//Annuncio eliminato definitivamente
     "profileEdited" => "Perfil editado exitosamente",//Profilo modificato correttamente
-    "rating" =>"Calificaciones",//giudizi
-    "adultContent" =>"Adult content",
+    "close"=> "Cerca",//chiudi
 
+    "adRejected"=>  "Ad rejected",//Annuncio rifiutato
     //FOOTER
     "postOne" => "Publicar uno", //Pubblicane uno
     "workWithUs" => "Trabaja con nosotros", //lavora con noi
@@ -94,6 +94,13 @@ return [
     "UserAccepted"  => "Usuario aceptado como revisor",//"Utente accettato come revisore",
     'UserRejected' => "Usuario rechazada",//Utente rifiutato   
 
+    "ratings" => "Calificaciones",//giudizi
+    "adultContent" => "Contenido para adultos",//contenuti per adulti
+    "violentContent" =>"Contenido violento",//
+    "misleadingContent" => "Contenido engañoso",//Contenuti ingannevoli 
+    "compellingContent" => "Contenido atractivo",//Contenuti ammicanti
+    "medicalContent" => "Contenido medico",//Contenuti medici
+    "labels" => "Etiquetas",//etichette
 
     //Lavora con noi
     "joins"=> "Entra a una parte lejana",//Entra a far parte
@@ -109,6 +116,7 @@ return [
     "search"  => "Buscar aquí...", // Cerca
     "profile"  => "Perfil", // Profilo
     "newAnnouncement"  => "Nuevo anuncio", //Nuovo annuncio
+
     //
 
 // LOGIN E REGISTER

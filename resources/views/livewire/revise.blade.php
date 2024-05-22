@@ -99,25 +99,25 @@
                                                                                 
                                                                                 {{-- Google vision --}}
                                                                                 <div class="col-4 my-2 pe-0">
-                                                                                    <h5>Ratings:</h5>
+                                                                                    <h5>{{__("messages.ratings")}}:</h5>
                                                                                     <div class="d-flex">
-                                                                                        <p>Contenuti per adulti</p>
+                                                                                        <p>{{__("messages.adultContent")}}</p>
                                                                                         <span class="{{$image->adult}} mt-2 mx-2"></span>
                                                                                     </div>
                                                                                     <div class="d-flex">
-                                                                                        <p>Contenuti violenti</p>
+                                                                                        <p> {{__("messages.violentContent")}}</p>
                                                                                         <span class="{{$image->violence}} mt-2 mx-2"></span>
                                                                                     </div>
                                                                                     <div class="d-flex">
-                                                                                        <p>Contenuti ingannevoli</p>
+                                                                                        <p>{{__("messages.misleadingContent")}}</p>
                                                                                         <span class="{{$image->spoof}} mt-2 mx-2"></span>
                                                                                     </div>
                                                                                     <div class="d-flex">
-                                                                                        <p>Contenuti ammicanti</p>
+                                                                                        <p>{{__("messages.compellingContent")}}</p>
                                                                                         <span class="{{$image->racy}} mt-2 mx-2"></span>
                                                                                     </div>
                                                                                     <div class="d-flex">
-                                                                                        <p>Contenuti medici</p>
+                                                                                        <p>{{__("messages.medicalContent")}}</p>
                                                                                         <span class="{{$image->medical}} mt-2 mx-2"></span>
                                                                                     </div>
                                                                                 </div>
@@ -125,7 +125,7 @@
                                                                                 
                                                                                 {{-- Altro google vision --}}
                                                                                 <div class="col-8 ps-5 my-2 pe-4">
-                                                                                    <h5>Labels:</h5>
+                                                                                    <h5> {{__("messages.labels")}}:</h5>
                                                                                     {{-- Labels --}}
                                                                                     <div class="">
                                                                                         <?php
@@ -169,7 +169,7 @@
                                                     {{-- fine modal body  --}}
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btnView" data-bs-dismiss="modal">Chiudi</button>
+                                                    <button type="button" class="btn btnView" data-bs-dismiss="modal">{{ __("messages.close") }}</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -354,25 +354,25 @@
                                                                 
                                                                 {{-- Google vision --}}
                                                                 <div class="col-4 my-2 pe-0">
-                                                                    <h5>Ratings:</h5>
+                                                                    <h5>{{__("messages.ratings")}}:</h5>
                                                                     <div class="d-flex">
-                                                                        <p>Contenuti per adulti</p>
+                                                                        <p>{{__("messages.adultContent")}}</p>
                                                                         <span class="{{$image->adult}} mx-2"></span>
                                                                     </div>
                                                                     <div class="d-flex">
-                                                                        <p>Contenuti violenti</p>
+                                                                        <p>{{__("messages.violentContent")}}</p>
                                                                         <span class="{{$image->violence}} mx-2"></span>
                                                                     </div>
                                                                     <div class="d-flex">
-                                                                        <p>Contenuti ingannevoli</p>
+                                                                        <p>{{__("messages.misleadingContent")}}</p>
                                                                         <span class="{{$image->spoof}} mx-2"></span>
                                                                     </div>
                                                                     <div class="d-flex">
-                                                                        <p>Contenuti ammicanti</p>
+                                                                        <p>{{__("messages.compellingContent")}}</p>
                                                                         <span class="{{$image->racy}} mx-2"></span>
                                                                     </div>
                                                                     <div class="d-flex">
-                                                                        <p>Contenuti meidici</p>
+                                                                        <p>{{__("messages.medicalContent")}}</p>
                                                                         <span class="{{$image->medical}} mx-2"></span>
                                                                     </div>
                                                                 </div>
@@ -380,7 +380,7 @@
                                                                 
                                                                 {{-- Altro google vision --}}
                                                                 <div class="col-8 ps-5 my-2 pe-4">
-                                                                    <h5>Labels:</h5>
+                                                                    <h5>{{__("messages.labels")}}:</h5>
                                                                     {{-- Labels --}}
                                                                     <div class="">
                                                                         <?php
@@ -430,7 +430,7 @@
                                     
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btnView" data-bs-dismiss="modal">Chiudi</button>
+                                    <button type="button" class="btn btnView" data-bs-dismiss="modal">{{__("messages.close")}}</button>
                                 </div>
                         </div>
         </div>
