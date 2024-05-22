@@ -53,8 +53,8 @@ return [
     "privacyPolicy" => "Política de privacidad", //Politica sulla privacy
     "termsConditions" => "Términos y condiciones", //Termi e condizioni
     "results" => "Resultados", //Risultati
-    "searchResults" => "The search did not return any results", //La ricerca non ha prodotto risultati
-    "browseCategories" => "Browse categories", //Sfoglia le categorie
+    "searchResults" => "La búsqueda no arrojó ningún resultado.", //La ricerca non ha prodotto risultati
+    "browseCategories" => "Examinar las categorías", //Sfoglia le categorie
     "noAds" => "No hay anuncios en esta categoría.", //Non sono presenti annunci in questa categoria
     "revisorApplicants" => "Candidatos",
     "previewMessage" => "Solo la primera imagen cargada estará disponible en la vista previa del anuncio",
