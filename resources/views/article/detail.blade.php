@@ -9,7 +9,7 @@
       <div class="container-fluid pt-5 ">        
           <div class="row justify-content-center ">
 
-            <div class="col-12 col-md-11 ">
+            <div class="col-12 col-md-9 ">
                 <div class="container-fluid shadow">
                     <div class="row bg-white justify-content-between ">
                         {{-- div per il testo a sinistra --}}
@@ -24,7 +24,7 @@
                                     {{-- ARTICLE BODY --}}
                                 <p class="lead">{{$article->body}}</p>
                             </div>
-                            <h3>Prezzo: {{$article->price}}€</h3>
+                            <h3>{{__("messages.price")}} {{$article->price}}€</h3>
                         </div>
                             {{-- CAROUSEL a destra--}}
                         <div class="col-12 col-md-6 d-flex align-items-center justify-content-end order-1 order-md-2">

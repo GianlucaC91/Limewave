@@ -103,6 +103,7 @@ return [
     "adRestored" => "Annuncio ripristinato",//
     "deletedP"=> "Annuncio eliminato definitivamente",//Annuncio eliminato definitivamente
     "profileEdited" => "Profilo modificato correttamente",
+    "passwordProfile" => "Password",
 
     //Lavora con noi
     "joins"=> "Entra a far parte",

@@ -38,7 +38,7 @@
                             <tr class="text-center">
                                 <th scope="row" class="p-3">{{$loop->iteration}}</th>
                                 <td>{{$pending->id}}</td>
-                                <td>{{$pending->category->name}}</td>
+                                <td>{{__("messages." . $pending->category->name) }}</td>
                                 <td>{{Str::limit($pending->user->name, 14)}}</td>
                                 <td>{{Str::limit($pending->title, 14)}}</td>
                                 <td>{{Str::limit($pending->price, 14)}}</td>
@@ -186,7 +186,7 @@
                                                     aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p class="card-text">{{__("messages.category")}}: {{ $pending->category->name }}</p>
+                                                    <p class="card-text">{{__("messages.category")}}: {{__("messages." . $pending->category->name) }}</p>
                                                     <p class="card-text">{{__("messages.price")}}: {{ $pending->price }} €</p>
                                                     <p class="card-text">{{ Str::limit($pending->body, 50) }}</p>
                                                     
@@ -253,7 +253,7 @@
                         <tr class="text-center">
                             <th scope="row" class="p-3">{{$loop->iteration}}</th>
                             <td>{{$rejected->id}}</td>
-                            <td>{{$rejected->category->name}}</td>
+                            <td>{{__("messages." . $rejected->category->name) }}</td>
                             <td>{{Str::limit($rejected->user->name, 15)}}</td>
                             <td>{{Str::limit($rejected->title, 15)}}</td>
                             <td>{{Str::limit($rejected->price, 15)}}</td>
@@ -298,7 +298,7 @@
                                     aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <p class="card-text">{{__("messages.category")}}: {{ $rejected->category->name }}</p>
+                                    <p class="card-text">{{__("messages.category")}}: {{__("messages." . $rejected->category->name) }}</p>
                                     <p class="card-text">{{__("messages.price")}}: {{ $rejected->price }} €</p>
                                     <p class="card-text">{{ Str::limit($rejected->body, 50) }}</p>
                                     

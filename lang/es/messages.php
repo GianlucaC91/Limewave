@@ -101,6 +101,7 @@ return [
     "compellingContent" => "Contenido atractivo",//Contenuti ammicanti
     "medicalContent" => "Contenido medico",//Contenuti medici
     "labels" => "Etiquetas",//etichette
+    "passwordProfile" => "Contraseña",
 
     //Lavora con noi
     "joins"=> "Entra a una parte lejana",//Entra a far parte

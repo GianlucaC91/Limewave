@@ -278,13 +278,13 @@ use App\Models\User;
                     <div class="accordion-body border-0 bg-s text-p px-0">
                         <ul class="bg-s list-unstyled">
                             <li>
-                                <x-_locale lang="en"></x-_locale> 
+                                <x-_locale lang="IT"></x-_locale> 
                             </li>
                             <li>
-                                <x-_locale lang="it"></x-_locale> 
+                                <x-_locale lang="EN"></x-_locale> 
                             </li>
                             <li>
-                                <x-_locale lang="es"></x-_locale> 
+                                <x-_locale lang="ES"></x-_locale> 
                             </li>       
                         </ul>
                     </div>

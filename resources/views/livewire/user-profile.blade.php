@@ -77,7 +77,7 @@
                             </div>
                             {{-- PASSWORD --}}
                             <div class="mb-3">
-                                <label for="password" class="form-label">{{__("messages.password")}}:</label>
+                                <label for="password" class="form-label">{{__("messages.passwordProfile")}}:</label>
                                 <input type="password" wire:model="password" class="form-control" id="password">
                             </div>
                             <div class="text-danger">

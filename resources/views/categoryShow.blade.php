@@ -33,7 +33,7 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">{{ Str::limit($article->title, 20) }}</h5>
-                                <p class="card-text">Creato il: {{ $article->created_at->format('d/m/Y') }}</p>
+                                <p class="card-text">{{__("messages.created_at")}} {{ $article->created_at->format('d/m/Y') }}</p>
                             </div>
                             <div class="card-body">
                                 <p class="card-text h5">{{ __("messages.price") }}: {{ $article->price }}€</p>

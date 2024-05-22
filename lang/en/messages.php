@@ -109,6 +109,8 @@ return [
     "search"  => "Search", // Cerca
     "profile"  => "Profile", // Profilo
     "newAnnouncement"  => "New announcement", //Nuovo annuncio
+    "passwordProfile" => "Password",
+    "profileEdited" => "Profile modified successfully",
     //
 
 // LOGIN E REGISTER
