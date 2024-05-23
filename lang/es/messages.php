@@ -102,7 +102,7 @@ return [
     "medicalContent" => "Contenido medico",//Contenuti medici
     "labels" => "Etiquetas",//etichette
     "passwordProfile" => "Contraseña",
-
+    "userAccepted" => "Usuario aceptado como revisor",//
     //Lavora con noi
     "joins"=> "Entra a una parte lejana",//Entra a far parte
     "team" => "de nuestro equipo",//del nostro team

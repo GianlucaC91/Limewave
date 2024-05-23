@@ -104,7 +104,7 @@ return [
     "deletedP"=> "Annuncio eliminato definitivamente",//Annuncio eliminato definitivamente
     "profileEdited" => "Profilo modificato correttamente",
     "passwordProfile" => "Password",
-
+    "userAccepted"  => "Utente accettato come revisore",//"Utente accettato come revisore",
     //Lavora con noi
     "joins"=> "Entra a far parte",
     "team" => "del nostro team",//del nostro team
