@@ -18,7 +18,7 @@ class Article extends Model
         'user_id',
         'category_id',
         "is_accepted",
-        "deleted_at"
+        "deleted_at",
     ];
     
     public function toSearchableArray()
